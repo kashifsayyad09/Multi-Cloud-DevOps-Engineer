@@ -57,6 +57,13 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
+<!-- Vanta.js 3D animated backgrounds (one WebGL scene active at a time, per scroll zone) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.waves.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.halo.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.rings.min.js"></script>
+
 <style>
   :root{
     /* ---- Design tokens (derived from SpaceX-inspired design system) ---- */
@@ -99,7 +106,7 @@
     --tint-page: 244,244,249;
     --tint-light: 10,10,20;
   }
-  html[data-theme="light"] .bg-video-layer,
+  html[data-theme="light"] .vanta-zone,
   html[data-theme="light"] .orb,
   html[data-theme="light"] .bg-grain,
   html[data-theme="light"] .cursor-spot{
@@ -160,27 +167,21 @@
     position: relative;
   }
 
-  /* ---------------- BACKGROUND VIDEO SYSTEM ---------------- */
-  /* Fixed layer sits behind everything. Multiple clips are stacked and
-     crossfaded as the person scrolls between content "zones". */
-  .bg-video-layer{
+  /* ---------------- BACKGROUND: VANTA.JS 3D SCENES ---------------- */
+  /* One fixed full-viewport container per zone. Only one is ever visible/active
+     at a time — Vanta effects are destroyed and re-initialized as the person
+     scrolls between zones, so only a single WebGL context runs at once. */
+  .vanta-zone{
     position: fixed;
     inset:0;
     z-index:-3;
     background: var(--color-bg);
     pointer-events:none;
-  }
-  .bg-clip{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    object-fit:cover;
     opacity:0;
-    filter: saturate(1.05) brightness(1);
-    transform: scale(1.06);
-    transition: opacity 1.4s var(--ease);
-    will-change: opacity;
+    transition: opacity 1.2s var(--ease);
   }
-  .bg-clip.is-active{ opacity:1; }
+  .vanta-zone.is-active{ opacity:1; }
+  .vanta-zone canvas{ pointer-events:none !important; }
 
   .bg-video-scrim{
     position:fixed; inset:0; z-index:-2; pointer-events:none;
@@ -948,14 +949,12 @@
 
   /* ---------------- (Optional) DEMO VIDEO ---------------- */
   /*
-    TWO SEPARATE VIDEO SYSTEMS ON THIS PAGE:
+    BACKGROUND: this site uses Vanta.js 3D scenes (Birds, Waves, Halo, Rings),
+    one per scroll zone — see VANTA_ZONE_CONFIG near the bottom of the <script>
+    block to change effects, colors, or options per zone.
 
-    1. SCROLLING BACKGROUND VIDEOS (behind the whole page, crossfade per section)
-       Find `backgroundVideos: [...]` in the <script> DATA object.
-       Add up to 4 clips to assets/ (e.g. assets/bg-hero.mp4, assets/bg-cloud.mp4...)
-       and fill in each slot's path. Leave "" for zones that should stay plain dark.
-
-    2. THE "WALKTHROUGH" SECTION BELOW (a single full video with controls/sound)
+    THE "WALKTHROUGH" SECTION BELOW (a single full video with controls/sound)
+    is a separate, optional feature:
        1. Drop the file at assets/demo.mp4
        2. Set `demoVideoSrc: "assets/demo.mp4"` in the DATA object
        3. This section un-hides automatically — no other edits needed.
@@ -1104,6 +1103,7 @@
     z-index:400;
     border-radius:50%;
     transform: translate(-50%,-50%);
+    opacity:0;
   }
   .cursor-dot{
     width:6px; height:6px;
@@ -1306,7 +1306,10 @@
   </div>
 </div>
 
-<div class="bg-video-layer" id="bgVideoLayer" aria-hidden="true"></div>
+<div class="vanta-zone" id="vantaZone0" aria-hidden="true"></div>
+<div class="vanta-zone" id="vantaZone1" aria-hidden="true"></div>
+<div class="vanta-zone" id="vantaZone2" aria-hidden="true"></div>
+<div class="vanta-zone" id="vantaZone3" aria-hidden="true"></div>
 <div class="bg-video-scrim" aria-hidden="true"></div>
 <div class="orb orb-1" aria-hidden="true"></div>
 <div class="orb orb-2" aria-hidden="true"></div>
@@ -1356,7 +1359,7 @@
 <main id="main-content">
 
   <!-- ============ HERO ============ -->
-  <section class="hero" id="zone-hero" data-video-zone="0">
+  <section class="hero" id="zone-hero" data-bg-zone="0">
     <div class="container">
       <div class="availability-badge"><span class="pulse-dot"></span>Available for new opportunities</div>
       <div class="eyebrow"><span class="bar"></span>DevOps Engineer · Cloud Infrastructure · Hyderabad, India</div>
@@ -1383,7 +1386,7 @@
   </section>
 
   <!-- ============ ABOUT ============ -->
-  <section id="about" data-video-zone="1">
+  <section id="about" data-bg-zone="1">
     <div class="container">
       <div class="section-head reveal">
         <span class="section-num">01 — About</span>
@@ -1437,7 +1440,7 @@
   </section>
 
   <!-- ============ EXPERIENCE ============ -->
-  <section id="experience" data-video-zone="2">
+  <section id="experience" data-bg-zone="2">
     <div class="container">
       <div class="section-head reveal">
         <span class="section-num">03 — Experience</span>
@@ -1475,7 +1478,7 @@
   </section>
 
   <!-- ============ CERTIFICATIONS ============ -->
-  <section id="certifications" data-video-zone="3">
+  <section id="certifications" data-bg-zone="3">
     <div class="container">
       <div class="section-head reveal">
         <span class="section-num">05 — Certifications</span>
@@ -1709,16 +1712,6 @@ const DATA = {
     { name:'Dynatrace Essentials', issuer:'Dynatrace' },
     { name:'HackFest 2026', issuer:'Naresh i Technologies' }
   ],
-  // ---- Background videos that crossfade in as the person scrolls through each zone.
-  //      Zone 0 = Hero, 1 = About/Skills, 2 = Experience/Projects, 3 = Certifications/Education/Contact.
-  //      Add each clip to assets/ (e.g. assets/bg-1.mp4) and fill in the path below.
-  //      Leave any slot "" to just show the plain dark background for that stretch. ----
-  backgroundVideos: [
-    "https://portfolio-123-ali.s3.us-east-1.amazonaws.com/demo2.mp4",   // zone 0 — Hero
-    "https://portfolio-123-ali.s3.us-east-1.amazonaws.com/uhd_30fps.mp4",   // zone 1 — About / Skills
-    "https://portfolio-123-ali.s3.us-east-1.amazonaws.com/13738893_1920_1080_30fps.mp4",   // zone 2 — Experience / Projects
-    "https://portfolio-123-ali.s3.us-east-1.amazonaws.com/12234337_1920_1080_30fps.mp4"    // zone 3 — Certifications / Education / Contact
-  ],
   // ---- Optional separate "Walkthrough" section further down the page ----
   demoVideoSrc: "",
   // ---- GitHub username for the live "GitHub Activity" section (leave "" to hide it) ----
@@ -1927,56 +1920,77 @@ async function loadGithubStats(){
   }
 }
 
-let bgClips = [];
-function buildBackgroundVideos(){
-  const layer = document.getElementById('bgVideoLayer');
-  bgClips = DATA.backgroundVideos.map((src, i) => {
-    if(!src || src.trim() === "") return null;
-    const video = document.createElement('video');
-    video.className = 'bg-clip';
-    // set as real HTML attributes (not just JS props) — some browsers only
-    // honor autoplay/muted policy checks against the attributes at load time
-    video.setAttribute('muted', '');
-    video.setAttribute('loop', '');
-    video.setAttribute('playsinline', '');
-    video.setAttribute('autoplay', '');
-    video.muted = true;
-    video.loop = true;
-    video.playsInline = true;
-    video.autoplay = true;
-    video.preload = 'auto';
-    video.addEventListener('error', () => {
-      const err = video.error;
-      console.warn(`[background video] zone ${i} failed to load (${src}).`,
-        err ? `MediaError code ${err.code}` : '',
-        '— check that the file exists at this URL and the S3 bucket/object allows public read access.');
-    });
-    video.addEventListener('stalled', () => {
-      console.warn(`[background video] zone ${i} stalled while buffering (${src}).`);
-    });
-    video.src = src;
-    layer.appendChild(video);
-    return video;
-  });
-}
+// ---- Vanta.js background zones: one WebGL 3D scene per scroll zone.
+//      Only one effect ever runs at a time — switching zones destroys the
+//      previous scene and initializes the next, so there's a single active
+//      WebGL context at any moment (kept light despite 4 total scenes).
+const VANTA_ZONE_CONFIG = [
+  { // zone 0 — Hero
+    effect: 'BIRDS',
+    options: {
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00,
+      scale: 1.00, scaleMobile: 1.00,
+      colorMode: 'lerpGradient',
+      backgroundColor: 0x050506
+    }
+  },
+  { // zone 1 — About / Skills
+    effect: 'WAVES',
+    options: {
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00,
+      scale: 1.00, scaleMobile: 1.00,
+      color: 0xe2230
+    }
+  },
+  { // zone 2 — Experience / Projects
+    effect: 'HALO',
+    options: {
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00,
+      baseColor: 0xe2001b,
+      backgroundColor: 0x10033f
+    }
+  },
+  { // zone 3 — Certifications / Education / Contact
+    effect: 'RINGS',
+    options: {
+      mouseControls: true, touchControls: true, gyroControls: false,
+      minHeight: 200.00, minWidth: 200.00,
+      scale: 1.00, scaleMobile: 1.00,
+      backgroundColor: 0x050506
+    }
+  }
+];
 
+let currentVantaInstance = null;
 let activeZone = -1;
 function activateZone(idx){
   if(idx === activeZone) return;
   activeZone = idx;
-  bgClips.forEach((clip, i) => {
-    if(!clip) return;
-    if(i === idx){
-      clip.classList.add('is-active');
-      const tryPlay = () => clip.play().catch(err => {
-        console.warn(`[background video] zone ${i} could not autoplay yet:`, err.message);
-      });
-      tryPlay();
-      if(clip.readyState < 3){ clip.addEventListener('canplay', tryPlay, { once: true }); }
-    } else {
-      clip.classList.remove('is-active');
-    }
-  });
+
+  // fade out + tear down whatever scene is currently running
+  document.querySelectorAll('.vanta-zone').forEach(el => el.classList.remove('is-active'));
+  if(currentVantaInstance){
+    try { currentVantaInstance.destroy(); } catch(e){ /* already gone */ }
+    currentVantaInstance = null;
+  }
+
+  const zoneEl = document.getElementById('vantaZone' + idx);
+  const config = VANTA_ZONE_CONFIG[idx];
+  if(!zoneEl || !config) return;
+
+  zoneEl.classList.add('is-active');
+  if(typeof VANTA === 'undefined' || !VANTA[config.effect]){
+    console.warn(`[vanta background] VANTA.${config.effect} isn't loaded — check that the CDN script tags for three.js and vanta.${config.effect.toLowerCase()}.min.js loaded successfully.`);
+    return;
+  }
+  try {
+    currentVantaInstance = VANTA[config.effect]({ el: zoneEl, ...config.options });
+  } catch(err){
+    console.warn(`[vanta background] failed to initialize VANTA.${config.effect}:`, err.message);
+  }
 }
 
 renderSkills();
@@ -1987,7 +2001,6 @@ renderProjects();
 renderCerts();
 setupDemoVideo();
 loadGithubStats();
-buildBackgroundVideos();
 
 /* =========================================================
    TERMINAL TYPING ANIMATION
@@ -2179,9 +2192,14 @@ window.addEventListener('load', () => {
     const dotY = gsap.quickTo(dot, 'y', { duration: 0.05, ease: 'none' });
     const ringX = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'power3.out' });
     const ringY = gsap.quickTo(ring, 'y', { duration: 0.35, ease: 'power3.out' });
+    let cursorRevealed = false;
     window.addEventListener('mousemove', (e) => {
       dotX(e.clientX); dotY(e.clientY);
       ringX(e.clientX); ringY(e.clientY);
+      if(!cursorRevealed){
+        cursorRevealed = true;
+        gsap.to([dot, ring], { opacity: 1, duration: 0.2 });
+      }
     });
     document.addEventListener('mouseleave', () => { gsap.to([dot, ring], { opacity: 0, duration: 0.2 }); });
     document.addEventListener('mouseenter', () => { gsap.to([dot, ring], { opacity: 1, duration: 0.2 }); });
@@ -2449,8 +2467,8 @@ window.addEventListener('load', () => {
 
   // background video zones — crossfade as each zone enters/re-enters view
   activateZone(0); // start on the hero clip
-  document.querySelectorAll('[data-video-zone]').forEach(el => {
-    const idx = parseInt(el.getAttribute('data-video-zone'), 10);
+  document.querySelectorAll('[data-bg-zone]').forEach(el => {
+    const idx = parseInt(el.getAttribute('data-bg-zone'), 10);
     ScrollTrigger.create({
       trigger: el,
       start: 'top 55%',
