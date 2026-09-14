@@ -707,6 +707,32 @@
   }
   .pill:hover{ color:var(--color-text); border-color: var(--color-accent-bright); background: rgba(0,0,238,0.10); }
 
+  /* ---------------- TECH STACK ---------------- */
+  .stack-marquee{
+    overflow:hidden;
+    -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
+    margin: 26px 0 34px;
+  }
+  .stack-track{ display:flex; width:max-content; gap:14px; }
+  .stack-chip{
+    display:flex; align-items:center; gap:10px;
+    white-space:nowrap;
+    padding: 10px 16px 10px 12px;
+    background: rgba(var(--tint-dark),0.5);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid var(--color-border-strong);
+    border-radius: 999px;
+    color: var(--color-text-dim);
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    transition: border-color .25s var(--ease), color .25s var(--ease), background .25s var(--ease);
+  }
+  .stack-chip:hover{ border-color: var(--color-accent-bright); color: var(--color-text); background: rgba(0,0,238,0.10); }
+  .stack-chip img{ width:20px; height:20px; object-fit:contain; flex-shrink:0; }
+  .stack-chip img.icon-invert{ filter: invert(1) brightness(1.6); }
+
   /* ---------------- CORE PROFICIENCY BARS ---------------- */
   .proficiency-panel{
     margin-top: 28px;
@@ -1430,6 +1456,11 @@
         <h2 class="section-title">Technical Skills</h2>
         <p class="section-desc">Auto-categorized from tools and platforms used across real deployments.</p>
       </div>
+
+      <div class="stack-marquee">
+        <div class="stack-track" id="stackTrack"></div>
+      </div>
+
       <div class="skills-grid" id="skillsGrid"></div>
 
       <div class="proficiency-panel reveal">
@@ -1614,6 +1645,27 @@ const DATA = {
     { type:'out', text:'app production Synced  Healthy' },
     { type:'cmd', text:'docker build -t app:latest . && docker push' },
     { type:'out', text:'latest: digest sha256:8f2e... pushed' }
+  ],
+  // ---- Tech stack icon strip shown under the Skills intro ----
+  techStack: [
+    { name:'AWS', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original-wordmark.svg' },
+    { name:'Google Cloud', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg' },
+    { name:'Azure', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg' },
+    { name:'Grafana', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/grafana/grafana-original.svg' },
+    { name:'Prometheus', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/prometheus/prometheus-original.svg' },
+    { name:'Node.js', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg' },
+    { name:'Java', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg' },
+    { name:'React', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg' },
+    { name:'Terraform', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/terraform/terraform-original.svg' },
+    { name:'Kubernetes', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg' },
+    { name:'GitLab', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/gitlab/gitlab-original.svg' },
+    { name:'Docker', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg' },
+    { name:'GitHub', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg', invert:true },
+    { name:'Python', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg' },
+    { name:'Streamlit', src:'https://cdn.simpleicons.org/streamlit' },
+    { name:'Claude', src:'https://cdn.simpleicons.org/claude' },
+    { name:'Linux', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg', invert:true },
+    { name:'MySQL', src:'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg' }
   ],
   skills: [
     { cat:'Cloud Platforms', items:['AWS EC2','AWS S3','AWS IAM','AWS VPC','AWS EBS','AWS RDS','AWS EKS','AWS ECR','Oracle Cloud','GCP','Azure'] },
@@ -1868,6 +1920,15 @@ function renderCerts(){
   track.innerHTML = chips + chips;
 }
 
+function renderStack(){
+  const track = document.getElementById('stackTrack');
+  const chips = DATA.techStack.map(s => `
+    <div class="stack-chip"><img src="${s.src}" alt="${s.name}" loading="lazy" class="${s.invert ? 'icon-invert' : ''}" />${s.name}</div>
+  `).join('');
+  // duplicate for seamless marquee loop
+  track.innerHTML = chips + chips;
+}
+
 function setupDemoVideo(){
   if(DATA.demoVideoSrc && DATA.demoVideoSrc.trim() !== ""){
     const section = document.getElementById('demo-section');
@@ -1994,6 +2055,7 @@ function activateZone(idx){
 }
 
 renderSkills();
+renderStack();
 renderProficiency();
 renderExploring();
 renderFaq();
@@ -2454,6 +2516,17 @@ window.addEventListener('load', () => {
   gsap.to(track, {
     x: -trackWidth,
     duration: trackWidth / 60,
+    ease: 'none',
+    repeat: -1
+  });
+
+  // tech stack marquee — infinite scroll, opposite direction for contrast
+  const stackTrack = document.getElementById('stackTrack');
+  const stackWidth = stackTrack.scrollWidth / 2;
+  gsap.set(stackTrack, { x: -stackWidth });
+  gsap.to(stackTrack, {
+    x: 0,
+    duration: stackWidth / 60,
     ease: 'none',
     repeat: -1
   });
