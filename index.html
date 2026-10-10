@@ -13,6 +13,7 @@
 <meta name="description" content="Syed Kashif Ali — DevOps and cloud engineer (Hyderabad, India) working with AWS, Kubernetes, Terraform, CI/CD and GitOps. Projects, skills, certifications and résumé." />
 <meta name="author" content="Syed Kashif Ali" />
 <meta name="theme-color" content="#050506" />
+<meta name="referrer" content="strict-origin-when-cross-origin" />
 <link rel="canonical" href="https://syed.drocart.shop/" />
 
 <!-- Favicon: a simple inline SVG terminal-prompt mark, no external file needed -->
@@ -49,7 +50,8 @@
     "https://www.linkedin.com/in/syed-kashif-ali-844137292/",
     "https://github.com/kashifsayyad09"
   ],
-  "knowsAbout": ["AWS", "Kubernetes", "Terraform", "CI/CD", "GitOps", "Docker", "Ansible", "DevOps"]
+  "alumniOf": { "@type": "CollegeOrUniversity", "name": "Savitribai Phule Pune University" },
+  "knowsAbout": ["AWS", "Kubernetes", "Terraform", "CI/CD", "GitOps", "Docker", "Ansible", "DevOps", "Amazon Bedrock", "Prometheus", "Grafana"]
 }
 </script>
 
@@ -291,8 +293,8 @@
     background: var(--color-accent-bright);
     transition: width .3s var(--ease);
   }
-  .nav-links a:hover{ color: var(--color-text); }
-  .nav-links a:hover::after{ width:100%; }
+  .nav-links a:hover, .nav-links a.is-active{ color: var(--color-text); }
+  .nav-links a:hover::after, .nav-links a.is-active::after{ width:100%; }
   .nav-cta{
     font-size:13px;
     font-weight:500;
@@ -596,6 +598,16 @@
     gap: 48px;
     align-items:start;
   }
+  @media print{
+    header, .mobile-menu, #preloader, .vanta-zone, .orb, .bg-grain, .bg-grid, .bg-video-scrim, .cursor-ring, .cursor-dot, .cursor-spot,
+    .progress-bar, .to-top, .copy-toast, .cmdk-overlay, .shortcuts-overlay, .terminal, .project-filters, .stack-marquee, .cert-marquee, #demo-section, #github{ display:none !important; }
+    html, body{ background:#fff !important; color:#000 !important; }
+    *{ color:#000 !important; text-shadow:none !important; box-shadow:none !important; backdrop-filter:none !important; -webkit-backdrop-filter:none !important; }
+    .reveal, .photo-frame-wrap, .hero-title .line span{ opacity:1 !important; transform:none !important; }
+    .project-card, .skill-card{ break-inside:avoid; border:1px solid #bbb !important; background:#fff !important; }
+    a[href^="http"]::after{ content:" (" attr(href) ")"; font-size:10px; }
+  }
+
   /* ---------------- HERO AVATAR ---------------- */
   .hero-id{ display:flex; align-items:center; gap:16px; flex-wrap:wrap; margin-bottom:18px; }
   .hero-id .availability-badge{ margin-bottom:0; }
@@ -866,6 +878,25 @@
   .project-desc{ color: var(--color-text-dim); font-size:14px; margin-bottom:18px; }
   .project-desc li{ margin-bottom:7px; padding-left:16px; position:relative; }
   .project-desc li::before{ content:'—'; position:absolute; left:0; color:var(--color-text-faint); }
+  .sr-only{ position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+  .project-filters{ display:flex; flex-wrap:wrap; gap:10px; margin: 0 0 28px; }
+  .filter-chip{
+    font-family: var(--font-mono); font-size:12px; letter-spacing:0.3px;
+    padding: 8px 16px; border-radius:999px; cursor:pointer;
+    color: var(--color-text-dim);
+    background: rgba(var(--tint-dark),0.45);
+    border: 1px solid var(--color-border-strong);
+    transition: color .25s var(--ease), border-color .25s var(--ease), background .25s var(--ease);
+  }
+  .filter-chip:hover{ color: var(--color-text); border-color: var(--color-accent-bright); }
+  .filter-chip[aria-pressed="true"]{ color:#fff; background: var(--color-accent); border-color: var(--color-accent-bright); }
+  .project-card.is-filtered-out{ display:none !important; }
+  .project-link{
+    display:inline-block; margin-top:18px;
+    font-family: var(--font-mono); font-size:12px; color: var(--color-accent-bright);
+    border-bottom:1px solid transparent; transition: border-color .25s var(--ease);
+  }
+  .project-link:hover{ border-bottom-color: var(--color-accent-bright); }
   .tag-row{ display:flex; flex-wrap:wrap; gap:7px; }
   .tag{
     font-family: var(--font-mono);
@@ -1325,6 +1356,18 @@
 
 <a href="#main-content" class="skip-link">Skip to content</a>
 
+<noscript>
+  <style>
+    #preloader{ display:none !important; }
+    .reveal, .photo-frame-wrap, .hero-title .line span{ opacity:1 !important; transform:none !important; }
+  </style>
+  <div style="max-width:720px;margin:96px auto 0;padding:0 24px;font-family:system-ui,sans-serif;">
+    <h2 style="margin-bottom:8px;">Syed Kashif Ali — DevOps &amp; Multi-Cloud Engineer</h2>
+    <p style="margin-bottom:12px;">This portfolio uses JavaScript for its skills, projects and certifications sections. Core links:</p>
+    <p><a href="Kashif_DevOps_Resume_ATS.pdf">Résumé (PDF)</a> · <a href="https://github.com/kashifsayyad09">GitHub</a> · <a href="https://www.linkedin.com/in/syed-kashif-ali-844137292/">LinkedIn</a> · <a href="mailto:kashifsayyad09@gmail.com">Email</a></p>
+  </div>
+</noscript>
+
 <div id="preloader">
   <div class="preloader-mark"><span class="dot"></span>kashif@devops:~ booting</div>
   <div class="preloader-log" id="preloaderLog">Initializing kubelet...</div>
@@ -1466,7 +1509,7 @@
           <p>Proficient in Jenkins, GitHub Actions, Kubernetes, Docker, Terraform, Ansible, and Argo CD, with practical exposure to AI/LLM integration via Amazon Bedrock. Eager to contribute to a DevOps or Cloud Engineering team and deliver scalable, reliable infrastructure solutions.</p>
         </div>
         <div class="about-stats reveal">
-          <div class="stat"><div class="stat-num" data-target="7" data-suffix="+">7+</div><div class="stat-label">Infrastructure &amp; DevOps Projects</div></div>
+          <div class="stat"><div class="stat-num" data-target="10" data-suffix="+">10+</div><div class="stat-label">Infrastructure, DevOps &amp; AI Projects</div></div>
           <div class="stat"><div class="stat-num" data-target="9" data-suffix="">9</div><div class="stat-label">Certifications</div></div>
           <div class="stat"><div class="stat-num" data-target="8.3" data-suffix="" data-decimals="1">8.3</div><div class="stat-label">CGPA / 10</div></div>
           <div class="stat"><div class="stat-num" data-target="4" data-suffix="+">4+</div><div class="stat-label">Cloud Platforms</div></div>
@@ -1529,8 +1572,10 @@
       <div class="section-head reveal">
         <span class="section-num">04 — Projects</span>
         <h2 class="section-title">Selected Projects</h2>
-        <p class="section-desc">End-to-end infrastructure, CI/CD, and observability builds.</p>
+        <p class="section-desc">End-to-end infrastructure, CI/CD, observability and AI-assisted automation builds.</p>
       </div>
+      <div class="project-filters" id="projectFilters" role="group" aria-label="Filter projects by category"></div>
+      <p class="sr-only" id="projectFilterStatus" role="status" aria-live="polite"></p>
       <div class="projects-grid" id="projectsGrid"></div>
     </div>
   </section>
@@ -1711,14 +1756,59 @@ const DATA = {
     { cat:'Monitoring & Observability', items:['Prometheus','Grafana','Alertmanager','PagerDuty','Datadog','Dynatrace','Node Exporter','cAdvisor'] },
     { cat:'Languages & Scripting', items:['Bash','YAML','SQL','Python','Java'] },
     { cat:'Version Control', items:['Git','GitHub','GitLab'] },
-    { cat:'Tools', items:['Jira','Postman','REST APIs','Ansible Vault','SonarQube','CodeAnt AI'] },
-    { cat:'Generative AI', items:['Amazon Bedrock','Claude','LLM integration'] },
+    { cat:'Tools', items:['Jira','Postman','REST APIs','FastAPI','Streamlit','Ansible Vault','SonarQube','CodeAnt AI'] },
+    { cat:'Generative AI', items:['Amazon Bedrock','Claude','Groq','Multi-agent LLM workflows'] },
     { cat:'Core Concepts', items:['CI/CD','GitOps','IaC','RBAC','OIDC','Microservices','Cloud Security','HPA','Ingress'] }
   ],
   projects: [
+    // Optional per-project fields: groups:[...] for the filter bar, url:'https://github.com/...' to show a "View on GitHub" link.
+    {
+      category: 'AI · CI/CD',
+      title:'AI GitHub Actions Builder',
+      groups:['ai','cicd'],
+      desc:[
+        'Multi-agent CI/CD platform built around seven Groq LLM-powered agents.',
+        'FastAPI backend with a React, Vite and Tailwind frontend.',
+        'Dual-mode CLI/library design lets the agents run behind FastAPI or directly as GitHub Actions pipeline steps.'
+      ],
+      tags:['Groq','FastAPI','React','Vite','Tailwind','GitHub Actions']
+    },
+    {
+      category: 'Cloud · Kubernetes · IaC',
+      title:'Production-Pattern EKS Infrastructure with Terraform',
+      groups:['cloud','kubernetes'],
+      desc:[
+        'Ten Terraform modules: vpc, iam, security-groups, kms, cloudwatch, eks, node-group, bastion, github-oidc and s3.',
+        'Uses Terraform native S3 state locking, EKS access entries instead of manual aws-auth edits, and KMS customer-managed key encryption.',
+        'Identified and fixed ten CI/CD errors through iterative review.'
+      ],
+      tags:['Terraform','EKS','KMS','GitHub OIDC','CloudWatch','S3']
+    },
+    {
+      category: 'Cloud · IaC (GCP)',
+      title:'Three-Tier Architecture on GCP with Terraform',
+      groups:['cloud'],
+      desc:[
+        'Three-tier Terraform architecture across dev, test and prod environments.',
+        'Six modules with an eight-subnet network design.'
+      ],
+      tags:['Terraform','GCP','Multi-environment']
+    },
+    {
+      category: 'Analytics · CI/CD',
+      title:'Veera Actions Dashboard',
+      groups:['cicd','observability'],
+      desc:[
+        'GitHub Actions analytics platform in Python, Streamlit and Plotly, with pages for Deployments, Contributors, Repo Health, Analytics and Performance.',
+        'Custom design system with a hand-built 37-icon SVG library and a four-layer GSAP animation architecture.',
+        'Deployed through a GitHub Actions pipeline using OIDC and SSM to a private EC2 server.'
+      ],
+      tags:['Python','Streamlit','Plotly','GSAP','GitHub Actions','OIDC','SSM','EC2']
+    },
     {
       category: 'Cloud · Kubernetes',
       title:'Containerized App Deployment on AWS EKS with RDS',
+      groups:['cloud','kubernetes','cicd'],
       desc:[
         'Built CI/CD pipelines using Jenkins, Terraform, Argo CD, and Kubernetes (EKS).',
         'Containerized and deployed Node.js applications using Docker and Kubernetes.',
@@ -1729,6 +1819,7 @@ const DATA = {
     {
       category: 'CI/CD · GitOps',
       title:'CI/CD & GitOps Pipeline',
+      groups:['cicd','kubernetes'],
       desc:[
         'Designed end-to-end CI/CD pipelines in Jenkins for automated build, test, and deployment.',
         'Built parallel GitHub Actions workflows for linting, testing, and Docker image build/push per PR.',
@@ -1741,6 +1832,7 @@ const DATA = {
     {
       category: 'Cloud · IaC',
       title:'AWS 3-Tier Architecture with Terraform',
+      groups:['cloud'],
       desc:[
         'Designed a modular 3-tier AWS architecture (web, app, database) using reusable Terraform modules.',
         'Built a custom VPC with public/private subnets across multiple Availability Zones.',
@@ -1752,6 +1844,7 @@ const DATA = {
     {
       category: 'Kubernetes',
       title:'Kubernetes Cluster Setup & Management',
+      groups:['kubernetes'],
       desc:[
         'Provisioned and managed a multi-node Kubernetes cluster on Amazon EKS.',
         'Deployed microservices using Helm charts with environment-specific overrides.',
@@ -1763,6 +1856,7 @@ const DATA = {
     {
       category: 'Config Management',
       title:'Ansible Configuration Management & Automation',
+      groups:['cloud'],
       desc:[
         'Authored modular Ansible playbooks for server provisioning and OS hardening across EC2 fleets.',
         'Organized reusable roles for web, application, and database servers.',
@@ -1774,6 +1868,7 @@ const DATA = {
     {
       category: 'Linux · Scripting',
       title:'Linux Administration & Shell Scripting',
+      groups:['cloud'],
       desc:[
         'Performed user/group management, permission hardening, and SSH key-based auth on Ubuntu servers.',
         'Wrote Bash scripts for log rotation, disk usage alerting, and service health monitoring via cron.',
@@ -1784,6 +1879,7 @@ const DATA = {
     {
       category: 'Observability',
       title:'Monitoring & Alerting Stack',
+      groups:['observability'],
       desc:[
         'Deployed a full observability stack: Prometheus, Grafana, and Alertmanager.',
         'Built custom Grafana dashboards for CPU, memory, pod health, latency, and error rate.',
@@ -1791,6 +1887,14 @@ const DATA = {
       ],
       tags:['Prometheus','Grafana','Alertmanager','PagerDuty','Datadog','Dynatrace']
     }
+  ],
+  projectFilters: [
+    { id:'all', label:'All' },
+    { id:'cloud', label:'Cloud & IaC' },
+    { id:'kubernetes', label:'Kubernetes' },
+    { id:'cicd', label:'CI/CD & GitOps' },
+    { id:'observability', label:'Observability' },
+    { id:'ai', label:'AI' }
   ],
   certifications: [
     { name:'AWS Well-Architected Proficient', issuer:'Amazon Web Services' },
@@ -1920,7 +2024,7 @@ function renderFaq(){
 function renderProjects(){
   const grid = document.getElementById('projectsGrid');
   grid.innerHTML = DATA.projects.map((p, idx) => `
-    <div class="project-card reveal">
+    <div class="project-card reveal" data-groups="${(p.groups || []).join(' ')}">
       <div class="project-card-head">
         <div class="project-index">${String(idx+1).padStart(2,'0')}</div>
         <div class="project-category">${p.category}</div>
@@ -1928,6 +2032,7 @@ function renderProjects(){
       <div class="project-title">${p.title}</div>
       <ul class="project-desc">${p.desc.map(d => `<li>${d}</li>`).join('')}</ul>
       <div class="tag-row">${p.tags.map(t => `<span class="tag">${t}</span>`).join('')}</div>
+      ${p.url ? `<a class="project-link" href="${p.url}" target="_blank" rel="noopener">View on GitHub <span aria-hidden="true">↗</span></a>` : ''}
     </div>
   `).join('');
 
@@ -1947,6 +2052,30 @@ function renderProjects(){
     card.addEventListener('mouseleave', () => {
       gsap.to(card, { rotateX: 0, rotateY: 0, y: 0, duration: 0.6, ease: 'elastic.out(1, 0.5)' });
     });
+  });
+}
+
+function setupProjectFilters(){
+  const bar = document.getElementById('projectFilters');
+  const status = document.getElementById('projectFilterStatus');
+  if(!bar) return;
+  const cards = [...document.querySelectorAll('#projectsGrid .project-card')];
+  bar.innerHTML = DATA.projectFilters.map((f, i) =>
+    `<button type="button" class="filter-chip" data-filter="${f.id}" aria-pressed="${i === 0}">${f.label}</button>`
+  ).join('');
+  bar.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-chip');
+    if(!btn) return;
+    const id = btn.dataset.filter;
+    bar.querySelectorAll('.filter-chip').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    let shown = 0;
+    cards.forEach(c => {
+      const match = id === 'all' || c.dataset.groups.split(' ').includes(id);
+      c.classList.toggle('is-filtered-out', !match);
+      if(match){ shown++; c.style.opacity = 1; }
+    });
+    status.textContent = `Showing ${shown} of ${cards.length} projects`;
+    if(window.ScrollTrigger) ScrollTrigger.refresh();
   });
 }
 
@@ -2099,6 +2228,7 @@ renderProficiency();
 renderExploring();
 renderFaq();
 renderProjects();
+setupProjectFilters();
 renderCerts();
 setupDemoVideo();
 loadGithubStats();
@@ -2796,6 +2926,22 @@ window.addEventListener('load', () => {
   }
   wireCopy('a[href^="mailto:"]', 'kashifsayyad09@gmail.com', 'Email');
   wireCopy('a[href^="tel:"]', '+91 82650 61177', 'Phone number');
+
+  // ---- Scrollspy: highlight the nav link for the section in view ----
+  (function(){
+    const links = [...document.querySelectorAll('.nav-links a[href^="#"]')];
+    const map = new Map(links.map(a => [a.getAttribute('href').slice(1), a]));
+    if(!('IntersectionObserver' in window) || !map.size) return;
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if(!en.isIntersecting) return;
+        links.forEach(a => { a.classList.remove('is-active'); a.removeAttribute('aria-current'); });
+        const a = map.get(en.target.id);
+        if(a){ a.classList.add('is-active'); a.setAttribute('aria-current', 'true'); }
+      });
+    }, { rootMargin: '-45% 0px -50% 0px' });
+    map.forEach((_, id) => { const el = document.getElementById(id); if(el) io.observe(el); });
+  })();
 
   // ---- Footer status strip: live Hyderabad time ----
   const clockEl = document.getElementById('footerClock');
