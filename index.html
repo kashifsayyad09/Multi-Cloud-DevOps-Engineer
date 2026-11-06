@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Syed Kashif Ali — DevOps &amp; Cloud Engineer</title>
 <meta name="description" content="Portfolio of Syed Kashif Ali: AWS, Terraform, Kubernetes, CI/CD and observability.">
+<meta name="theme-color" content="#0b0a10">
+<meta property="og:type" content="website"><meta property="og:title" content="Syed Kashif Ali — DevOps &amp; Cloud Engineer"><meta property="og:description" content="AWS, Terraform, Kubernetes, CI/CD and observability projects, with live simulations.">
+<meta name="twitter:card" content="summary"><meta name="twitter:title" content="Syed Kashif Ali — DevOps &amp; Cloud Engineer">
+<!-- Add <link rel="canonical" href="https://YOUR-DOMAIN/"> and og:url once your domain is final -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230b0a10'/%3E%3Ctext x='32' y='46' font-size='40' text-anchor='middle' fill='%23b29dff' font-family='Georgia,serif' font-style='italic'%3EK%3C/text%3E%3C/svg%3E">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Syed Kashif Ali","jobTitle":"DevOps & Cloud Engineer","address":{"@type":"PostalAddress","addressLocality":"Hyderabad","addressCountry":"IN"},"sameAs":["https://www.linkedin.com/in/syed-kashif-ali-844137292/","https://github.com/kashifsayyad09"]}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
 <style>
@@ -31,11 +37,11 @@ a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;backgroun
 #menu a{font:italic 400 clamp(44px,9vw,120px)/1.05 var(--ser);min-height:44px;display:block;transition:color .2s,transform .3s}#menu a:hover{color:var(--pu);transform:translateX(18px)}
 #menu a small{font:600 14px var(--sans);color:var(--pu);margin-right:16px;letter-spacing:.1em}
 /* hero */
-#top{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+#top{position:relative;min-height:max(100svh,740px);display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
 #hcv{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}
 .hbot{position:relative;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:end;padding-bottom:clamp(28px,5vh,60px);pointer-events:none}
 .hbot a{pointer-events:auto}
-h1{font:800 clamp(44px,7.4vw,118px)/.95 var(--sans);letter-spacing:-.065em}h1 em{display:block;color:var(--pu);font:italic 400 1.02em/1 var(--ser);letter-spacing:-.03em}
+h1{font:800 clamp(40px,6.2vw,100px)/.95 var(--sans);letter-spacing:-.065em}h1 em{display:block;color:var(--pu);font:italic 400 1.02em/1 var(--ser);letter-spacing:-.03em}
 .hbot p{color:var(--tx);font-size:clamp(16px,1.5vw,21px);max-width:560px}
 .cta{display:inline-flex;gap:12px;margin-top:20px;flex-wrap:wrap}
 .btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 24px;border-radius:14px;background:var(--tx);color:var(--bg);font-weight:600;transition:transform .25s,box-shadow .25s}.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px -8px rgba(178,157,255,.55)}
@@ -196,15 +202,60 @@ html{scroll-padding-top:88px}
 .about p:last-child{margin-bottom:0}
 @media(max-width:900px){.nav{padding:10px var(--pad)}.jt{left:var(--pad)}.tl{right:var(--pad)}.about>div:last-child{width:100%}.kgrid{grid-template-columns:1fr}#top .hbot{padding-top:96px}.fb{justify-content:flex-start}}
 @media(max-width:560px){.rg{grid-template-columns:1fr}.chip{min-height:44px}.case{padding:20px}.cb .btn{width:100%;justify-content:center}.gs div{flex:1 1 40%}.paper .contact .btn{flex:1 1 100%;justify-content:center}.jt{bottom:24px}}
+/* compact full-screen menu */
+#menu{padding:92px var(--gut) 36px;overflow-y:auto;justify-content:center}
+#menu a{display:flex;align-items:baseline;gap:18px;width:100%;max-width:560px;font-size:min(6.4vh,clamp(28px,3.6vw,52px));line-height:1.1;padding:.2em 0;min-height:44px;border-bottom:1px solid rgba(244,240,232,.1)}
+#menu a small{flex:0 0 30px;font-size:12px;letter-spacing:.12em}
+#menu a:hover{transform:translateX(10px)}
+/* cursor themes + mouse doll */
+body.ck,body.ck *{cursor:none!important}body.ck dialog.rd,body.ck dialog.rd *,body.ck dialog.rd::backdrop{cursor:auto!important}
+#ck{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}#ck>*{display:none;position:absolute;left:0;top:0;will-change:transform}
+#ck[data-t=orb] .od,#ck[data-t=orb] .or,#ck[data-t=arrow] .ar,#ck[data-t=arrow] .al,#ck[data-t=term] .tm,#ck[data-t=doll] .dl{display:block}
+#ckcv{position:fixed;inset:0;width:100%;height:100%;z-index:9998;pointer-events:none;display:none;transition:opacity .2s}
+.od{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#b29dff;box-shadow:0 0 14px 2px #b29dff}
+.or{width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1.5px solid rgba(178,157,255,.8);transition:width .25s,height .25s,margin .25s,background .25s}.or.hov{width:58px;height:58px;margin:-29px 0 0 -29px;background:rgba(178,157,255,.2)}
+.ar{width:28px;height:28px;margin:-2px 0 0 -2px;filter:drop-shadow(0 0 8px var(--a1,rgba(178,157,255,.8)));transition:transform .2s}.al{margin:18px 0 0 20px;padding:2px 7px;border-radius:7px;font:800 10px/1.3 var(--sans);letter-spacing:.08em;background:var(--a1,#ff8a6b);color:var(--as,#fff);box-shadow:0 4px 12px -2px rgba(0,0,0,.5)}.al:empty{display:none!important}.ar.hov{transform:scale(1.25) rotate(-8deg)}
+.tm{font:800 20px/1 ui-monospace,Menlo,Consolas,monospace;color:#ff8a6b;margin:-4px 0 0 -2px;text-shadow:0 0 10px rgba(255,138,107,.6);white-space:nowrap}.tm b{display:inline-block;animation:bl 1s steps(2) infinite}.tm.hov{color:#2fb37a}@keyframes bl{50%{opacity:0}}
+.dl{width:56px;height:56px}.dl svg{width:100%;height:100%;overflow:visible;transition:transform .1s}
+.dl .ears,.dl .eyes{transform-box:fill-box;transform-origin:center}.dl .eyes{animation:blk 4.2s infinite}@keyframes blk{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
+.dl.hov .ears{animation:ew .25s infinite alternate}@keyframes ew{to{transform:scale(1.12) rotate(4deg)}}
+.dl.sl .eyes{animation:none;transform:scaleY(.12)}.zz,.say{position:absolute;opacity:0;white-space:nowrap}.zz{left:46px;top:-16px;font:italic 400 20px var(--ser);color:var(--pu)}.dl.sl .zz{opacity:1;animation:zz 2s ease-in-out infinite}@keyframes zz{50%{transform:translateY(-7px)}}
+.say{left:48px;top:-10px;font:800 13px var(--sans);background:var(--tx);color:var(--bg);border-radius:10px;padding:3px 10px;transform:scale(.6);transition:.18s}.dl.sy .say{opacity:1;transform:none}.dl.sy svg{transform:scale(.88)}
+.ckw{position:fixed;left:16px;bottom:16px;z-index:70}#ckb{min-height:44px;padding:0 18px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(178,157,255,.55);color:var(--tx);font-weight:600;font-size:14px;backdrop-filter:blur(8px)}#ckb b{color:var(--pu);font-weight:600}
+#ckp{position:absolute;bottom:56px;left:0;min-width:220px;background:var(--s2);border:1px solid rgba(244,240,232,.2);border-radius:18px;padding:8px;display:grid;gap:2px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7)}#ckp[hidden]{display:none}
+#ckp button{min-height:44px;padding:0 14px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--tx);text-align:left}#ckp button:hover{background:var(--s3)}#ckp [aria-checked=true]{background:var(--s3);color:var(--pu)}#ckp [aria-checked=true]:after{content:"✓"}
+/* advanced: palette, progress, flow, skip link */
+.skip{position:fixed;left:12px;top:-70px;z-index:200;background:var(--tx);color:var(--bg);padding:12px 18px;border-radius:10px;font-weight:700;transition:top .2s}.skip:focus{top:12px}
+#pg{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;background:linear-gradient(90deg,var(--pu),var(--co));transform:scaleX(0);transform-origin:left;pointer-events:none}
+.kb{font:600 13px ui-monospace,Menlo,Consolas,monospace;border:1px solid rgba(244,240,232,.3);border-radius:10px;padding:0 12px}
+#toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--tx);color:var(--bg);padding:12px 20px;border-radius:12px;font-weight:600;opacity:0;transition:.3s;z-index:200;pointer-events:none}#toast.on{opacity:1;transform:translate(-50%,0)}
+dialog.cmd{width:min(640px,92vw);margin:12vh auto auto;padding:0;border-radius:20px;background:var(--s2);border:1px solid rgba(178,157,255,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.cmd::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}body.ck dialog.cmd,body.ck dialog.cmd *,body.ck dialog.cmd::backdrop{cursor:auto!important}
+.cmi{display:flex;align-items:center;gap:12px;padding:6px 18px;border-bottom:1px solid rgba(244,240,232,.14)}.cmi input{flex:1;min-height:56px;background:none;border:0;color:var(--tx);font:500 18px var(--sans);outline:0}.cmi kbd{font:12px ui-monospace,monospace;border:1px solid rgba(244,240,232,.3);border-radius:6px;padding:2px 8px;color:var(--mu)}
+#cml{list-style:none;max-height:min(52vh,440px);overflow:auto;padding:8px}#cml li{min-height:46px;padding:0 14px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}#cml li span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}#cml li[aria-selected=true]{background:var(--s3);color:var(--pu)}#cml .no{color:var(--mu);cursor:default}
+.pl.pl5{grid-template-columns:repeat(5,1fr)}@media(max-width:1100px){.pl.pl5{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.pl.pl5{grid-template-columns:1fr 1fr}}
+/* monitoring dashboard + terminal */
+.mo{padding:var(--sec) 0}.mo h2{margin:14px 0 clamp(28px,4vw,48px)}.mog{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-bottom:20px}
+.mop,.moc{border:1px solid rgba(244,240,232,.14);border-radius:22px;background:var(--s2);padding:18px}.moh{display:flex;justify-content:space-between;align-items:baseline;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}.moh b{font:italic 400 38px/1 var(--ser);color:var(--tx);letter-spacing:0;text-transform:none}
+.mop svg{width:100%;height:90px;margin-top:10px;overflow:visible}.mop polyline{fill:none;stroke:var(--pu);stroke-width:2;stroke-linejoin:round;vector-effect:non-scaling-stroke;transition:stroke .4s}.mop .th{stroke:#ff5d6c;stroke-dasharray:4 4;stroke-width:1;vector-effect:non-scaling-stroke}.mop.hot{border-color:#ff5d6c}.mop.hot polyline{stroke:#ff5d6c}
+.mos{display:grid;grid-template-columns:1fr 1.5fr;gap:20px}.moc{display:flex;flex-direction:column;gap:16px}.moc dl{display:grid;grid-template-columns:auto 1fr;gap:10px 18px;align-items:center;color:var(--mu);font-size:14px}.moc dd{color:var(--tx);font-weight:600}
+.ms{--c:#9be7c4;display:inline-block;padding:4px 14px;border-radius:99px;font-weight:800;font-size:13px;letter-spacing:.08em;border:1.5px solid var(--c);color:var(--c)}.ms[data-st=pending]{--c:#ffb35c}.ms[data-st=firing]{--c:#ff5d6c;animation:pls 1s infinite}
+#mlog{min-height:210px;max-height:260px;overflow:auto}
+.shb{position:fixed;right:16px;bottom:16px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(155,231,196,.55);color:#9be7c4;font:700 14px ui-monospace,Menlo,Consolas,monospace;backdrop-filter:blur(8px)}
+dialog.sh{width:min(780px,94vw);height:min(72vh,580px);margin:auto;padding:0;border-radius:18px;background:#07060b;border:1px solid rgba(178,157,255,.45);color:#d9d3e6;overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.sh[open]{display:flex;flex-direction:column}dialog.sh::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}body.ck dialog.sh,body.ck dialog.sh *,body.ck dialog.sh::backdrop{cursor:auto!important}
+.shh{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(244,240,232,.12);font:13px ui-monospace,Menlo,Consolas,monospace;color:var(--mu)}.shh i{width:12px;height:12px;border-radius:50%;background:#ff5d6c}.shh i+i{background:#ffb35c}.shh i+i+i{background:#9be7c4}.shh span{margin:0 auto}.shh button{min-width:44px;min-height:44px;font-size:20px;color:var(--mu)}
+#sho{flex:1;overflow:auto;padding:16px;font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}#sho .pr{color:#9be7c4}#sho .er{color:#ff5d6c}#sho .mu{color:#7d768c}#sho .hl{color:#b29dff}
+.shi{display:flex;gap:10px;align-items:center;padding:6px 16px 14px;font:13px ui-monospace,Menlo,Consolas,monospace}.shi span{color:#9be7c4;white-space:nowrap}.shi input{flex:1;min-height:44px;background:none;border:0;outline:0;color:#f4f0e8;font:inherit;min-width:0}
+@media(max-width:900px){.mog,.mos{grid-template-columns:1fr}.shi span{display:none}}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv0{opacity:1;transform:none}.art circle{display:none}.ph em path{stroke-dashoffset:0}}
 </style>
 </head>
 <body>
+<a class="skip" href="#work">Skip to content</a><div id="pg" aria-hidden="true"></div>
 <header class="nav">
   <a class="logo it" href="#top" aria-label="Kashif, back to top">Kashif<span class="mark">SK</span></a>
   <div class="r">
     <svg class="ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="21" stroke="rgba(255,255,255,.2)"/><circle id="rp" cx="24" cy="24" r="21" stroke="#b29dff" stroke-dasharray="132" stroke-dashoffset="106" transform="rotate(-90 24 24)"/><text id="rn" x="24" y="29">1/5</text></svg>
-    <button class="lt" type="button" data-ropen>Resume</button><a class="lt" href="#contact">Let’s talk</a>
+    <button class="lt kb" type="button" data-cmd aria-label="Open command palette">⌘K</button><button class="lt" type="button" data-ropen>Resume</button><a class="lt" href="#contact">Let’s talk</a>
     <button class="mbtn" id="mb" aria-expanded="false" aria-controls="menu">Menu <i></i></button>
   </div>
 </header>
@@ -291,6 +342,20 @@ html{scroll-padding-top:88px}
   <p class="k8note">Illustration only: a scripted simulation based on the tools in my resume (GitHub Actions, Trivy, SonarQube, ECR, Helm, Argo CD). Rollback is a Git revert, which Argo CD syncs back.</p>
 </div></section>
 
+<section class="mo" id="monitor" data-s="3" aria-label="Monitoring dashboard simulation"><div class="wrap">
+  <p class="eb">Observability · Prometheus · Grafana · PagerDuty · simulated data</p><h2 class="it">Watch it page me, then heal itself.</h2>
+  <div class="mog">
+    <div class="mop" id="mpc"><div class="moh"><span>CPU usage</span><b id="vc">0%</b></div><svg viewBox="0 0 240 80" preserveAspectRatio="none" role="img" aria-label="CPU usage line chart with an 80 percent alert threshold"><line class="th" x1="0" x2="240" y1="16" y2="16"/><polyline id="lc"/></svg></div>
+    <div class="mop"><div class="moh"><span>Memory</span><b id="vm">0%</b></div><svg viewBox="0 0 240 80" preserveAspectRatio="none" role="img" aria-label="Memory usage line chart"><polyline id="lm"/></svg></div>
+    <div class="mop"><div class="moh"><span>Latency</span><b id="vl">0 ms</b></div><svg viewBox="0 0 240 80" preserveAspectRatio="none" role="img" aria-label="Request latency line chart"><polyline id="ll"/></svg></div>
+  </div>
+  <div class="mos">
+    <div class="moc"><dl><dt>Alert HighCPU</dt><dd><span class="ms" id="ma" data-st="ok">OK</span></dd><dt>Replicas</dt><dd id="mr">2</dd><dt>On-call</dt><dd id="mp">Quiet</dd></dl><button class="btn" id="mgo" type="button">⚡ Inject load</button></div>
+    <pre class="term" id="mlog" role="log" aria-live="off" aria-label="Simulated alert and autoscaling log"></pre>
+  </div>
+  <p class="k8note">Illustration only: the numbers are generated in your browser, not measured. The flow mirrors my observability project: a metric crosses a threshold, Alertmanager fires, PagerDuty pages on-call, the autoscaler adds replicas, and the alert resolves.</p>
+</div></section>
+
 <section class="gh" id="github" data-s="3" aria-label="Live GitHub repositories"><div class="wrap">
   <div class="ghh"><div><p class="eb">Live from GitHub · <span id="gu"></span></p><h2 class="it">Open source, as it ships.</h2></div><a class="btn g" id="gp" target="_blank" rel="noopener noreferrer" href="#github">View profile ↗</a></div>
   <div class="gs" id="gst" aria-live="polite"></div><div class="lang" id="lb" aria-hidden="true"></div><div class="lg" id="lg"></div>
@@ -305,6 +370,14 @@ html{scroll-padding-top:88px}
     <ol class="tl" id="tl"></ol>
   </div>
 </section>
+
+<section class="cd" id="delivery" data-s="3" aria-label="How this site is delivered"><div class="wrap">
+  <p class="eb">Delivery · S3 + CloudFront + OAC · simulation</p><h2 class="it">How this very page reaches your browser.</h2>
+  <ol class="pl pl5" id="flpl"></ol>
+  <div class="cdc"><button class="btn" id="flgo" type="button">▶ Send request</button><button class="btn g" id="flinv" type="button" disabled>Invalidate cache</button><span id="flcs" role="status">Send a request: the first one misses the edge cache, the next one hits it.</span></div>
+  <pre class="term" id="fllg" role="log" aria-live="off" aria-label="Simulated request log"></pre>
+  <p class="k8note">Reference architecture, simulated: private S3 bucket, CloudFront with Origin Access Control, ACM certificate in us-east-1 and an optional Route 53 alias. No ALB, EC2 or public bucket is needed for a static page. Large numbers of invalidation paths can incur AWS charges.</p>
+</div></section>
 
 <section class="paper" id="approach" data-s="4">
   <div class="wrap">
@@ -355,6 +428,13 @@ html{scroll-padding-top:88px}
   </div>
 </section>
 </main>
+<div id="ck" aria-hidden="true" data-t="system"><i class="od"></i><i class="or"></i><svg class="ar" viewBox="0 0 28 28"><defs><linearGradient id="ckg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--a1,#ff8a6b)"/><stop offset="1" style="stop-color:var(--a2,#6a4ce0)"/></linearGradient></defs><path d="M2 2v20l5.5-4.5L11 26l4-1.6-3.4-8H20z" fill="url(#ckg)" style="stroke:var(--as,#fff)" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="al"></span><div class="tm">~$<b>▌</b></div><div class="dl"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="rot"><g class="ears"><circle cx="13" cy="15" r="11" fill="#d9cffc"/><circle cx="13" cy="15" r="6.5" fill="#ff9fb2"/><circle cx="51" cy="15" r="11" fill="#d9cffc"/><circle cx="51" cy="15" r="6.5" fill="#ff9fb2"/></g><ellipse cx="32" cy="36" rx="24" ry="22" fill="#ece7ff" stroke="#b9aee6" stroke-width="1.5"/><circle cx="17" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><circle cx="47" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><g class="eyes"><circle cx="23" cy="31" r="5" fill="#fff"/><circle cx="41" cy="31" r="5" fill="#fff"/><g class="pp"><circle cx="23" cy="31" r="2.8" fill="#1a1724"/><circle cx="41" cy="31" r="2.8" fill="#1a1724"/><circle cx="22" cy="30" r=".9" fill="#fff"/><circle cx="40" cy="30" r=".9" fill="#fff"/></g></g><ellipse cx="32" cy="40" rx="3.6" ry="2.7" fill="#ff7a93"/><path d="M28 45q4 3.5 8 0" fill="none" stroke="#6a4ce0" stroke-width="1.6" stroke-linecap="round"/><path d="M4 38l11 2M4 45l11-1M60 38l-11 2M60 45l-11-1" stroke="#b9aee6" stroke-width="1.4" stroke-linecap="round"/></g></svg><span class="zz">z z</span><span class="say">squeak!</span></div></div>
+<canvas id="ckcv" aria-hidden="true"></canvas>
+<div class="ckw" id="ckw"><button id="ckb" type="button" aria-expanded="false" aria-controls="ckp">Cursor · <b id="ckn">System</b></button><div id="ckp" role="radiogroup" aria-label="Cursor theme" hidden></div></div>
+<dialog class="cmd" id="cmd" aria-label="Command palette"><div class="cmi"><input id="cmq" type="text" role="combobox" aria-expanded="true" aria-controls="cml" aria-autocomplete="list" placeholder="Type a command or search…" autocomplete="off" spellcheck="false"><kbd>esc</kbd></div><ul id="cml" role="listbox" aria-label="Commands"></ul></dialog>
+<div id="toast" role="status" aria-live="polite"></div>
+<button class="shb" id="shb" type="button" aria-haspopup="dialog">›_ Terminal</button>
+<dialog class="sh" id="sh" aria-label="Interactive terminal"><div class="shh"><i></i><i></i><i></i><span>kashif@portfolio: ~ (simulated shell)</span><button type="button" id="shx" aria-label="Close terminal">×</button></div><div id="sho" role="log" aria-live="polite"></div><div class="shi"><span>kashif@portfolio:~$</span><input id="shi" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="Terminal command"></div></dialog>
 <div id="cur" aria-hidden="true"><i></i>open case</div>
 
 <dialog class="rd" id="rdlg" aria-labelledby="rdt"><div class="rdh"><h2 id="rdt">Resume preview</h2><a class="btn rdl" download="Syed_Kashif_Ali_Resume.pdf" href="#">⬇ Download PDF</a><a class="btn g rdx" target="_blank" rel="noopener noreferrer" href="#">Word (.docx)</a><a class="btn g" id="rtab" target="_blank" rel="noopener noreferrer" href="#">Open in new tab ↗</a><button class="x" id="rcl" type="button" aria-label="Close preview">×</button></div>
@@ -416,13 +496,13 @@ $('#up').onclick=()=>scrollTo({top:0,behavior:RM?'auto':'smooth'});
 /* reveal */
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});$$('.rv0').forEach(e=>io.observe(e));
 /* nav ring */
-const secs=$$('[data-s]');function ring(){$('.nav').classList.toggle('sc',scrollY>40);let n=1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.5)n=i+1});$('#rn').textContent=n+'/'+secs.length;$('#rp').style.strokeDashoffset=132*(1-n/secs.length)}
+const secs=$$('[data-s]');function ring(){$('#pg').style.transform='scaleX('+clamp(scrollY/Math.max(1,document.documentElement.scrollHeight-innerHeight),0,1)+')';$('.nav').classList.toggle('sc',scrollY>40);let n=1;secs.forEach((s,i)=>{if(s.getBoundingClientRect().top<innerHeight*.5)n=i+1});$('#rn').textContent=n+'/'+secs.length;$('#rp').style.strokeDashoffset=132*(1-n/secs.length)}
 /* HERO particles */
 (function(){const cv=$('#hcv'),c=cv.getContext('2d'),dpr=Math.min(devicePixelRatio||1,2);let W,H,P=[],mx=-999,my=-999,vis=true,t=0;
 function build(){const r=cv.parentElement.getBoundingClientRect();W=r.width;H=r.height;cv.width=W*dpr;cv.height=H*dpr;c.setTransform(dpr,0,0,dpr,0,0);
 const o=document.createElement('canvas');o.width=W;o.height=H;const x=o.getContext('2d');x.fillStyle='#fff';x.textAlign='center';x.textBaseline='middle';
-const fs=Math.min(W*(W<700?.46:.3),H*.5);x.font=`italic ${fs}px "Instrument Serif",Georgia,serif`;x.fillText('Kashif',W*(W<700?.5:.44),H*.36);
-const vf=clamp(W*.02,14,30);x.font=`800 ${vf}px "Bricolage Grotesque",Arial,sans-serif`;if(W>=700)'DEVOPS'.split('').forEach((ch,i)=>x.fillText(ch,W*.86,H*.14+i*vf*1.7));
+const h1=document.querySelector('#top h1'),aT=88,aB=Math.max(aT+140,(h1?h1.getBoundingClientRect().top-r.top:H*.55)-36),aH=aB-aT;const fs=Math.min(W*(W<700?.46:.3),aH/.92);x.font=`italic ${fs}px "Instrument Serif",Georgia,serif`;x.fillText('Kashif',W*(W<700?.5:.44),aT+aH/2);
+const vf=clamp(W*.02,14,30),vs=Math.min(vf*1.7,(aH-vf-16)/5);x.font=`800 ${vf}px "Bricolage Grotesque",Arial,sans-serif`;if(W>=700)'DEVOPS'.split('').forEach((ch,i)=>x.fillText(ch,W*.86,aT+10+i*vs));
 const d=x.getImageData(0,0,W|0,H|0).data,st=W<700?4:3,ow=o.width;P=[];
 for(let y=0;y<H;y+=st)for(let xx=0;xx<W;xx+=st){if(d[((y|0)*ow+(xx|0))*4+3]>120){const a=Math.random()*6.28,R=Math.max(W,H)*(.4+Math.random()*.6);P.push({hx:xx,hy:y,x:W/2+Math.cos(a)*R,y:H/2+Math.sin(a)*R,vx:0,vy:0,v:xx>W*.8&&W>=700,s:Math.random()*1.5+.7,ph:Math.random()*6.28,k:.025+Math.random()*.03})}}}
 function draw(){if(vis){t+=.016;c.clearRect(0,0,W,H);const sc=clamp(scrollY/H,0,1);
@@ -590,6 +670,111 @@ function open(){if(!d.showModal){window.open(url,'_blank','noopener');return}
 if(navigator.pdfViewerEnabled&&url){f.hidden=false;sh.hidden=true;if(!f.getAttribute('src'))f.src=url}else{f.hidden=true;sh.hidden=false}
 d.showModal();document.body.style.overflow='hidden'}
 $$('[data-ropen]').forEach(b=>b.onclick=open);$('#rcl').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target===d)d.close()});d.addEventListener('close',()=>{document.body.style.overflow=''})})();
+/* Cursor themes + mouse doll (fine pointers only; choice saved in localStorage) */
+(function(){const w=$('#ckw');if(!w)return;if(!matchMedia('(hover:hover) and (pointer:fine)').matches){w.hidden=true;return}
+const ck=$('#ck'),cv=$('#ckcv'),c=cv.getContext('2d'),od=ck.querySelector('.od'),or=ck.querySelector('.or'),ar=ck.querySelector('.ar'),al=ck.querySelector('.al'),tm=ck.querySelector('.tm'),dl=ck.querySelector('.dl'),rot=dl.querySelector('.rot'),pp=dl.querySelector('.pp'),dlg=$('#rdlg'),dpr=Math.min(devicePixelRatio||1,2);
+const T=[['system','System arrow'],['arrow','Glow arrow','arrow','#ff8a6b','#6a4ce0','#fff',''],['aws','AWS arrow','arrow','#ff9900','#232f3e','#fff','AWS'],['tf','Terraform arrow','arrow','#7b42bc','#b29dff','#fff','TF'],['k8s','Kubernetes arrow','arrow','#326ce5','#7fb0ff','#fff','K8S'],['gh','GitHub arrow','arrow','#f0f6fc','#8b949e','#0d1117','GIT'],['orb','Neon orb'],['term','Terminal'],['doll','Mouse doll']];let th='system',mx=-99,my=-99,px=-99,py=-99,rx=-99,ry=-99,hov=false,inside=false,raf=0,lm=0,tail=[];
+try{th=localStorage.getItem('ck-th')||'system'}catch(e){}if(!T.some(t=>t[0]===th))th='system';
+function size(){cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;c.setTransform(dpr,0,0,dpr,0,0)}size();addEventListener('resize',size);
+const P=$('#ckp');P.innerHTML=T.map(t=>`<button type="button" role="radio" aria-checked="false" data-t="${t[0]}">${t[1]}</button>`).join('');
+function apply(t){th=t;const D=T.find(x=>x[0]===t);ck.dataset.t=D[2]||t;['--a1','--a2','--as'].forEach((k,i)=>D[3+i]?ck.style.setProperty(k,D[3+i]):ck.style.removeProperty(k));al.textContent=D[6]||'';document.body.classList.toggle('ck',t!=='system');cv.style.display=t==='doll'?'block':'none';$('#ckn').textContent=T.find(x=>x[0]===t)[1];[...P.children].forEach(b=>b.setAttribute('aria-checked',b.dataset.t===t));try{localStorage.setItem('ck-th',t)}catch(e){}if(t!=='system'&&!raf)raf=requestAnimationFrame(loop)}
+P.onclick=e=>{const b=e.target.closest('button');if(b){apply(b.dataset.t);P.hidden=true;$('#ckb').setAttribute('aria-expanded','false')}};
+$('#ckb').onclick=()=>{P.hidden=!P.hidden;$('#ckb').setAttribute('aria-expanded',!P.hidden)};
+addEventListener('keydown',e=>{if(e.key==='Escape'&&!P.hidden){P.hidden=true;$('#ckb').setAttribute('aria-expanded','false');$('#ckb').focus()}});
+addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;inside=true;lm=performance.now();hov=!!(e.target.closest&&e.target.closest('a,button,input,label,summary,[role=button]'));if(px<0){px=rx=mx;py=ry=my;tail=Array.from({length:16},()=>({x:mx,y:my}))}},{passive:true});
+document.documentElement.addEventListener('mouseleave',()=>inside=false);document.documentElement.addEventListener('mouseenter',()=>inside=true);
+addEventListener('mousedown',()=>{if(th==='doll'){dl.classList.add('sy');setTimeout(()=>dl.classList.remove('sy'),650)}});
+const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
+function loop(now){if(th==='system'){raf=0;ck.style.opacity=0;c.clearRect(0,0,innerWidth,innerHeight);return}raf=requestAnimationFrame(loop);
+const f=RM?1:.22,show=inside&&mx>-50&&!document.querySelector('dialog[open]');ck.style.opacity=cv.style.opacity=show?1:0;
+const vx=mx-px,vy=my-py;px+=vx*f;py+=vy*f;rx+=(mx-rx)*(RM?1:.14);ry+=(my-ry)*(RM?1:.14);
+for(const el of [or,ar,al,tm,dl])el.classList.toggle('hov',hov);
+od.style.transform=`translate(${mx}px,${my}px)`;or.style.transform=`translate(${rx}px,${ry}px)`;ar.style.transform=`translate(${mx}px,${my}px)`+(hov?' scale(1.25) rotate(-8deg)':'');tm.style.transform=`translate(${mx}px,${my}px)`;al.style.transform=`translate(${mx}px,${my}px)`;
+if(th==='doll'){dl.style.transform=`translate(${px-28}px,${py-35}px)`;dl.classList.toggle('sl',now-lm>4000);rot.style.transform=`rotate(${cl(vx*.9,-20,20)}deg)`;rot.style.transformOrigin='32px 40px';
+pp.setAttribute('transform',`translate(${cl(vx*.2,-1.8,1.8).toFixed(2)} ${cl(vy*.2,-1.4,1.4).toFixed(2)})`);
+c.clearRect(0,0,innerWidth,innerHeight);tail[0].x=px;tail[0].y=py+14;
+for(let i=1;i<tail.length;i++){const a=tail[i-1],b=tail[i];b.y+=.18;b.x+=RM?0:Math.sin(now/260+i*.7)*.35;let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1;b.x=a.x+dx/d*8;b.y=a.y+dy/d*8}
+c.lineCap='round';c.lineJoin='round';for(let i=1;i<tail.length;i++){c.strokeStyle=i>13?'#ff9fb2':'#f4a8bd';c.lineWidth=5-i*.22;c.beginPath();c.moveTo(tail[i-1].x,tail[i-1].y);c.lineTo(tail[i].x,tail[i].y);c.stroke()}}}
+apply(th);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&th!=='system'&&!raf)raf=requestAnimationFrame(loop)})})();
+/* Command palette (Ctrl/⌘+K) */
+(function(){const d=$('#cmd'),q=$('#cmq'),ul=$('#cml');if(!d||!d.showModal)return;
+const go=id=>()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})};
+const go2=(id,sel)=>()=>{go(id)();setTimeout(()=>{const b=$(sel);if(b&&!b.disabled)b.click()},RM?0:800)};
+const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)};
+const ext=u=>()=>u?window.open(u,'_blank','noopener'):toast('Add this URL in SITE_CONFIG');
+const ck=t=>()=>{const b=$('#ckp [data-t='+t+']');b?b.click():toast('Cursor themes need a mouse')};
+const A=[['Projects','Go',go('work')],['Terraform environments','Go',go('terraform')],['Kubernetes self-healing','Go',go('k8s')],['Git branching','Go',go('branching')],['CI/CD pipeline','Go',go('cicd')],['GitHub repositories','Go',go('github')],['About me','Go',go('about')],['How this site is delivered','Go',go('delivery')],['Approach','Go',go('approach')],['Contact','Go',go('contact')],
+['Preview resume','Action',()=>$('[data-ropen]').click()],['Download resume (PDF)','Action',()=>{const a=$('.rdl');if(a)a.click()}],['Copy email address','Action',()=>{const m=SITE_CONFIG.email;(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(()=>toast('Email copied'),()=>toast(m))}],['Open LinkedIn','Link',ext(SITE_CONFIG.linkedin)],['Open GitHub','Link',ext(SITE_CONFIG.github)],
+['Run CI/CD pipeline','Demo',go2('cicd','#runpl')],['Crash a Kubernetes pod','Demo',go2('k8s','#kk')],['Run terraform workflow','Demo',go2('terraform','#tfrun')],['Play git branching','Demo',go2('branching','#gtplay')],['Send a request through CloudFront','Demo',go2('delivery','#flgo')],
+['Open terminal','Action',()=>{const b=$('#shb');if(b)b.click()}],['Monitoring dashboard','Go',go('monitor')],['Inject load (alert demo)','Demo',go2('monitor','#mgo')],['Cursor: Mouse doll','Cursor',ck('doll')],['Cursor: Neon orb','Cursor',ck('orb')],['Cursor: Terminal','Cursor',ck('term')],['Cursor: System arrow','Cursor',ck('system')]];
+let L=A,i=0;
+function draw(){ul.innerHTML=L.length?L.map((a,n)=>`<li role="option" id="cm${n}" data-i="${n}" aria-selected="${n===i}">${a[0]}<span>${a[1]}</span></li>`).join(''):'<li class="no" role="option" aria-selected="false">No matching command</li>';q.setAttribute('aria-activedescendant',L.length?'cm'+i:'');const e=$('#cm'+i);if(e)e.scrollIntoView({block:'nearest'})}
+function filter(){const w=q.value.toLowerCase().split(/\s+/).filter(Boolean);L=A.filter(a=>w.every(x=>(a[0]+' '+a[1]).toLowerCase().includes(x)));i=0;draw()}
+function open(){q.value='';filter();d.showModal();q.focus()}
+function run(n){const a=L[n];if(!a)return;d.close();setTimeout(a[2],60)}
+q.oninput=filter;q.onkeydown=e=>{if(e.key==='ArrowDown'){e.preventDefault();i=Math.min(L.length-1,i+1);draw()}else if(e.key==='ArrowUp'){e.preventDefault();i=Math.max(0,i-1);draw()}else if(e.key==='Enter'){e.preventDefault();run(i)}};
+ul.onclick=e=>{const li=e.target.closest('li[data-i]');if(li)run(+li.dataset.i)};d.addEventListener('click',e=>{if(e.target===d)d.close()});
+addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key.toLowerCase()==='k'){e.preventDefault();d.open?d.close():open()}});$$('[data-cmd]').forEach(b=>b.onclick=open)})();
+/* Delivery flow: Visitor -> DNS -> CloudFront -> S3 (OAC) */
+(function(){const pl=$('#flpl'),lg=$('#fllg'),b=$('#flgo'),inv=$('#flinv'),cs=$('#flcs');if(!pl)return;const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const ST=[['Browser','GET / over HTTPS'],['DNS','Route 53 alias (optional)'],['CloudFront','HTTPS · ACM · edge cache'],['S3 + OAC','private origin bucket'],['Response','index.html']];
+pl.innerHTML=ST.map((x,i)=>`<li class="sg" data-st="idle"><span class="no">0${i+1}</span><h3>${x[0]}</h3><small>${x[1]}</small><div class="bar" aria-hidden="true"><i></i></div><span class="sx">Waiting</span></li>`).join('');
+const L=[...pl.children];let cached=false,go=false;
+const line=(t,c)=>{const e=document.createElement('div');e.className=c||'';e.textContent=t;lg.appendChild(e);while(lg.children.length>14)lg.firstChild.remove();lg.scrollTop=lg.scrollHeight};
+const mark=(i,st,t)=>{L[i].dataset.st=st;L[i].querySelector('.sx').textContent=t};
+async function bar(i,ms){const x=L[i].querySelector('.bar i');x.style.transition='none';x.style.width='0';x.offsetWidth;x.style.transition='width '+ms+'ms linear';x.style.width='100%';await sleep(ms)}
+b.onclick=async()=>{if(go)return;go=true;b.disabled=inv.disabled=true;b.textContent='Requesting…';lg.textContent='';L.forEach((e,i)=>{mark(i,'idle','Waiting');e.querySelector('.bar i').style.width='0'});const hit=cached;
+const S=[[['GET / HTTP/2  host: <your-domain>','ok']],[['DNS: <your-domain> resolves to a CloudFront edge location','ok']],[['TLS ok with the ACM certificate (issued in us-east-1)','ok'],hit?['cache lookup: HIT','ok']:['cache lookup: MISS','wn']],hit?[['origin not contacted','mu']]:[['CloudFront → S3 request signed with OAC (SigV4)','ok'],['bucket is private; public access stays blocked','mu'],['200 index.html, stored in the edge cache','ok']],[['200 OK  content-type: text/html','ok'],[hit?'x-cache: Hit from cloudfront':'x-cache: Miss from cloudfront',hit?'ok':'wn']]];
+for(let i=0;i<5;i++){if(i===3&&hit){mark(3,'skip','Not needed');line(S[3][0][0],S[3][0][1]);await sleep(500);continue}mark(i,'run','Running');const p=bar(i,1200);for(const l of S[i]){await sleep(1200/(S[i].length+1));line(l[0],l[1])}await p;mark(i,'ok','Done')}
+cached=true;cs.textContent=hit?'Served from the edge cache. The origin was never touched.':'First request went to S3. The next one will be a cache hit.';b.disabled=false;b.textContent='▶ Send again';inv.disabled=false;go=false};
+inv.onclick=()=>{if(go)return;cached=false;inv.disabled=true;line('$ aws cloudfront create-invalidation --distribution-id <id> --paths "/index.html"','mu');line('Invalidation requested. The next request will go to the origin.','wn');cs.textContent='Cache cleared. The next request is a MISS again.'}})();
+/* Monitoring dashboard simulation */
+(function(){const sec=$('#monitor');if(!sec)return;const N=60,cpu=Array(N).fill(32),mem=Array(N).fill(46),lat=Array(N).fill(120),btn=$('#mgo'),lg=$('#mlog');let rep=2,load=0,st='ok',above=0,below=0,fire=0,calm=0,vis=false;
+const n=()=>Math.random()-.5,pts=(a,m)=>a.map((v,i)=>(i/(N-1)*240).toFixed(1)+','+(78-Math.min(v,m)/m*76).toFixed(1)).join(' ');
+const log=(t,c)=>{const e=document.createElement('div');e.className=c||'';e.textContent=new Date().toTimeString().slice(0,8)+'  '+t;lg.appendChild(e);while(lg.children.length>30)lg.firstChild.remove();lg.scrollTop=lg.scrollHeight};
+const setSt=(v,t)=>{st=v;const a=$('#ma');a.dataset.st=v==='resolved'?'ok':v;a.textContent=t};
+function step(){const c=clamp(30+n()*8+(load?110/rep:0),2,100);cpu.push(cpu[N-1]*.45+c*.55);cpu.shift();mem.push(mem[N-1]*.7+(46+n()*3+(load?6:0))*.3);mem.shift();const cv=cpu[N-1];lat.push(lat[N-1]*.6+(120+n()*14+(cv>80?(cv-80)*14:0))*.4);lat.shift();
+if(cv>80){above++;below=0}else{below++;above=0}
+if(st==='ok'&&above>=1){setSt('pending','PENDING');log('Prometheus: cpu > 80% for shop-api, waiting for the "for" duration','wn')}
+else if(st==='pending'){if(above>=3){setSt('firing','FIRING');fire=0;$('#mp').textContent='Paged';log('Alertmanager: HighCPU FIRING','er');log('PagerDuty: incident triggered, on-call notified','er')}else if(below>=2){setSt('ok','OK');log('Alert cleared before firing','ok')}}
+else if(st==='firing'){fire++;if(fire===3&&rep<4){rep=4;$('#mr').textContent='4 (autoscaled)';log('HPA: scaling shop-api 2 → 4 replicas','wn')}if(rep===4&&below>=2){setSt('resolved','RESOLVED');$('#mp').textContent='Incident resolved';calm=0;log('Alertmanager: HighCPU RESOLVED','ok');log('PagerDuty: incident auto-resolved','ok')}}
+else if(st==='resolved'){calm++;if(calm===3){load=0;log('Load test stopped','mu')}if(calm===7){rep=2;$('#mr').textContent='2';setSt('ok','OK');$('#mp').textContent='Quiet';log('HPA: scaling in 4 → 2 replicas','mu');btn.disabled=false}}
+$('#lc').setAttribute('points',pts(cpu,100));$('#lm').setAttribute('points',pts(mem,100));$('#ll').setAttribute('points',pts(lat,600));$('#vc').textContent=Math.round(cv)+'%';$('#vm').textContent=Math.round(mem[N-1])+'%';$('#vl').textContent=Math.round(lat[N-1])+' ms';$('#mpc').classList.toggle('hot',cv>80)}
+btn.onclick=()=>{if(load||st!=='ok')return;btn.disabled=true;load=1;above=below=0;log('$ kubectl run load-generator --image=busybox  # traffic spike','mu')};
+new IntersectionObserver(e=>vis=e[0].isIntersecting).observe(sec);for(let i=0;i<N;i++)step();log('# monitoring shop-api · press "Inject load" to simulate a traffic spike','mu');setInterval(()=>{if(vis)step()},800)})();
+/* Interactive terminal (simulated shell) */
+(function(){const d=$('#sh'),out=$('#sho'),inp=$('#shi'),b=$('#shb');if(!d||!d.showModal)return;let H=[],hi=0;
+const w=(t,c)=>{const e=document.createElement('div');e.textContent=t;if(c)e.className=c;out.appendChild(e);out.scrollTop=out.scrollHeight};
+const go=id=>{d.close();setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth'})},80)};
+const S=SITE_CONFIG,FILES={'about.txt':['Syed Kashif Ali, DevOps & Cloud Engineer from Hyderabad.','Cloud Engineer intern at Future Applications Technologies (Nov 2025 - May 2026).','Pursuing MCA (2026-2028); BCA 2022-2025, CGPA 8.3/10.'],'skills.txt':['AWS: EC2 ECS S3 VPC IAM Lambda RDS ALB ECR CloudWatch KMS WAF','IaC: Terraform (AWS/Azure/GCP modules), Ansible basics','Containers: Docker, Kubernetes (EKS), Helm, Trivy','CI/CD: Jenkins, GitHub Actions, Argo CD, SonarQube','Observability: Prometheus, Grafana, CloudWatch, Dynatrace, EFK, PagerDuty','Code: Python, Bash, Java, SQL'],'contact.txt':['email:    '+S.email,'linkedin: '+S.linkedin,'github:   '+S.github,'site:     '+S.site]};
+const THEMES=['system','arrow','aws','tf','k8s','gh','orb','term','doll'],SEC={projects:'work',terraform:'terraform',kubernetes:'k8s',git:'branching',cicd:'cicd',monitor:'monitor',github:'github',about:'about',contact:'contact'},DEMO={pipeline:['cicd','#runpl'],pod:['k8s','#kk'],terraform:['terraform','#tfrun'],git:['branching','#gtplay'],cdn:['delivery','#flgo'],alert:['monitor','#mgo']};
+const C={help:()=>['Commands:','  whoami  about  skills  projects  experience  certs  education  contact','  ls  cat <file>  resume  github  linkedin  goto <section>  demo <name>','  kubectl get pods  terraform plan  neofetch  theme <name>  clear  exit','','goto: '+Object.keys(SEC).join(' '),'demo: '+Object.keys(DEMO).join(' '),'theme: '+THEMES.join(' ')],
+whoami:()=>['kashif  (DevOps & Cloud Engineer, Hyderabad, India)'],about:()=>FILES['about.txt'],skills:()=>FILES['skills.txt'],contact:()=>FILES['contact.txt'],
+projects:()=>['1. Infrastructure as Code with Terraform (AWS)','2. Ecommerce microservices on EKS with Helm + Argo CD','3. AI Agent Hostel Management Platform (Lambda, Bedrock, MCP)','4. Monitoring & alerting with Prometheus, Grafana, PagerDuty'],
+experience:()=>['Cloud Engineer (Internship) - Future Applications Technologies','Nov 2025 - May 2026 | Beed, Maharashtra | Hybrid','- Terraform on AWS, CI/CD pipelines, EC2 shutdown archival to S3, Lambda log rotation'],
+certs:()=>['DevOps with Multi-Cloud (Naresh i Technologies)','AWS Well-Architected Proficient · AWS Cloud Practitioner Essentials','Claude in Amazon Bedrock · Foundations of Prompt Engineering','Manage Kubernetes in Google Cloud · OCI 2025 Foundations Associate','LFS101 Linux · Dynatrace Essentials · Microsoft AI Skills Passport'],
+education:()=>['MCA (pursuing, 2026-2028) - Dr. Babasaheb Ambedkar Marathwada University','BCA (CGPA 8.3/10, 2022-2025) - Savitribai Phule Pune University'],
+ls:()=>Object.keys(FILES).concat(['resume.pdf']).join('  ').split('\n'),
+neofetch:()=>['kashif@portfolio','-----------------','Role:     DevOps & Cloud Engineer','Cloud:    AWS (EC2, S3, VPC, IAM, Lambda, EKS)','IaC:      Terraform','CI/CD:    GitHub Actions, Jenkins, Argo CD','Observe:  Prometheus, Grafana, PagerDuty','Shell:    this simulated one'],
+'kubectl get pods':()=>['# simulated output','NAME                         READY   STATUS    RESTARTS','shop-api-7d9c8b6f5-k2x9p     1/1     Running   0','shop-api-7d9c8b6f5-m4t7z     1/1     Running   0'],
+'terraform plan':()=>['# simulated output','Plan: 11 to add, 0 to change, 0 to destroy.'],
+'sudo hire kashif':()=>['[sudo] permission granted.','Next step: email '+S.email]};
+function exec(raw){const l=raw.trim();if(!l)return;const [c,...a]=l.split(/\s+/),k2=c+' '+(a[0]||''),k3=k2+' '+(a[1]||'');w('kashif@portfolio:~$ '+l,'pr');
+if(C[l])return C[l]().forEach(x=>w(x));if(C[k3.trim()])return C[k3.trim()]().forEach(x=>w(x));
+switch(c){case'clear':out.textContent='';return;case'exit':d.close();return;
+case'cat':{const f=FILES[a[0]];return f?f.forEach(x=>w(x)):w(a[0]?'cat: '+a[0]+': No such file':'usage: cat <file>','er')}
+case'resume':w('opening resume preview...','mu');d.close();setTimeout(()=>$('[data-ropen]').click(),80);return;
+case'github':case'linkedin':{const u=c==='github'?S.github:S.linkedin;w(u?'opening '+u:'URL not set in SITE_CONFIG',u?'mu':'er');if(u)window.open(u,'_blank','noopener');return}
+case'goto':{const t=SEC[a[0]];return t?(w('scrolling to '+a[0]+'...','mu'),go(t)):w('usage: goto <'+Object.keys(SEC).join('|')+'>','er')}
+case'demo':{const t=DEMO[a[0]];return t?(w('starting demo: '+a[0],'mu'),d.close(),setTimeout(()=>{const e=document.getElementById(t[0]);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>{const x=$(t[1]);if(x&&!x.disabled)x.click()},RM?0:800)},80)):w('usage: demo <'+Object.keys(DEMO).join('|')+'>','er')}
+case'theme':{const t=a[0],x=$('#ckp [data-t='+t+']');return THEMES.includes(t)&&x?(x.click(),w('cursor theme: '+t,'ok')):w(x||!t?'usage: theme <'+THEMES.join('|')+'>':'cursor themes need a mouse','er')}
+case'rm':w('nice try. this shell is read-only.','er');return;case'sudo':w('kashif is not in the sudoers file. This incident will be reported.','er');return}
+w('command not found: '+c+'. Type "help".','er')}
+function open(){d.showModal();inp.focus();if(!out.children.length){w('Welcome! This is a simulated shell: nothing real is executed.','hl');w('Type "help" to see commands. Tip: press ` anywhere to open me.','mu')}}
+b.onclick=open;$('#shx').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target===d)d.close()});
+const ALL=Object.keys(C).concat(['clear','exit','cat','resume','github','linkedin','goto','demo','theme']);
+inp.onkeydown=e=>{if(e.key==='Enter'){const v=inp.value;if(v.trim()){H.push(v);hi=H.length}exec(v);inp.value=''}else if(e.key==='ArrowUp'){e.preventDefault();if(hi>0)inp.value=H[--hi]||''}else if(e.key==='ArrowDown'){e.preventDefault();inp.value=hi<H.length-1?H[++hi]:(hi=H.length,'')}else if(e.key==='Tab'){e.preventDefault();const m=ALL.filter(x=>x.startsWith(inp.value));if(m.length===1)inp.value=m[0]}else if(e.key==='l'&&e.ctrlKey){e.preventDefault();out.textContent=''}};
+addEventListener('keydown',e=>{if(e.key==='`'&&!e.ctrlKey&&!e.metaKey&&!/^(INPUT|TEXTAREA|SELECT)$/.test((e.target.tagName||''))&&!d.open&&!document.querySelector('dialog[open]')){e.preventDefault();open()}})})();
 addEventListener('scroll',ring,{passive:true});ring();
 </script>
 </body>
