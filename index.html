@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Syed Kashif Ali — DevOps &amp; Cloud Engineer</title>
+<meta name="portfolio-version" content="advanced-v3">
 <meta name="description" content="Portfolio of Syed Kashif Ali: AWS, Terraform, Kubernetes, CI/CD and observability.">
 <script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="theme-color" content="#0b0a10">
@@ -312,7 +313,80 @@ html[data-theme=light] #menu .mx{border-bottom-color:rgba(18,18,18,.1)}
 @media(max-width:700px){.rdh{gap:8px;padding:10px 12px}.rdh h2{flex:1 0 100%;font-size:24px}.rdh .btn{min-height:44px;padding:0 12px;font-size:13px}.rdh .x{margin-left:auto}
 .shi{border-top:1px solid rgba(244,240,232,.14);padding:4px 14px 10px;gap:6px}.shi span{display:block!important;font-size:0}.shi span:before{content:"$";font-size:15px}.shi input{font-size:16px;border-radius:10px}}
 .nm3 b{color:#f4f0e8}
+/* About now sits before Projects (dark/light page background, not the paper section) */
+.ab{padding:calc(var(--sec) + 20px) 0 0}.ab .about{margin-bottom:0}.ab .about p{color:var(--mu)}.ab .about h2.ph{font-size:clamp(34px,5vw,72px);letter-spacing:-.05em;margin:14px 0 22px}.ab+.work{padding-top:var(--sec)}
+.ab .about>div:last-child p:first-of-type{color:var(--tx)}
+html[data-theme=light] .ab .about h2.ph{letter-spacing:-.03em}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}.rv0{opacity:1;transform:none}.art circle{display:none}.ph em path{stroke-dashoffset:0}}
+
+/* ===== ADVANCED v2: incident simulator + recruiter assistant ===== */
+.inc{padding:var(--sec) 0}.inc h2{margin:14px 0 clamp(28px,4vw,48px)}
+.incgrid{display:grid;grid-template-columns:1.15fr 1fr;gap:20px}
+@media(max-width:900px){.incgrid{grid-template-columns:1fr}}
+.incc{border:1px solid rgba(244,240,232,.14);border-radius:26px;padding:clamp(18px,3vw,34px);background:radial-gradient(ellipse at 50% 0,#241a12,var(--s2) 72%);display:flex;flex-direction:column;gap:18px}
+.incrow{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.incchip{border:1.5px solid rgba(244,240,232,.25);border-radius:99px;padding:10px 16px;min-height:44px;font-weight:700;font-size:14px;transition:.25s}
+.incchip[aria-pressed=true]{border-color:var(--co);color:var(--co);background:rgba(255,138,107,.08)}
+.incstat{display:flex;gap:12px;flex-wrap:wrap}
+.incstat div{flex:1 1 110px;border:1px solid rgba(244,240,232,.14);border-radius:16px;padding:12px 16px;background:var(--s2)}
+.incstat b{display:block;font:italic 400 32px/1 var(--ser);color:var(--pu)}
+.incstat span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}
+#incterm{min-height:280px;max-height:340px;overflow:auto}
+.incsev{--c:#9be7c4;display:inline-block;padding:4px 14px;border-radius:99px;font-weight:800;font-size:13px;letter-spacing:.08em;border:1.5px solid var(--c);color:var(--c)}
+.incsev[data-s="sev1"]{--c:#ff5d6c;animation:pls 1s infinite}.incsev[data-s="sev2"]{--c:#ffb35c}
+.askb{position:fixed;right:16px;bottom:70px;z-index:70;min-height:44px;padding:0 18px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(178,157,255,.6);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+.askb b{color:var(--pu)}
+dialog.ask{width:min(560px,94vw);max-height:min(78vh,720px);margin:auto;padding:0;border-radius:22px;background:var(--s2);border:1px solid rgba(178,157,255,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}
+dialog.ask[open]{display:flex;flex-direction:column}
+dialog.ask::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
+.askh{display:flex;align-items:center;gap:12px;padding:16px 18px;border-bottom:1px solid rgba(244,240,232,.12)}
+.askh h2{font:italic 400 26px var(--ser);margin:0 auto 0 0}
+#asklog{flex:1;overflow:auto;padding:18px;display:grid;gap:12px;min-height:220px}
+.askm{max-width:88%;padding:12px 16px;border-radius:16px;font-size:15px;line-height:1.5;white-space:pre-wrap;overflow-wrap:anywhere}
+.askm.bot{background:var(--s3);justify-self:start;border-bottom-left-radius:4px}
+.askm.me{background:var(--pd);color:#fff;justify-self:end;border-bottom-right-radius:4px}
+.askq{display:flex;gap:8px;flex-wrap:wrap;padding:0 18px 12px}
+.askq button{border:1px solid rgba(178,157,255,.5);color:var(--pu);border-radius:99px;padding:8px 14px;min-height:40px;font-size:13px;font-weight:600}
+.askf{display:flex;gap:10px;padding:12px 18px 18px;border-top:1px solid rgba(244,240,232,.12)}
+.askf input{flex:1;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid rgba(244,240,232,.25);background:var(--bg);color:var(--tx);font:inherit;min-width:0}
+html[data-theme=light] .incc{background:linear-gradient(180deg,#fff,#f1f1f9)}
+html[data-theme=light] .incstat div,html[data-theme=light] dialog.ask{background:#fff}
+html[data-theme=light] .askm.bot{background:#e0e4f4}
+html[data-theme=light] .askf input{background:#fff;color:#121212}
+
+/* ===== ADVANCED v3: architecture explorer + HPA load simulator + perf/voice ===== */
+.arch,.hpa{padding:var(--sec) 0}.arch h2,.hpa h2{margin:14px 0 clamp(28px,4vw,48px)}
+.archflow{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch;margin-bottom:20px}
+.archnode{flex:1 1 150px;border:1.5px solid rgba(244,240,232,.22);border-radius:18px;padding:16px;background:var(--s2);text-align:left;min-height:96px;transition:.25s;position:relative}
+.archnode b{display:block;font:800 18px/1.15 var(--sans);letter-spacing:-.03em;margin-bottom:6px}
+.archnode span{font-size:13px;color:var(--mu)}
+.archnode:hover{transform:translateY(-4px);border-color:var(--pu)}
+.archnode[aria-pressed=true]{border-color:var(--co);background:rgba(255,138,107,.08);box-shadow:0 16px 36px -16px rgba(255,138,107,.55)}
+.archdet{border:1px solid rgba(244,240,232,.14);border-radius:22px;padding:clamp(18px,3vw,30px);background:radial-gradient(ellipse at 20% 0,#1f1838,var(--s2) 70%)}
+.archdet h3{font:italic 400 clamp(26px,3vw,38px) var(--ser);color:var(--pu);margin-bottom:8px}
+.archdet p{color:var(--mu);max-width:820px}
+.archdet .tags{margin-top:14px}
+.hpagrid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+@media(max-width:900px){.hpagrid{grid-template-columns:1fr}}
+.hpactrl{border:1px solid rgba(244,240,232,.14);border-radius:26px;padding:clamp(18px,3vw,34px);background:var(--s2);display:flex;flex-direction:column;gap:18px}
+.hpactrl label{font-weight:700;display:flex;justify-content:space-between;gap:12px}
+.hpactrl label output{color:var(--pu);font:italic 400 24px var(--ser)}
+.hpactrl input[type=range]{width:100%;accent-color:#6a4ce0;min-height:44px}
+.hpaviz{border:1px solid rgba(244,240,232,.14);border-radius:26px;padding:18px;background:#07060b;display:flex;flex-direction:column;gap:12px}
+#hpacv{width:100%;height:220px;display:block}
+.hp pods,.hpapods{display:flex;gap:8px;flex-wrap:wrap;min-height:34px}
+.hpapod{width:30px;height:30px;border-radius:9px;border:1.5px solid #9be7c4;box-shadow:0 0 14px -4px #9be7c4;animation:born .5s both}
+.hpapod.hot{border-color:#ffb35c;box-shadow:0 0 14px -2px #ffb35c}
+.perfb{position:fixed;right:16px;bottom:122px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(155,231,196,.55);color:#9be7c4;font:700 14px ui-monospace,Menlo,Consolas,monospace;backdrop-filter:blur(8px)}
+dialog.perf{width:min(560px,94vw);margin:auto;padding:0;border-radius:22px;background:var(--s2);border:1px solid rgba(155,231,196,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(0,0,0,.7)}
+dialog.perf::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
+.perfh{display:flex;align-items:center;padding:16px 18px;border-bottom:1px solid rgba(244,240,232,.12)}
+.perfh h2{font:italic 400 26px var(--ser);margin:0 auto 0 0}
+.perfb2{padding:18px;display:grid;gap:14px}
+.perfb2 dl{display:grid;grid-template-columns:1fr auto;gap:10px 18px;color:var(--mu);font-size:15px}
+.perfb2 dd{color:var(--tx);font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
+html[data-theme=light] .archdet,html[data-theme=light] .hpactrl{background:linear-gradient(180deg,#fff,#f1f1f9)}
+html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#fff}
 </style>
 </head>
 <body>
@@ -327,7 +401,7 @@ html[data-theme=light] #menu .mx{border-bottom-color:rgba(18,18,18,.1)}
   </div>
 </header>
 <nav id="menu" aria-label="Main">
-  <a href="#work"><small>01</small>Projects</a><a href="#github"><small>02</small>GitHub</a><a href="#journey"><small>03</small>About</a><a href="#stack"><small>04</small>Skills</a><a href="#approach"><small>05</small>Approach</a><a href="#contact"><small>06</small>Contact</a><button type="button" class="mx" data-mx="resume"><small>07</small>Resume</button><button type="button" class="mx" data-mx="term"><small>08</small>Terminal</button><button type="button" class="mx" data-mx="cmd"><small>09</small>Command palette</button>
+  <a href="#work"><small>01</small>Projects</a><a href="#github"><small>02</small>GitHub</a><a href="#about"><small>03</small>About</a><a href="#stack"><small>04</small>Skills</a><a href="#approach"><small>05</small>Approach</a><a href="#contact"><small>06</small>Contact</a><button type="button" class="mx" data-mx="resume"><small>07</small>Resume</button><button type="button" class="mx" data-mx="term"><small>08</small>Terminal</button><button type="button" class="mx" data-mx="cmd"><small>09</small>Command palette</button>
 </nav>
 
 <main>
@@ -339,6 +413,21 @@ html[data-theme=light] #menu .mx{border-bottom-color:rgba(18,18,18,.1)}
     <div class="cta"><a class="btn" href="#work">See projects ↓</a><a class="btn g" href="#contact">Contact</a><button class="btn g" type="button" data-ropen>Resume ↗</button></div></div>
   </div>
 </section>
+
+<section class="ab" data-s="2" aria-label="About me"><div class="wrap">
+    <div class="about" id="about">
+      <div class="scene"><div class="card3" id="card3">
+        <div class="pic"><img id="me" alt="Portrait of Syed Kashif Ali" decoding="async" fetchpriority="high" referrerpolicy="no-referrer" hidden>
+          <svg id="mefb" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait with initials SK; add your photo in SITE_CONFIG.photo"><circle cx="150" cy="150" r="62" fill="#8d7be0" opacity=".55"/><path d="M40 400c0-90 50-140 110-140s110 50 110 140z" fill="#8d7be0" opacity=".45"/><text x="150" y="168" text-anchor="middle">SK</text></svg></div>
+        <div class="nm3"><b>Syed Kashif Ali</b><span>DevOps &amp; Cloud Engineer</span></div>
+        <span class="fl a">AWS</span><span class="fl b">Terraform</span><span class="fl c">Kubernetes</span>
+        <div class="glare" id="glare"></div>
+      </div></div>
+      <div><p class="eb rv0">About</p><h2 class="ph rv0">Learned by building, one lab at a time.</h2>
+        <p class="rv0">I’m a DevOps &amp; Cloud Engineer in the making from Hyderabad, with working knowledge of AWS, Linux, networking, Terraform, containers and CI/CD.</p>
+        <p class="rv0">From Nov 2025 to May 2026 I worked as a Cloud Engineer intern at Future Applications Technologies, on infrastructure and delivery for the Clariop product. I’m now pursuing an MCA while building projects on EKS, Bedrock and Prometheus.</p></div>
+    </div>
+</div></section>
 
 <section class="work" id="work" data-s="2">
   <div class="wrap">
@@ -454,20 +543,70 @@ html[data-theme=light] #menu .mx{border-bottom-color:rgba(18,18,18,.1)}
   <p class="k8note">Reference architecture, simulated: private S3 bucket, CloudFront with Origin Access Control, ACM certificate in us-east-1 and an optional Route 53 alias. No ALB, EC2 or public bucket is needed for a static page. Large numbers of invalidation paths can incur AWS charges.</p>
 </div></section>
 
+
+<section class="inc wrap" id="incident" aria-label="Incident response simulator">
+<p class="eb">Live simulation · Incident response</p>
+<h2>An alert fires. <span class="it">Run the runbook.</span></h2>
+<div class="incgrid">
+<div class="incc">
+<div class="incrow" role="group" aria-label="Choose a scenario">
+<button class="incchip" data-sc="pod" aria-pressed="true">Pod OOMKilled</button>
+<button class="incchip" data-sc="deploy" aria-pressed="false">Failed deployment</button>
+<button class="incchip" data-sc="latency" aria-pressed="false">High latency</button>
+</div>
+<div class="incstat">
+<div><b id="incclock">00:00</b><span>Time to resolve</span></div>
+<div><b id="incstep">–</b><span>Runbook step</span></div>
+<div><span class="incsev" id="incsev" data-s="idle">No incident</span></div>
+</div>
+<p style="color:var(--mu);font-size:15px" id="incdesc">Pick a scenario, start the incident, then work the runbook in order: acknowledge the PagerDuty alert, check Grafana, read the first real error, fix the root cause, and verify recovery. Wrong order costs time.</p>
+<div class="incrow">
+<button class="btn" id="incstart">▶ Start incident</button>
+<button class="btn g" id="incact" disabled>Next runbook step</button>
+<button class="btn g" id="increset">Reset</button>
+</div>
+<p class="k8note">Simulation only — built on the stack from my monitoring project: Prometheus · Grafana · Alertmanager · PagerDuty.</p>
+</div>
+<div class="term" id="incterm" aria-live="polite"><div class="mu"># incident console ready — choose a scenario and press Start incident</div></div>
+</div>
+</section>
+
+
+<section class="arch wrap" id="arch" aria-label="Ecommerce-Shopping architecture explorer">
+<p class="eb">Interactive architecture · Ecommerce-Shopping</p>
+<h2>Click the system, <span class="it">piece by piece.</span></h2>
+<div class="archflow" role="group" aria-label="Architecture components">
+<button class="archnode" data-a="users" aria-pressed="true"><b>Users</b><span>Browser traffic</span></button>
+<button class="archnode" data-a="ingress" aria-pressed="false"><b>Ingress</b><span>Routes traffic in</span></button>
+<button class="archnode" data-a="eks" aria-pressed="false"><b>Amazon EKS</b><span>Kubernetes cluster</span></button>
+<button class="archnode" data-a="services" aria-pressed="false"><b>Microservices</b><span>Frontend + Flask backend</span></button>
+<button class="archnode" data-a="rds" aria-pressed="false"><b>Amazon RDS</b><span>MySQL database</span></button>
+<button class="archnode" data-a="gitops" aria-pressed="false"><b>Argo CD + Helm</b><span>GitOps delivery</span></button>
+</div>
+<div class="archdet" aria-live="polite"><h3 id="archt">Users</h3><p id="archp">Shoppers open the storefront in a browser. Every request enters through the Ingress — no service is exposed directly.</p><div class="tags" id="archtags"><span>HTTPS</span><span>Browser</span></div></div>
+<p class="k8note">Explorer for my Ecommerce-Shopping project: microservices on AWS EKS, GitOps via Argo CD, Helm and Ingress, MySQL on RDS.</p>
+</section>
+<section class="hpa wrap" id="scale" aria-label="Kubernetes autoscaling load simulator">
+<p class="eb">Live simulation · Autoscaling under load</p>
+<h2>Push the traffic. <span class="it">Watch HPA answer.</span></h2>
+<div class="hpagrid">
+<div class="hpactrl">
+<label>Requests / second <output id="hpaout">120 rps</output></label>
+<input type="range" id="hparange" min="20" max="1200" value="120" step="20" aria-label="Requests per second">
+<div class="incrow"><button class="btn" id="hpaspike">⚡ Traffic spike</button><button class="btn g" id="hpapause">Pause</button></div>
+<div class="incstat">
+<div><b id="hpapodn">2</b><span>Pods (HPA)</span></div>
+<div><b id="hpalat">42ms</b><span>p95 latency</span></div>
+<div><b id="hpacpu">31%</b><span>CPU / pod</span></div>
+</div>
+<p style="color:var(--mu);font-size:15px">The Horizontal Pod Autoscaler targets ~60% CPU per pod. Load per pod climbs → HPA adds replicas → latency settles. Drop the traffic and it scales back down — with a cooldown, so it doesn't flap.</p>
+</div>
+<div class="hpaviz"><canvas id="hpacv" width="640" height="220" aria-label="Live chart of requests and pod count"></canvas><div class="hpapods" id="hpapods" aria-label="Running pods"></div></div>
+</div>
+</section>
+
 <section class="paper" id="approach" data-s="4">
   <div class="wrap">
-    <div class="about" id="about">
-      <div class="scene"><div class="card3" id="card3">
-        <div class="pic"><img id="me" alt="Portrait of Syed Kashif Ali" loading="lazy" decoding="async" referrerpolicy="no-referrer" hidden>
-          <svg id="mefb" viewBox="0 0 300 400" role="img" aria-label="Placeholder portrait with initials SK; add your photo in SITE_CONFIG.photo"><circle cx="150" cy="150" r="62" fill="#8d7be0" opacity=".55"/><path d="M40 400c0-90 50-140 110-140s110 50 110 140z" fill="#8d7be0" opacity=".45"/><text x="150" y="168" text-anchor="middle">SK</text></svg></div>
-        <div class="nm3"><b>Syed Kashif Ali</b><span>DevOps &amp; Cloud Engineer</span></div>
-        <span class="fl a">AWS</span><span class="fl b">Terraform</span><span class="fl c">Kubernetes</span>
-        <div class="glare" id="glare"></div>
-      </div></div>
-      <div><p class="eb rv0">About</p><h2 class="ph rv0">Learned by building, one lab at a time.</h2>
-        <p class="rv0">I’m a DevOps &amp; Cloud Engineer in the making from Hyderabad, with working knowledge of AWS, Linux, networking, Terraform, containers and CI/CD.</p>
-        <p class="rv0">From Nov 2025 to May 2026 I worked as a Cloud Engineer intern at Future Applications Technologies, on infrastructure and delivery for the Clariop product. I’m now pursuing an MCA while building projects on EKS, Bedrock and Prometheus.</p></div>
-    </div>
     <p class="eb rv0">Approach</p>
     <h2 class="ph rv0" style="font-style:normal;margin:18px 0 10px">I build infrastructure <em>that stays up<svg viewBox="0 0 300 20" preserveAspectRatio="none" aria-hidden="true"><path d="M2 14 C60 4 150 4 298 10"/></svg></em></h2>
     <p class="sub rv0">one commit at a time</p>
@@ -508,6 +647,38 @@ html[data-theme=light] #menu .mx{border-bottom-color:rgba(18,18,18,.1)}
 <div id="ck" aria-hidden="true" data-t="system"><i class="od"></i><i class="or"></i><svg class="ar" viewBox="0 0 28 28"><defs><linearGradient id="ckg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--a1,#ff8a6b)"/><stop offset="1" style="stop-color:var(--a2,#6a4ce0)"/></linearGradient></defs><path d="M2 2v20l5.5-4.5L11 26l4-1.6-3.4-8H20z" fill="url(#ckg)" style="stroke:var(--as,#fff)" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="al"></span><div class="tm">~$<b>▌</b></div><div class="dl"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="rot"><g class="ears"><circle cx="13" cy="15" r="11" fill="#d9cffc"/><circle cx="13" cy="15" r="6.5" fill="#ff9fb2"/><circle cx="51" cy="15" r="11" fill="#d9cffc"/><circle cx="51" cy="15" r="6.5" fill="#ff9fb2"/></g><ellipse cx="32" cy="36" rx="24" ry="22" fill="#ece7ff" stroke="#b9aee6" stroke-width="1.5"/><circle cx="17" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><circle cx="47" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><g class="eyes"><circle cx="23" cy="31" r="5" fill="#fff"/><circle cx="41" cy="31" r="5" fill="#fff"/><g class="pp"><circle cx="23" cy="31" r="2.8" fill="#1a1724"/><circle cx="41" cy="31" r="2.8" fill="#1a1724"/><circle cx="22" cy="30" r=".9" fill="#fff"/><circle cx="40" cy="30" r=".9" fill="#fff"/></g></g><ellipse cx="32" cy="40" rx="3.6" ry="2.7" fill="#ff7a93"/><path d="M28 45q4 3.5 8 0" fill="none" stroke="#6a4ce0" stroke-width="1.6" stroke-linecap="round"/><path d="M4 38l11 2M4 45l11-1M60 38l-11 2M60 45l-11-1" stroke="#b9aee6" stroke-width="1.4" stroke-linecap="round"/></g></svg><span class="zz">z z</span><span class="say">squeak!</span></div></div>
 <canvas id="ckcv" aria-hidden="true"></canvas>
 <div class="ckw" id="ckw"><button id="ckb" type="button" aria-expanded="false" aria-controls="ckp">Cursor · <b id="ckn">System</b></button><div id="ckp" role="radiogroup" aria-label="Cursor theme" hidden></div></div>
+
+<button class="askb" id="askopen" aria-haspopup="dialog">✦ Ask <b>about Kashif</b></button>
+
+<button class="perfb" id="perfopen" aria-haspopup="dialog">⚡ Perf</button>
+<dialog class="perf" id="perfdlg" aria-label="Site performance and audio summary">
+<div class="perfh"><h2>This page, measured live</h2><button class="x2" id="perfclose" aria-label="Close">×</button></div>
+<div class="perfb2">
+<dl>
+<dt>Page load (navigation → load event)</dt><dd id="pfload">—</dd>
+<dt>DOM nodes on this page</dt><dd id="pfdom">—</dd>
+<dt>Sections & simulations</dt><dd id="pfsec">—</dd>
+<dt>Your connection (browser-reported)</dt><dd id="pfnet">—</dd>
+</dl>
+<p style="color:var(--mu);font-size:15px">Measured in your browser with the Performance API — not a screenshot of someone else's Lighthouse run.</p>
+<button class="btn" id="voiceread">🔊 Listen: 30-second summary of Kashif</button>
+<button class="btn g" id="voicestop">Stop</button>
+</div>
+</dialog>
+
+<dialog class="ask" id="askdlg" aria-label="Ask about Kashif">
+<div class="askh"><h2>Ask about Kashif</h2><button class="x2" id="askclose" aria-label="Close">×</button></div>
+<div id="asklog"></div>
+<div class="askq">
+<button data-q="What are his core skills?">Core skills</button>
+<button data-q="Tell me about his projects">Projects</button>
+<button data-q="What experience does he have?">Experience</button>
+<button data-q="What certifications does he hold?">Certifications</button>
+<button data-q="How can I contact him?">Contact</button>
+</div>
+<form class="askf" id="askform"><input id="askin" type="text" placeholder="Ask about skills, projects, education…" autocomplete="off" aria-label="Your question"><button class="btn" type="submit">Ask</button></form>
+</dialog>
+
 <dialog class="cmd" id="cmd" aria-label="Command palette"><div class="cmi"><input id="cmq" type="text" role="combobox" aria-expanded="true" aria-controls="cml" aria-autocomplete="list" placeholder="Type a command or search…" autocomplete="off" spellcheck="false"><kbd>esc</kbd></div><ul id="cml" role="listbox" aria-label="Commands"></ul></dialog>
 <div id="toast" role="status" aria-live="polite"></div>
 <button class="shb" id="shb" type="button" aria-haspopup="dialog">›_ Terminal</button>
@@ -956,5 +1127,156 @@ b.setAttribute('aria-checked',t==='light');lab.textContent=t==='light'?'Light':'
 apply(isLight()?'light':'dark',false);b.onclick=()=>apply(isLight()?'dark':'light',true)})();
 addEventListener('scroll',ring,{passive:true});ring();
 </script>
+
+<script>
+/* ===== ADVANCED v2 JS: incident simulator + recruiter assistant (self-contained, offline) ===== */
+(function(){
+"use strict";
+/* ---------- Incident simulator ---------- */
+var SC={
+pod:{sev:"sev1",sevT:"SEV-1 · PagerDuty",desc:"Alertmanager fires: a pod in the EKS workload is OOMKilled and restarting in a loop.",steps:[
+["ack","Acknowledge the PagerDuty alert and open the incident channel."],
+["grafana","Grafana first: memory graph spikes to the pod limit, then the pod dies — a sawtooth, not a traffic surge."],
+["logs","Read the first real error: 'OOMKilled' in the container status. Ignore the restart cascade below it."],
+["fix","Root cause fix: raise the memory limit/request for the container and roll out the updated Helm values."],
+["verify","Verify: pod stays Running through two spike windows, restarts stay at 0, alert auto-resolves."]]},
+deploy:{sev:"sev2",sevT:"SEV-2 · CI/CD",desc:"The pipeline goes red after a merge: the new rollout never becomes ready and Argo CD reports Degraded.",steps:[
+["ack","Acknowledge the alert and freeze further merges to the affected service."],
+["grafana","Check the pipeline stages in order: build and tests passed — the failure is at deploy, not in the code stage."],
+["logs","Read the first real error: the rollout timed out waiting for readiness; the new pod shows a failing readiness probe."],
+["fix","Root cause fix: roll back with Argo CD to the last healthy revision, then fix the probe path in the Helm chart."],
+["verify","Verify: Argo CD shows Synced + Healthy, readiness passes, and the pipeline re-runs green."]]},
+latency:{sev:"sev2",sevT:"SEV-2 · SLO",desc:"Latency alert: p95 response time climbs steadily while error rate stays flat — something is saturating, not crashing.",steps:[
+["ack","Acknowledge the PagerDuty alert and note the start time for the timeline."],
+["grafana","Lock the time window in Grafana first: latency rises with one saturated resource, not with request volume."],
+["logs","Read the signals, not the noise: no new errors — check node CPU / pod throttling before touching the app."],
+["fix","Root cause fix: scale the deployment replicas and set CPU requests so the scheduler stops packing the node."],
+["verify","Verify: p95 returns inside the SLO window and stays there; close the incident with the timeline attached."]]}
+};
+var cur="pod",step=-1,t0=0,timer=null,term=document.getElementById("incterm");
+function log(txt,cls){if(!term)return;var d=document.createElement("div");if(cls)d.className=cls;d.textContent=txt;term.appendChild(d);term.scrollTop=term.scrollHeight;}
+function fmt(s){var m=Math.floor(s/60),r=s%60;return (m<10?"0":"")+m+":"+(r<10?"0":"")+r;}
+function setClock(){var el=document.getElementById("incclock");if(el&&t0)el.textContent=fmt(Math.floor((Date.now()-t0)/1000));}
+function reset(){step=-1;t0=0;if(timer)clearInterval(timer);timer=null;
+var c=document.getElementById("incclock");if(c)c.textContent="00:00";
+var s=document.getElementById("incstep");if(s)s.textContent="–";
+var sv=document.getElementById("incsev");if(sv){sv.dataset.s="idle";sv.textContent="No incident";}
+var a=document.getElementById("incact");if(a)a.disabled=true;
+if(term)term.innerHTML="";log("# incident console ready — press Start incident","mu");}
+document.querySelectorAll(".incchip").forEach(function(b){b.addEventListener("click",function(){
+document.querySelectorAll(".incchip").forEach(function(x){x.setAttribute("aria-pressed","false")});
+b.setAttribute("aria-pressed","true");cur=b.dataset.sc;reset();
+var d=document.getElementById("incdesc");if(d)d.textContent=SC[cur].desc;log("# scenario selected: "+b.textContent,"mu");});});
+var start=document.getElementById("incstart");
+if(start)start.addEventListener("click",function(){reset();t0=Date.now();timer=setInterval(setClock,500);step=0;
+var sc=SC[cur],sv=document.getElementById("incsev");if(sv){sv.dataset.s=sc.sev;sv.textContent=sc.sevT;}
+var st=document.getElementById("incstep");if(st)st.textContent="0 / "+sc.steps.length;
+var a=document.getElementById("incact");if(a)a.disabled=false;
+log("🔥 INCIDENT OPEN — "+sc.desc,"er");log("Prometheus → Alertmanager → PagerDuty: alert delivered. Clock started.","wn");});
+var act=document.getElementById("incact");
+if(act)act.addEventListener("click",function(){var sc=SC[cur];if(step<0||step>=sc.steps.length)return;
+var s=sc.steps[step];log("✓ Step "+(step+1)+": "+s[1],"ok");step++;
+var st=document.getElementById("incstep");if(st)st.textContent=Math.min(step,sc.steps.length)+" / "+sc.steps.length;
+if(step>=sc.steps.length){if(timer)clearInterval(timer);var el=Math.floor((Date.now()-t0)/1000);
+var sv=document.getElementById("incsev");if(sv){sv.dataset.s="ok";sv.textContent="Resolved";}
+act.disabled=true;log("✅ INCIDENT RESOLVED in "+fmt(el)+" — post-incident notes written: timeline, root cause, and the one-line fix.","ok");}});
+var rs=document.getElementById("increset");if(rs)rs.addEventListener("click",reset);
+/* ---------- Recruiter assistant (rule-based, answers only from resume facts on this page) ---------- */
+var KB=[
+[["skill","stack","tech","tool"],"Core skills: AWS (EC2, EKS, ECS, ECR, S3, Lambda, Secrets Manager, WAF, KMS) · Terraform · Kubernetes, Helm & Argo CD GitOps · CI/CD · Prometheus, Grafana, Alertmanager, CloudWatch, Datadog, Dynatrace & PagerDuty."],
+[["project","build","portfolio"],"Projects: 1) Terraform IaC on AWS  2) Ecommerce-Shopping — microservices on AWS EKS with GitOps (Argo CD, Helm, Ingress)  3) AI Agent Hostel Management Platform — EC2, Lambda, API Gateway, DynamoDB, SQS, Bedrock + MCP  4) Monitoring & Alerting — Prometheus, Grafana, PagerDuty. Scroll to Projects for the live simulations."],
+[["experience","work","intern","job"],"Experience: Cloud Engineer Intern at Future Applications Technologies (hybrid, Nov 2025 – May 2026) — automated AWS provisioning with Terraform, built EC2 shutdown automation archiving code/logs to S3, a Lambda workflow exporting CloudWatch logs to S3, and worked on CI/CD pipelines for the Clariop product."],
+[["certif","course","qualification"],"Certifications include: AWS Well-Architected Proficient · OCI 2025 Certified Foundations Associate · Manage Kubernetes in Google Cloud Skill Badge · DevOps with Multi-Cloud (Naresh i Technologies) · LFS101 · Foundations of Prompt Engineering — 13 in total on his current resume."],
+[["education","study","college","mca","bca","degree"],"Education: MCA (2026–2028) at Aditya Engineering College, Dr. Babasaheb Ambedkar Marathwada University, Beed · BCA (2022–2025), Savitribai Phule Pune University — CGPA 8.3/10."],
+[["contact","email","hire","reach","linkedin"],"You can reach Kashif through the contact section at the bottom of this page, or on LinkedIn: linkedin.com/in/syed-kashif-ali-844137292. He is based in Hyderabad, India, and is applying for Cloud & DevOps fresher roles."],
+[["location","where","based","hyderabad"],"Kashif is based in Hyderabad, India."],
+[["who","about","summary","introduce"],"Syed Kashif Ali is a DevOps Engineer focused on Cloud Infrastructure and DevSecOps, based in Hyderabad. He builds AWS infrastructure with Terraform, runs workloads on Kubernetes/EKS with GitOps, and wires up observability with Prometheus, Grafana and PagerDuty."]];
+var FALLBACK="I can answer from Kashif's resume on this page — try asking about his skills, projects, experience, certifications, education, or how to contact him.";
+var dlg=document.getElementById("askdlg"),logEl=document.getElementById("asklog");
+function addMsg(txt,who){if(!logEl)return;var d=document.createElement("div");d.className="askm "+who;d.textContent=txt;logEl.appendChild(d);logEl.scrollTop=logEl.scrollHeight;}
+function answer(q){var s=q.toLowerCase();for(var i=0;i<KB.length;i++){for(var j=0;j<KB[i][0].length;j++){if(s.indexOf(KB[i][0][j])>-1)return KB[i][1];}}return FALLBACK;}
+var opened=false;
+function openAsk(){if(!dlg)return;if(typeof dlg.showModal==="function")dlg.showModal();else dlg.setAttribute("open","");
+if(!opened){opened=true;addMsg("Hi — I'm a small offline assistant built into this page. Ask me anything about Kashif's skills, projects, experience or certifications.","bot");}}
+var ob=document.getElementById("askopen");if(ob)ob.addEventListener("click",openAsk);
+var cb=document.getElementById("askclose");if(cb)cb.addEventListener("click",function(){if(dlg)dlg.close();});
+document.querySelectorAll(".askq button").forEach(function(b){b.addEventListener("click",function(){var q=b.dataset.q;addMsg(q,"me");setTimeout(function(){addMsg(answer(q),"bot")},250);});});
+var form=document.getElementById("askform");
+if(form)form.addEventListener("submit",function(e){e.preventDefault();var inp=document.getElementById("askin");var q=(inp.value||"").trim();if(!q)return;inp.value="";addMsg(q,"me");setTimeout(function(){addMsg(answer(q),"bot")},250);});
+})();
+</script>
+
+
+<script>
+/* ===== ADVANCED v3 JS: architecture explorer + HPA simulator + perf/voice (self-contained) ===== */
+(function(){
+"use strict";
+/* ---------- Architecture explorer ---------- */
+var ARCH={
+users:["Users","Shoppers open the storefront in a browser. Every request enters through the Ingress — no service is exposed directly.",["HTTPS","Browser"]],
+ingress:["Ingress","The Ingress is the single front door of the cluster: it routes host/path traffic to the right microservice and terminates the entry point, so services stay internal by default.",["Kubernetes Ingress","Routing","Single entry point"]],
+eks:["Amazon EKS","The managed Kubernetes cluster that runs the whole application: it schedules the microservice pods, restarts failed containers, and rolls out new versions without downtime.",["AWS EKS","Kubernetes","Pods & Services"]],
+services:["Microservices","The application is split into services: an HTML/CSS/JS frontend and a Python Flask backend, each containerised and deployed independently on EKS.",["HTML/CSS/JS","Python Flask","Containers"]],
+rds:["Amazon RDS · MySQL","State lives outside the cluster in a managed MySQL database on Amazon RDS — pods can be replaced or rescaled without taking the data with them.",["Amazon RDS","MySQL","Managed database"]],
+gitops:["Argo CD + Helm · GitOps","Git is the source of truth: microservices are packaged as Helm charts, and Argo CD continuously syncs the cluster to the repo — every deploy is a commit, every rollback is a revert.",["Argo CD","Helm charts","GitOps","Rollback = revert"]]};
+document.querySelectorAll(".archnode").forEach(function(b){b.addEventListener("click",function(){
+document.querySelectorAll(".archnode").forEach(function(x){x.setAttribute("aria-pressed","false")});
+b.setAttribute("aria-pressed","true");var a=ARCH[b.dataset.a];if(!a)return;
+var h=document.getElementById("archt"),p=document.getElementById("archp"),tg=document.getElementById("archtags");
+if(h)h.textContent=a[0];if(p)p.textContent=a[1];
+if(tg){tg.innerHTML="";a[2].forEach(function(s){var sp=document.createElement("span");sp.textContent=s;tg.appendChild(sp);});}});});
+/* ---------- HPA load simulator ---------- */
+var range=document.getElementById("hparange"),out=document.getElementById("hpaout"),cv=document.getElementById("hpacv");
+var pods=2,target=2,cool=0,paused=false,hist=[],tick=0;
+function rps(){return range?+range.value:120;}
+function draw(){if(!cv)return;var c=cv.getContext("2d");if(!c)return;var W=cv.width,H=cv.height;c.clearRect(0,0,W,H);
+c.strokeStyle="rgba(244,240,232,.12)";c.beginPath();for(var y=20;y<H;y+=40){c.moveTo(0,y);c.lineTo(W,y);}c.stroke();
+function line(data,max,col){c.strokeStyle=col;c.lineWidth=2;c.beginPath();data.forEach(function(v,i){var x=i/(119)*W,y=H-10-(v/max)*(H-30);if(i===0)c.moveTo(x,y);else c.lineTo(x,y);});c.stroke();}
+line(hist.map(function(h){return h.r;}),1200,"#b29dff");
+line(hist.map(function(h){return h.p*80;}),1200,"#9be7c4");
+c.fillStyle="#b29dff";c.font="12px sans-serif";c.fillText("— requests/s",12,16);
+c.fillStyle="#9be7c4";c.fillText("— pods ×80",110,16);}
+function renderPods(cpu){var w=document.getElementById("hpapods");if(!w)return;w.innerHTML="";
+for(var i=0;i<pods;i++){var d=document.createElement("div");d.className="hpapod"+(cpu>75?" hot":"");w.appendChild(d);}}
+setInterval(function(){if(paused||!range)return;tick++;
+var r=rps(),per=r/Math.max(pods,1),cpu=Math.min(118,Math.round(per/1.9)),lat=Math.round(28+Math.max(0,per-70)*1.6+Math.random()*8);
+if(out)out.textContent=r+" rps";
+var pn=document.getElementById("hpapodn");if(pn)pn.textContent=pods;
+var pl=document.getElementById("hpalat");if(pl)pl.textContent=lat+"ms";
+var pc=document.getElementById("hpacpu");if(pc)pc.textContent=cpu+"%";
+target=Math.max(2,Math.min(14,Math.ceil(r/115)));
+if(cool>0)cool--;
+if(target>pods){pods++;cool=3;renderPods(cpu);}
+else if(target<pods&&cool===0){pods--;renderPods(cpu);}
+if(tick%6===0)renderPods(cpu);
+hist.push({r:r,p:pods});if(hist.length>120)hist.shift();draw();},450);
+if(range)range.addEventListener("input",function(){if(out)out.textContent=range.value+" rps";});
+var sp=document.getElementById("hpaspike");
+if(sp)sp.addEventListener("click",function(){if(!range)return;range.value=1100;if(out)out.textContent="1100 rps";
+setTimeout(function(){range.value=180;if(out)out.textContent="180 rps";},7000);});
+var pz=document.getElementById("hpapause");
+if(pz)pz.addEventListener("click",function(){paused=!paused;pz.textContent=paused?"Resume":"Pause";});
+renderPods(31);
+/* ---------- Perf HUD + voice summary ---------- */
+var dlg=document.getElementById("perfdlg");
+function fillPerf(){
+try{var nav=performance.getEntriesByType("navigation")[0];
+var el=document.getElementById("pfload");if(el&&nav)el.textContent=Math.round(nav.loadEventEnd)+" ms";
+var dm=document.getElementById("pfdom");if(dm)dm.textContent=document.querySelectorAll("*").length.toLocaleString();
+var sc=document.getElementById("pfsec");if(sc)sc.textContent=document.querySelectorAll("section").length+" sections";
+var nt=document.getElementById("pfnet");if(nt){var cx=navigator.connection;nt.textContent=cx?(cx.effectiveType||"—")+" · ~"+(cx.downlink||"?")+" Mbps":"not reported";}
+}catch(e){}}
+var po=document.getElementById("perfopen");
+if(po)po.addEventListener("click",function(){fillPerf();if(!dlg)return;if(typeof dlg.showModal==="function")dlg.showModal();else dlg.setAttribute("open","");});
+var pcl=document.getElementById("perfclose");if(pcl)pcl.addEventListener("click",function(){if(dlg)dlg.close();});
+var SUMMARY="Syed Kashif Ali is a DevOps Engineer focused on cloud infrastructure and DevSecOps, based in Hyderabad, India. As a Cloud Engineer intern at Future Applications Technologies, he automated AWS provisioning with Terraform, built EC2 shutdown automation to S3, and a Lambda workflow exporting CloudWatch logs to S3. His projects include a microservices e-commerce application on Amazon EKS with GitOps using Argo CD and Helm, and a monitoring stack with Prometheus, Grafana and PagerDuty. He holds thirteen certifications, and is currently pursuing his MCA.";
+var vr=document.getElementById("voiceread");
+if(vr)vr.addEventListener("click",function(){if(!("speechSynthesis" in window))return;speechSynthesis.cancel();
+var u=new SpeechSynthesisUtterance(SUMMARY);u.rate=1;speechSynthesis.speak(u);});
+var vs=document.getElementById("voicestop");
+if(vs)vs.addEventListener("click",function(){if("speechSynthesis" in window)speechSynthesis.cancel();});
+})();
+</script>
+
 </body>
 </html>
