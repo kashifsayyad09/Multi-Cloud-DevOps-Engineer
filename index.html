@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Syed Kashif Ali — DevOps &amp; Cloud Engineer</title>
-<meta name="portfolio-version" content="advanced-v3">
+<meta name="portfolio-version" content="advanced-v9">
 <meta name="description" content="Portfolio of Syed Kashif Ali: AWS, Terraform, Kubernetes, CI/CD and observability.">
 <script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="theme-color" content="#0b0a10">
@@ -387,6 +387,96 @@ dialog.perf::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
 .perfb2 dd{color:var(--tx);font-weight:700;font-family:ui-monospace,Menlo,Consolas,monospace}
 html[data-theme=light] .archdet,html[data-theme=light] .hpactrl{background:linear-gradient(180deg,#fff,#f1f1f9)}
 html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#fff}
+
+/* ===== ADVANCED v4: SLO error budget + achievements + recruiter mode ===== */
+.slo{padding:var(--sec) 0}.slo h2{margin:14px 0 clamp(28px,4vw,48px)}
+.slogrid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+@media(max-width:900px){.slogrid{grid-template-columns:1fr}}
+.sloctrl{border:1px solid rgba(244,240,232,.14);border-radius:26px;padding:clamp(18px,3vw,34px);background:var(--s2);display:flex;flex-direction:column;gap:18px}
+.sloctrl label{font-weight:700;display:flex;justify-content:space-between;gap:12px}
+.sloctrl label output{color:var(--pu);font:italic 400 24px var(--ser)}
+.sloctrl input[type=range]{width:100%;accent-color:#6a4ce0;min-height:44px}
+.slobar{height:26px;border-radius:99px;background:rgba(244,240,232,.12);overflow:hidden}
+.slobar i{display:block;height:100%;width:100%;background:linear-gradient(90deg,#9be7c4,#2fb37a);transition:width .5s,background .5s}
+.slobar i.warn{background:linear-gradient(90deg,#ffb35c,#ff8a6b)}
+.slobar i.dead{background:linear-gradient(90deg,#ff5d6c,#c0392b)}
+.rec{position:fixed;right:16px;bottom:174px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(255,138,107,.6);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+.tro{position:fixed;right:16px;bottom:226px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(255,209,102,.6);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+.tro b{color:#ffd166}
+dialog.rec, dialog.tro2{width:min(600px,94vw);margin:auto;padding:0;border-radius:22px;background:var(--s2);border:1px solid rgba(178,157,255,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}
+dialog.rec::backdrop, dialog.tro2::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
+.recbody{padding:20px;display:grid;gap:14px}
+.recbody p{color:var(--mu)}
+.badges{display:grid;grid-template-columns:1fr 1fr;gap:12px;padding:20px}
+@media(max-width:560px){.badges{grid-template-columns:1fr}}
+.badge{border:1.5px solid rgba(244,240,232,.18);border-radius:18px;padding:16px;opacity:.45}
+.badge.on{opacity:1;border-color:#ffd166;background:rgba(255,209,102,.07)}
+.badge b{display:block;font-size:17px;margin-bottom:4px}
+.badge span{font-size:13px;color:var(--mu)}
+#advtoast{position:fixed;left:50%;bottom:84px;transform:translate(-50%,20px);background:#ffd166;color:#14121c;padding:12px 20px;border-radius:12px;font-weight:800;opacity:0;transition:.3s;z-index:210;pointer-events:none}
+#advtoast.on{opacity:1;transform:translate(-50%,0)}
+html[data-theme=light] .sloctrl,html[data-theme=light] dialog.rec,html[data-theme=light] dialog.tro2{background:#fff}
+
+/* ===== ADVANCED v5: log explorer + presentation mode + accessibility toolbar ===== */
+.logs{padding:var(--sec) 0}.logs h2{margin:14px 0 clamp(28px,4vw,48px)}
+.logbar{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:14px}
+.logbar input[type=search]{flex:1 1 220px;min-height:48px;padding:0 14px;border-radius:12px;border:1px solid rgba(244,240,232,.25);background:var(--s2);color:var(--tx);font:inherit}
+.logbar select{min-height:48px;padding:0 12px;border-radius:12px;border:1px solid rgba(244,240,232,.25);background:var(--s2);color:var(--tx);font:inherit}
+#logstream{min-height:320px;max-height:380px;overflow:auto}
+#logstream .lv-ERROR{color:#ff5d6c}#logstream .lv-WARN{color:#ffb35c}#logstream .lv-INFO{color:#9be7c4}
+#logstream mark{background:#ffd166;color:#14121c;border-radius:3px;padding:0 2px}
+.presb{position:fixed;right:16px;bottom:278px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(178,157,255,.6);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+.a11yb{position:fixed;left:16px;bottom:70px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(244,240,232,.4);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+#a11ypanel{position:fixed;left:16px;bottom:122px;z-index:71;background:var(--s2);border:1px solid rgba(244,240,232,.22);border-radius:18px;padding:14px;display:grid;gap:8px;min-width:230px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7)}
+#a11ypanel[hidden]{display:none}
+#a11ypanel button{min-height:44px;padding:0 14px;border-radius:12px;border:1px solid rgba(244,240,232,.2);text-align:left;font-weight:600;color:var(--tx)}
+#a11ypanel button[aria-pressed=true]{border-color:var(--pu);color:var(--pu)}
+body.adv5-rm *,body.adv5-rm *:before,body.adv5-rm *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+body.adv5-hc{--mu:#ded8ee}
+html[data-theme=light] body.adv5-hc{--mu:#2c2c38}
+#pres{position:fixed;inset:0;z-index:250;background:var(--bg);color:var(--tx);display:none;flex-direction:column;justify-content:center;padding:0 var(--gut)}
+#pres.on{display:flex}
+#pres .pk{font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--pu);font-weight:700;margin-bottom:18px}
+#pres h2{font:italic 400 clamp(38px,6.5vw,92px)/1.02 var(--ser);letter-spacing:-.04em;margin:0 0 22px}
+#pres p{font-size:clamp(17px,2vw,25px);color:var(--mu);max-width:860px;white-space:pre-line}
+.presnav{position:absolute;left:var(--gut);right:var(--gut);bottom:30px;display:flex;justify-content:space-between;align-items:center;gap:14px}
+.presnav span{color:var(--mu);font:700 14px ui-monospace,Menlo,Consolas,monospace}
+html[data-theme=light] #a11ypanel,html[data-theme=light] .logbar input[type=search],html[data-theme=light] .logbar select{background:#fff;color:#121212}
+
+/* ===== ADVANCED v6: pipeline builder + DevOps quiz + print one-pager ===== */
+.pb,.qz{padding:var(--sec) 0}.pb h2,.qz h2{margin:14px 0 clamp(28px,4vw,48px)}
+.pbgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
+@media(max-width:900px){.pbgrid{grid-template-columns:1fr}}
+.pbpal{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
+.pbstage{border:1.5px solid rgba(244,240,232,.25);border-radius:14px;padding:12px 16px;min-height:48px;font-weight:700;transition:.2s}
+.pbstage:hover{border-color:var(--pu);transform:translateY(-2px)}
+.pbstage[disabled]{opacity:.35;transform:none}
+.pbchosen{display:flex;flex-direction:column;gap:10px;margin-bottom:14px}
+.pbitem{display:flex;align-items:center;gap:12px;border:1.5px solid var(--pu);border-radius:14px;padding:10px 14px;background:var(--s2)}
+.pbitem b{flex:1}.pbitem button{min-width:40px;min-height:40px;border-radius:10px;border:1px solid rgba(244,240,232,.25)}
+.pbwarn{color:#ffb35c;font-size:15px;min-height:1.4em}
+.pbok{color:#9be7c4;font-size:15px;min-height:1.4em}
+#pbyaml{min-height:280px;max-height:380px;overflow:auto;font-size:12.5px}
+.qzgrid{display:grid;gap:16px}
+.qzq{border:1px solid rgba(244,240,232,.14);border-radius:20px;padding:20px;background:var(--s2)}
+.qzq h3{font-size:19px;margin-bottom:12px;letter-spacing:-.02em}
+.qzopts{display:grid;gap:8px}
+.qzopts button{text-align:left;border:1.5px solid rgba(244,240,232,.2);border-radius:12px;padding:12px 16px;min-height:48px;font-weight:600;transition:.2s}
+.qzopts button:hover{border-color:var(--pu)}
+.qzopts button.right{border-color:#9be7c4;background:rgba(155,231,196,.1)}
+.qzopts button.wrong{border-color:#ff5d6c;background:rgba(255,93,108,.1)}
+.qzopts button[disabled]{opacity:.75}
+.qzscore{font:italic 400 clamp(28px,3.4vw,44px) var(--ser);color:var(--pu)}
+.printb{position:fixed;right:16px;bottom:330px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(244,240,232,.45);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
+#printone{display:none}
+@media print{
+body>*{display:none!important}
+body>#printone{display:block!important;color:#000;background:#fff;font:14px/1.55 Georgia,serif;padding:24px}
+#printone h1{font:700 26px Georgia,serif;letter-spacing:0}
+#printone h2{font:700 16px Georgia,serif;margin:16px 0 6px;border-bottom:1.5px solid #000;padding-bottom:2px}
+#printone ul{margin-left:18px}#printone p{margin:3px 0}
+}
+html[data-theme=light] .qzq,html[data-theme=light] .pbitem{background:#fff}
 </style>
 </head>
 <body>
@@ -432,9 +522,9 @@ html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#
 <section class="work" id="work" data-s="2">
   <div class="wrap">
     <p class="eb rv0">Selected work · Cloud &amp; DevOps</p>
-    <h2 class="rv0">Four builds, from the first commit to the on-call alert.</h2>
+    <h2 class="rv0">Seven builds, from the first commit to the on-call alert.</h2>
     <div class="chips rv0">
-      <a class="chip" href="#c1"><b>01</b>Terraform IaC</a><a class="chip" href="#c2"><b>02</b>EKS Shop</a><a class="chip" href="#c3"><b>03</b>AI Agent</a><a class="chip" href="#c4"><b>04</b>Observability</a><a class="chip" href="#journey"><b>05</b>Clariop Intern</a><a class="chip" href="#certs"><b>06</b>Certifications</a>
+      <a class="chip" href="#c1"><b>01</b>WasteFlow AI</a><a class="chip" href="#c2"><b>02</b>ProcureHub</a><a class="chip" href="#c3"><b>03</b>Terraform IaC</a><a class="chip" href="#c4"><b>04</b>EKS Shop</a><a class="chip" href="#c5"><b>05</b>AI Agent</a><a class="chip" href="#c6"><b>06</b>Observability</a><a class="chip" href="#c7"><b>07</b>Incident Pilot</a><a class="chip" href="#journey"><b>08</b>Clariop Intern</a><a class="chip" href="#certs"><b>09</b>Certifications</a>
     </div>
     <div id="stack" class="rv0">
       <div class="mq" aria-hidden="true"><div id="m1"></div></div>
@@ -452,7 +542,7 @@ html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#
 </section>
 
 <section class="cases" aria-label="Project case studies" id="cases"></section>
-<noscript><section class="wrap" style="padding:40px var(--pad)"><h2 class="it">Projects</h2><ul style="margin-left:20px;display:grid;gap:12px"><li><b>Infrastructure as Code with Terraform (AWS)</b>: modular Terraform for VPC networking and least-privilege IAM, with remote state.</li><li><b>Ecommerce microservices on EKS</b>: Flask + MySQL RDS, Helm charts, GitOps with Argo CD, Ingress with TLS.</li><li><b>AI Agent Hostel Management Platform</b>: EC2 frontend, Lambda + API Gateway, MCP server with Claude on Amazon Bedrock, DynamoDB and SQS.</li><li><b>Monitoring &amp; alerting</b>: Prometheus and Grafana on Kubernetes with PagerDuty escalation.</li></ul><p style="margin-top:16px">Enable JavaScript to see the interactive demos.</p></section></noscript>
+<noscript><section class="wrap" style="padding:40px var(--pad)"><h2 class="it">Projects</h2><ul style="margin-left:20px;display:grid;gap:12px"><li><b>WasteFlow AI</b>: AI-powered waste-collection prioritization and route optimization — explainable 0–100 priority score, React/TypeScript, FastAPI, MCP server, Groq AI, deployed on AWS (EC2, dual ALB, RDS MySQL).</li><li><b>ProcureHub</b>: AI-powered procurement platform for SMEs — FastAPI microservices, React/TypeScript, RDS MySQL, SI-Talker AI (MCP, Groq, Gemini). Team Nexaroh, Buildathon 2026.</li><li><b>Infrastructure as Code with Terraform (AWS)</b>: modular Terraform for VPC networking and least-privilege IAM, with remote state.</li><li><b>Ecommerce microservices on EKS</b>: Flask + MySQL RDS, Helm charts, GitOps with Argo CD, Ingress with TLS.</li><li><b>AI Agent Hostel Management Platform</b>: EC2 frontend, Lambda + API Gateway, MCP server with Claude on Amazon Bedrock, DynamoDB and SQS.</li><li><b>Monitoring &amp; alerting</b>: Prometheus and Grafana on Kubernetes with PagerDuty escalation.</li><li><b>Incident-Pilot-Agent</b>: React web application (react-scripts), deployed to production on Vercel.</li></ul><p style="margin-top:16px">Enable JavaScript to see the interactive demos.</p></section></noscript>
 
 <section class="tf" id="terraform" data-s="3" aria-label="Terraform environments and modules simulation"><div class="wrap">
   <p class="eb">Terraform · environments &amp; modules · simulation</p><h2 class="it">One set of modules, many environments.</h2>
@@ -605,6 +695,90 @@ html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#
 </div>
 </section>
 
+
+<section class="slo wrap" id="slo" aria-label="SLO error budget simulator">
+<p class="eb">Live simulation · SRE · Error budgets</p>
+<h2>99.9% uptime sounds generous. <span class="it">Do the maths.</span></h2>
+<div class="slogrid">
+<div class="sloctrl">
+<label>Incidents this month <output id="sloincout">3</output></label>
+<input type="range" id="sloinc" min="0" max="12" value="3" step="1" aria-label="Incidents this month">
+<label>Average duration <output id="slodurout">9 min</output></label>
+<input type="range" id="slodur" min="1" max="60" value="9" step="1" aria-label="Average incident duration in minutes">
+<div class="incstat">
+<div><b>43.2m</b><span>Budget / 30 days at 99.9%</span></div>
+<div><b id="sloused">27m</b><span>Budget used</span></div>
+<div><b id="sloleft">16.2m</b><span>Budget left</span></div>
+</div>
+<div class="slobar" role="img" aria-label="Error budget remaining"><i id="slofill"></i></div>
+<p id="slomsg" style="color:var(--mu);font-size:15px">Within budget — but one bad night would eat the rest. This is why the runbook above matters: shorter incidents protect the budget.</p>
+</div>
+<div class="incc">
+<h3 style="font:italic 400 clamp(24px,2.6vw,34px) var(--ser);color:var(--pu)">How an SRE reads this</h3>
+<p style="color:var(--mu)">An SLO of 99.9% over 30 days allows 43.2 minutes of downtime — total. The error budget turns reliability into a spendable resource: ship fast while budget remains, slow down and fix reliability when it burns.</p>
+<p style="color:var(--mu)">Burn alerts (Prometheus + Alertmanager) fire on the <i>rate</i> of budget consumption, not just on downtime — so a fast burn pages long before the budget is gone.</p>
+<div class="tags"><span>Prometheus</span><span>Alertmanager</span><span>Grafana</span><span>PagerDuty</span><span>SLO 99.9%</span></div>
+</div>
+</div>
+</section>
+
+
+<section class="logs wrap" id="logs" aria-label="Live log explorer simulation">
+<p class="eb">Live simulation · Log explorer</p>
+<h2>Metrics tell you something broke. <span class="it">Logs tell you what.</span></h2>
+<div class="logbar">
+<input type="search" id="logq" placeholder="Search the stream — try: error, checkout, rds…" aria-label="Search logs">
+<select id="logsvc" aria-label="Filter by service">
+<option value="">All services</option><option>frontend</option><option>flask-backend</option><option>ingress</option><option>kube-system</option>
+</select>
+<button class="incchip" data-lv="" aria-pressed="true">All</button>
+<button class="incchip" data-lv="INFO" aria-pressed="false">INFO</button>
+<button class="incchip" data-lv="WARN" aria-pressed="false">WARN</button>
+<button class="incchip" data-lv="ERROR" aria-pressed="false">ERROR</button>
+<button class="btn g" id="logpause">Pause</button>
+<button class="btn g" id="logclear">Clear</button>
+</div>
+<div class="incstat" style="margin-bottom:14px">
+<div><b id="logtotal">0</b><span>Lines streamed</span></div>
+<div><b id="logerr">0</b><span>Errors seen</span></div>
+<div><b id="logmatch">0</b><span>Matching filter</span></div>
+</div>
+<div class="term" id="logstream" aria-live="off"></div>
+<p class="k8note">Simulated stream from the Ecommerce-Shopping services. Method that matters in a real incident: lock the time window, read the first error at the spike, ignore the cascade after it.</p>
+</section>
+
+
+<section class="pb wrap" id="builder" aria-label="CI CD pipeline builder">
+<p class="eb">Interactive tool · Pipeline builder</p>
+<h2>Build a pipeline. <span class="it">Get real YAML.</span></h2>
+<div class="pbgrid">
+<div>
+<div class="pbpal" id="pbpal" role="group" aria-label="Pipeline stages"></div>
+<div class="incrow" style="margin-top:16px">
+<button class="btn" id="pbsort">Auto-sort to best practice</button>
+<button class="btn g" id="pbclear">Clear</button>
+<button class="btn g" id="pbcopy">Copy YAML</button>
+</div>
+<p class="pbwarn" id="pbmsg" aria-live="polite"></p>
+<p style="color:var(--mu);font-size:15px">Stages from my CI/CD &amp; GitOps work — including the security gates: SonarQube, Snyk, Trivy and Checkov before anything reaches EKS.</p>
+</div>
+<div>
+<div class="pbchosen" id="pbchosen" aria-live="polite"></div>
+<div class="term"><div class="mu"># your pipeline.yml</div><pre id="pbyaml" style="white-space:pre-wrap"></pre></div>
+</div>
+</div>
+</section>
+<section class="qz wrap" id="quiz" aria-label="DevOps knowledge quiz">
+<p class="eb">Interactive challenge · Test yourself</p>
+<h2>Six questions. <span class="it">No pressure.</span></h2>
+<div class="qzgrid" id="qzgrid"></div>
+<div class="incrow" style="margin-top:20px;align-items:center">
+<span class="qzscore" id="qzscore">Score: 0 / 6</span>
+<button class="btn" id="qzretry">↻ Retry quiz</button>
+</div>
+<p class="k8note" id="qzmsg">Questions drawn from the tools and methods used across this page — Kubernetes, Terraform, GitOps, Helm and incident work.</p>
+</section>
+
 <section class="paper" id="approach" data-s="4">
   <div class="wrap">
     <p class="eb rv0">Approach</p>
@@ -651,6 +825,44 @@ html[data-theme=light] .archnode,html[data-theme=light] dialog.perf{background:#
 <button class="askb" id="askopen" aria-haspopup="dialog">✦ Ask <b>about Kashif</b></button>
 
 <button class="perfb" id="perfopen" aria-haspopup="dialog">⚡ Perf</button>
+
+<button class="rec" id="recopen" aria-haspopup="dialog">👔 Recruiter mode</button>
+<button class="tro" id="troopen" aria-haspopup="dialog">🏆 <b id="trocount">0/5</b> badges</button>
+<div id="advtoast" role="status"></div>
+
+<button class="presb" id="presopen">🎤 Present</button>
+<button class="a11yb" id="a11yopen" aria-expanded="false">♿ Access</button>
+<div id="a11ypanel" hidden role="group" aria-label="Accessibility options">
+<button id="a11ybig" aria-pressed="false">Text size: larger</button>
+<button id="a11ymotion" aria-pressed="false">Reduce motion</button>
+<button id="a11ycontrast" aria-pressed="false">Higher contrast text</button>
+</div>
+<div id="pres" role="dialog" aria-modal="true" aria-label="Presentation mode">
+<div class="pk" id="presk">Slide 1 / 6</div>
+<h2 id="prest">Syed Kashif Ali</h2>
+<p id="presp"></p>
+<div class="presnav"><button class="btn g" id="presprev">← Prev</button><span>Arrow keys to move · Esc to exit</span><button class="btn" id="presnext">Next →</button></div>
+</div>
+
+<dialog class="rec" id="recdlg" aria-label="Recruiter summary">
+<div class="perfh"><h2>Kashif in 20 seconds</h2><button class="x2" id="recclose" aria-label="Close">×</button></div>
+<div class="recbody">
+<p><b style="color:var(--tx)">Syed Kashif Ali — DevOps Engineer (Cloud Infrastructure & DevSecOps), Hyderabad.</b></p>
+<p>Cloud Engineer Intern at Future Applications Technologies (Nov 2025 – May 2026): Terraform AWS automation, EC2/S3 automation, Lambda + CloudWatch log workflows, CI/CD for the Clariop product.</p>
+<p>Projects: WasteFlow AI (AI waste prioritization, AWS) · ProcureHub (AI procurement SaaS, Team Nexaroh) · Terraform IaC on AWS · Ecommerce-Shopping on EKS (Argo CD, Helm, Ingress) · AI Agent Hostel Platform (Lambda, Bedrock, MCP) · Monitoring & Alerting (Prometheus, Grafana, PagerDuty) · Incident-Pilot-Agent (React, Vercel). 13 certifications. MCA 2026–2028, BCA CGPA 8.3/10.</p>
+<div class="incrow">
+<button class="btn" id="reccopy">📋 Copy summary</button>
+<button class="btn" id="recvcf">⬇ Download contact (vCard)</button>
+<a class="btn g" href="https://www.linkedin.com/in/syed-kashif-ali-844137292/" target="_blank" rel="noopener">LinkedIn ↗</a>
+</div>
+</div>
+</dialog>
+<dialog class="tro2" id="trodlg" aria-label="Visitor achievements">
+<div class="perfh"><h2>Explorer badges</h2><button class="x2" id="troclose" aria-label="Close">×</button></div>
+<div class="badges" id="badges"></div>
+<p style="padding:0 20px 20px;color:var(--mu);font-size:14px">Badges unlock as you try the simulations on this page, and are saved in your browser. No account, no tracking.</p>
+</dialog>
+
 <dialog class="perf" id="perfdlg" aria-label="Site performance and audio summary">
 <div class="perfh"><h2>This page, measured live</h2><button class="x2" id="perfclose" aria-label="Close">×</button></div>
 <div class="perfb2">
@@ -760,10 +972,13 @@ const T=["AWS","Terraform","Docker","Kubernetes","GitHub Actions","Argo CD","Jen
 $('#m1').innerHTML=[...T,...T].map(t=>`<span>${t}</span>`).join('');$('#m2').innerHTML=[...T].reverse().concat([...T].reverse()).map(t=>`<span>${t}</span>`).join('');
 /* cases */
 const C=[
+{t:"WasteFlow\u00b7AI",tag:"AI \u00b7 AWS Architecture",line:"Which bin first \u2014 and why, explained.",h:"#5c1a3a",st:"Personal project",stack:["React","TypeScript","FastAPI","RDS MySQL","EC2","ALB","MCP","Groq"],repo:"https://github.com/kashifsayyad09/waste-flow-ai",nodes:["External ALB","Frontend EC2 \u00b7 Nginx","Internal ALB","FastAPI EC2","RDS \u00b7 MCP EC2"],pts:["AI-powered waste-collection prioritization: an explainable, deterministic 0\u2013100 priority score helps collection teams decide which bins to collect first \u2014 and why they are urgent.","Deployed AWS architecture: external ALB \u2192 frontend EC2 (Nginx + React) \u2192 internal ALB \u2192 FastAPI backend EC2, with a separate MCP server EC2 and MySQL on Amazon RDS.","React 19 + TypeScript dashboard for bins and collection priorities; FastAPI REST API stores bins and collection records in MySQL.","Groq-hosted AI supports chat and waste-image features, with the MCP server supplying application tools and data to the assistant."]},
+{t:"ProcureHub",tag:"AI Procurement \u00b7 Buildathon",line:"Procurement for SMEs, piloted by AI.",h:"#3a1450",st:"Team Nexaroh \u00b7 Buildathon submission",stack:["React","TypeScript","FastAPI","MySQL RDS","EKS","Terraform","GitOps","Docker"],repo:"https://github.com/kashifsayyad09/procure-hub",nodes:["React frontend","FastAPI services","SI-Talker \u00b7 MCP","RDS MySQL","EKS \u00b7 GitOps"],pts:["AI-powered B2B procurement platform for SMEs: purchase requests, approvals, vendor RFQs, quotation comparison, purchase orders and three-way invoice matching.","Built as Python FastAPI microservices (auth, purchase requests, approvals, vendors, quotations) with a React/TypeScript frontend and MySQL on Amazon RDS.","SI-Talker AI assistant with MCP, Groq and Gemini fallback.","Submitted to Startup Buildathon India 2026 with Team Nexaroh \u2014 my role: Founder & CEO / Technical Lead."]},
 {t:"Terraform·IaC",tag:"Modular IaC · AWS",line:"Infrastructure that rebuilds itself.",h:"#2a1760",st:"Resume project",stack:["Terraform","AWS","IAM","VPC"],repo:SITE_CONFIG.repos.terraform,nodes:["terraform plan","VPC module","IAM roles","EC2 · S3","remote state"],pts:["Designed reusable, modular Terraform configurations to deploy AWS resources consistently.","Used modules for VPC networking and IAM roles with a least-privilege model.","Managed remote state to track deployed resources and keep changes consistent."]},
 {t:"EKS-Shop",tag:"Microservices · GitOps",line:"Git is the source of truth; the cluster follows.",h:"#5a2314",st:"Resume project",stack:["Flask","MySQL RDS","EKS","Helm","Ingress","Argo CD"],repo:SITE_CONFIG.repos.eks,nodes:["git push","Argo CD","EKS · Helm","Ingress","Flask → RDS"],pts:["Microservices ecommerce app: HTML/CSS/JS frontend, Python Flask backend, MySQL on Amazon RDS.","Each service packaged as a Helm chart with environment-specific values for versioned releases and rollbacks.","GitOps with Argo CD: continuous sync, drift detection and self-heal; rollback is a Git revert.","Ingress controller with path-based routing and central TLS termination."]},
 {t:"Agent-Hostel",tag:"Serverless · Bedrock",line:"A hostel desk that answers in real time.",h:"#0f3a4d",st:"Resume project",stack:["EC2","Lambda","API Gateway","DynamoDB","SQS","Bedrock"],repo:SITE_CONFIG.repos.agent,nodes:["EC2 frontend","API Gateway","Lambda","MCP · Bedrock","DynamoDB · SQS"],pts:["EC2-hosted frontend with a serverless Lambda backend behind API Gateway.","Real-time AI agent through an MCP server integrated with Claude on Amazon Bedrock.","DynamoDB and SQS hold conversation state and queue async tasks; APIs secured with auth and least-privilege IAM."]},
-{t:"Observe",tag:"Monitoring · Alerting",line:"If it breaks at 3 a.m., someone knows.",h:"#3d2a07",st:"Resume project",stack:["Prometheus","Grafana","PagerDuty","Kubernetes"],repo:SITE_CONFIG.repos.observability,nodes:["K8s metrics","Prometheus","Grafana","Alertmanager","PagerDuty"],pts:["Deployed Prometheus and Grafana on Kubernetes with dashboards for CPU, memory and latency.","Integrated PagerDuty with Prometheus alerting for on-call escalation."]}];
+{t:"Observe",tag:"Monitoring · Alerting",line:"If it breaks at 3 a.m., someone knows.",h:"#3d2a07",st:"Resume project",stack:["Prometheus","Grafana","PagerDuty","Kubernetes"],repo:SITE_CONFIG.repos.observability,nodes:["K8s metrics","Prometheus","Grafana","Alertmanager","PagerDuty"],pts:["Deployed Prometheus and Grafana on Kubernetes with dashboards for CPU, memory and latency.","Integrated PagerDuty with Prometheus alerting for on-call escalation."]},
+{t:"Incident\u00b7Pilot",tag:"React \u00b7 Vercel",line:"Built in React, shipped on Vercel.",h:"#123f2a",st:"Personal project",stack:["React","react-scripts","Vercel"],repo:"",nodes:["git push \u00b7 main","Vercel build","react-scripts","React app","production"],pts:["React-based web application built with Create React App tooling (react-scripts).","Deployed to production on Vercel from the main branch."]}];
 function svgH(n){const w=600,xs=n.map((_,i)=>60+i*(w-120)/(n.length-1)),ys=n.map((_,i)=>i%2?150:50);
 const d=xs.map((x,i)=>(i?'L':'M')+x+' '+ys[i]).join(' ').replace(/L/g,'L');const sm=xs.map((x,i)=>i?`S${(xs[i-1]+x)/2} ${ys[i-1]} ${x} ${ys[i]}`:`M${x} ${ys[i]}`).join(' ');
 return `<svg viewBox="-10 0 620 200" role="img" aria-label="Architecture flow: ${n.join(' to ')}"><path class="ln" id="p" d="${sm}"/><g class="nd">${xs.map((x,i)=>`<g><rect x="${x-56}" y="${ys[i]-22}" width="112" height="44"/><text x="${x}" y="${ys[i]+4}">${n[i]}</text></g>`).join('')}</g><circle r="5" fill="#fff"><animateMotion dur="5s" repeatCount="indefinite" path="${sm}"/></circle><circle r="5" fill="#ff8a6b"><animateMotion dur="5s" begin="2.5s" repeatCount="indefinite" path="${sm}"/></circle></svg>`}
@@ -1184,7 +1399,7 @@ var rs=document.getElementById("increset");if(rs)rs.addEventListener("click",res
 /* ---------- Recruiter assistant (rule-based, answers only from resume facts on this page) ---------- */
 var KB=[
 [["skill","stack","tech","tool"],"Core skills: AWS (EC2, EKS, ECS, ECR, S3, Lambda, Secrets Manager, WAF, KMS) · Terraform · Kubernetes, Helm & Argo CD GitOps · CI/CD · Prometheus, Grafana, Alertmanager, CloudWatch, Datadog, Dynatrace & PagerDuty."],
-[["project","build","portfolio"],"Projects: 1) Terraform IaC on AWS  2) Ecommerce-Shopping — microservices on AWS EKS with GitOps (Argo CD, Helm, Ingress)  3) AI Agent Hostel Management Platform — EC2, Lambda, API Gateway, DynamoDB, SQS, Bedrock + MCP  4) Monitoring & Alerting — Prometheus, Grafana, PagerDuty. Scroll to Projects for the live simulations."],
+[["project","build","portfolio"],"Projects: 1) WasteFlow AI — AI waste-collection prioritization on AWS (FastAPI, MCP, Groq, RDS MySQL)  2) ProcureHub — AI-powered procurement platform for SMEs (FastAPI microservices, React, RDS MySQL, SI-Talker AI)  3) Terraform IaC on AWS  4) Ecommerce-Shopping — microservices on AWS EKS with GitOps (Argo CD, Helm, Ingress)  5) AI Agent Hostel Management Platform — EC2, Lambda, API Gateway, DynamoDB, SQS, Bedrock + MCP  6) Monitoring & Alerting — Prometheus, Grafana, PagerDuty  7) Incident-Pilot-Agent — React app deployed on Vercel. Scroll to Projects for the live simulations."],
 [["experience","work","intern","job"],"Experience: Cloud Engineer Intern at Future Applications Technologies (hybrid, Nov 2025 – May 2026) — automated AWS provisioning with Terraform, built EC2 shutdown automation archiving code/logs to S3, a Lambda workflow exporting CloudWatch logs to S3, and worked on CI/CD pipelines for the Clariop product."],
 [["certif","course","qualification"],"Certifications include: AWS Well-Architected Proficient · OCI 2025 Certified Foundations Associate · Manage Kubernetes in Google Cloud Skill Badge · DevOps with Multi-Cloud (Naresh i Technologies) · LFS101 · Foundations of Prompt Engineering — 13 in total on his current resume."],
 [["education","study","college","mca","bca","degree"],"Education: MCA (2026–2028) at Aditya Engineering College, Dr. Babasaheb Ambedkar Marathwada University, Beed · BCA (2022–2025), Savitribai Phule Pune University — CGPA 8.3/10."],
@@ -1275,6 +1490,238 @@ if(vr)vr.addEventListener("click",function(){if(!("speechSynthesis" in window))r
 var u=new SpeechSynthesisUtterance(SUMMARY);u.rate=1;speechSynthesis.speak(u);});
 var vs=document.getElementById("voicestop");
 if(vs)vs.addEventListener("click",function(){if("speechSynthesis" in window)speechSynthesis.cancel();});
+})();
+</script>
+
+
+<script>
+/* ===== ADVANCED v4 JS: SLO budget + achievements + recruiter mode (self-contained) ===== */
+(function(){
+"use strict";
+/* ---------- SLO error budget ---------- */
+var inc=document.getElementById("sloinc"),dur=document.getElementById("slodur");
+function slo(){if(!inc||!dur)return;var i=+inc.value,d=+dur.value,used=i*d,left=43.2-used,pct=Math.max(0,Math.round(left/43.2*100));
+var a=document.getElementById("sloincout");if(a)a.textContent=i;
+var b=document.getElementById("slodurout");if(b)b.textContent=d+" min";
+var u=document.getElementById("sloused");if(u)u.textContent=used+"m";
+var l=document.getElementById("sloleft");if(l)l.textContent=(left<0?0:left.toFixed(1))+"m";
+var f=document.getElementById("slofill");if(f){f.style.width=pct+"%";f.className=pct<=0?"dead":(pct<35?"warn":"");}
+var m=document.getElementById("slomsg");if(m)m.textContent=left<0?"Budget exhausted — feature work pauses, reliability work takes over. This is the deal an SLO makes explicit.":
+pct<35?"Burning fast — at this rate the budget is gone before month-end. Burn-rate alerts would already be paging.":
+"Within budget — but one bad night would eat a big share of it. This is why the runbook above matters: shorter incidents protect the budget.";}
+if(inc)inc.addEventListener("input",slo);if(dur)dur.addEventListener("input",slo);slo();
+/* ---------- Achievements ---------- */
+var BADGES=[
+["explorer","🧭 Architecture Explorer","Open 3 pieces of the Ecommerce-Shopping architecture"],
+["responder","🚨 Incident Responder","Start an incident in the Incident Simulator"],
+["scale","⚡ Scale Master","Hit the traffic spike in the HPA simulator"],
+["curious","✦ Curious Mind","Open the Ask about Kashif assistant"],
+["speed","🏎 Measured It","Open the live Perf HUD"]];
+var got={};try{got=JSON.parse(localStorage.getItem("adv4badges")||"{}")}catch(e){got={};}
+var archSeen={};
+function toast(msg){var el=document.getElementById("advtoast");if(!el)return;el.textContent=msg;el.classList.add("on");setTimeout(function(){el.classList.remove("on")},2600);}
+function renderBadges(){var w=document.getElementById("badges");if(w){w.innerHTML="";BADGES.forEach(function(b){var d=document.createElement("div");d.className="badge"+(got[b[0]]?" on":"");var bb=document.createElement("b");bb.textContent=(got[b[0]]?"✓ ":"🔒 ")+b[1];var s=document.createElement("span");s.textContent=b[2];d.appendChild(bb);d.appendChild(s);w.appendChild(d);});}
+var c=document.getElementById("trocount");if(c)c.textContent=BADGES.filter(function(b){return got[b[0]];}).length+"/5";}
+function award(id){if(got[id])return;got[id]=1;try{localStorage.setItem("adv4badges",JSON.stringify(got))}catch(e){}
+var b=BADGES.filter(function(x){return x[0]===id})[0];if(b)toast("🏆 Badge unlocked: "+b[1]);renderBadges();}
+document.querySelectorAll(".archnode").forEach(function(n){n.addEventListener("click",function(){archSeen[n.dataset.a]=1;if(Object.keys(archSeen).length>=3)award("explorer");});});
+function hook(id,fn){var el=document.getElementById(id);if(el)el.addEventListener("click",fn);}
+hook("incstart",function(){award("responder")});
+hook("hpaspike",function(){award("scale")});
+hook("askopen",function(){award("curious")});
+hook("perfopen",function(){award("speed")});
+renderBadges();
+var td=document.getElementById("trodlg");
+hook("troopen",function(){renderBadges();if(td){if(typeof td.showModal==="function")td.showModal();else td.setAttribute("open","");}});
+hook("troclose",function(){if(td)td.close();});
+/* ---------- Recruiter mode ---------- */
+var rd=document.getElementById("recdlg");
+hook("recopen",function(){if(rd){if(typeof rd.showModal==="function")rd.showModal();else rd.setAttribute("open","");}});
+hook("recclose",function(){if(rd)rd.close();});
+var SUMMARY="Syed Kashif Ali — DevOps Engineer (Cloud Infrastructure & DevSecOps), Hyderabad, India.\nExperience: Cloud Engineer Intern, Future Applications Technologies (Nov 2025 - May 2026) — Terraform AWS automation, EC2/S3 automation, Lambda + CloudWatch workflows, CI/CD for Clariop.\nProjects: WasteFlow AI (AI waste prioritization, AWS) · ProcureHub (AI procurement SaaS, Team Nexaroh) · Terraform IaC (AWS) · Ecommerce-Shopping on EKS (Argo CD, Helm, Ingress) · AI Agent Hostel Platform (Lambda, Bedrock, MCP) · Monitoring & Alerting (Prometheus, Grafana, PagerDuty).\nCertifications: 13, incl. AWS Well-Architected Proficient and OCI 2025 Foundations.\nEducation: MCA 2026-2028 · BCA, CGPA 8.3/10.\nLinkedIn: https://www.linkedin.com/in/syed-kashif-ali-844137292/";
+hook("reccopy",function(){if(navigator.clipboard)navigator.clipboard.writeText(SUMMARY).then(function(){toast("📋 Summary copied")});});
+hook("recvcf",function(){var v=["BEGIN:VCARD","VERSION:3.0","FN:Syed Kashif Ali","TITLE:DevOps Engineer — Cloud Infrastructure & DevSecOps","EMAIL:kashifsayyad09@gmail.com","URL:https://www.linkedin.com/in/syed-kashif-ali-844137292/","URL:https://github.com/kashifsayyad09","ADR:;;Hyderabad;;;India","END:VCARD"].join("\n");
+var a=document.createElement("a");a.href=URL.createObjectURL(new Blob([v],{type:"text/vcard"}));a.download="Syed-Kashif-Ali.vcf";document.body.appendChild(a);a.click();a.remove();toast("⬇ Contact downloaded");});
+})();
+</script>
+
+
+<script>
+/* ===== ADVANCED v5 JS: log explorer + presentation mode + accessibility (self-contained) ===== */
+(function(){
+"use strict";
+/* ---------- Log explorer ---------- */
+var MSGS=[
+["frontend","INFO","GET /products 200 84ms"],["frontend","INFO","GET /static/app.js 200 12ms"],["frontend","WARN","slow asset: hero.webp took 940ms"],
+["flask-backend","INFO","checkout completed order_id=8412 201"],["flask-backend","INFO","GET /api/products 200 46ms"],["flask-backend","WARN","rds connection pool at 82% — watch this"],
+["flask-backend","ERROR","checkout failed: rds connection timeout after 3000ms"],["flask-backend","INFO","healthz ok db=up"],
+["ingress","INFO","POST /api/checkout 201 upstream=flask-backend"],["ingress","WARN","upstream latency p95 above 800ms"],
+["ingress","ERROR","502 upstream prematurely closed connection"],["kube-system","INFO","hpa scaled flask-backend 3 -> 5 replicas"],
+["kube-system","INFO","pod flask-backend-7d9f ready"],["kube-system","WARN","pod frontend-5c1 restart count 2 — check memory limits"]];
+var stream=document.getElementById("logstream"),paused=false,level="",total=0,errs=0,lines=[];
+function esc(s){return s.replace(/&/g,"&amp;").replace(/</g,"&lt;");}
+function matches(e){var svc=document.getElementById("logsvc"),q=document.getElementById("logq");
+var sv=svc?svc.value:"",query=(q?q.value:"").toLowerCase();
+if(sv&&e[0]!==sv)return false;if(level&&e[1]!==level)return false;
+if(query&&(e[0]+" "+e[1]+" "+e[2]).toLowerCase().indexOf(query)===-1)return false;return true;}
+function render(){if(!stream)return;stream.innerHTML="";var shown=0;
+lines.slice(-80).forEach(function(e){if(!matches(e))return;shown++;
+var d=document.createElement("div");var q=document.getElementById("logq");var query=q?q.value.trim():"";
+var txt=esc(e.time+"  "+e[0]+"  ["+e[1]+"]  "+e[2]);
+if(query){var i=txt.toLowerCase().indexOf(query.toLowerCase());if(i>-1)txt=txt.slice(0,i)+"<mark>"+txt.slice(i,i+query.length)+"</mark>"+txt.slice(i+query.length);}
+d.innerHTML=txt;var sp=d.querySelector("mark");d.className="lv-"+e[1];stream.appendChild(d);});
+var m=document.getElementById("logmatch");if(m)m.textContent=shown;
+stream.scrollTop=stream.scrollHeight;}
+function push(){if(paused)return;var e=MSGS[Math.floor(Math.random()*MSGS.length)];
+var now=new Date();var ts=now.toTimeString().slice(0,8);
+lines.push([e[0],e[1],e[2]]);lines[lines.length-1].time=ts;
+total++;if(e[1]==="ERROR")errs++;
+var tt=document.getElementById("logtotal");if(tt)tt.textContent=total;
+var te=document.getElementById("logerr");if(te)te.textContent=errs;render();}
+setInterval(push,900);for(var i0=0;i0<8;i0++)push();
+document.querySelectorAll("[data-lv]").forEach(function(b){b.addEventListener("click",function(){
+document.querySelectorAll("[data-lv]").forEach(function(x){x.setAttribute("aria-pressed","false")});
+b.setAttribute("aria-pressed","true");level=b.dataset.lv;render();});});
+var svcEl=document.getElementById("logsvc");if(svcEl)svcEl.addEventListener("change",render);
+var qEl=document.getElementById("logq");if(qEl)qEl.addEventListener("input",render);
+var pz=document.getElementById("logpause");if(pz)pz.addEventListener("click",function(){paused=!paused;pz.textContent=paused?"Resume":"Pause";});
+var cl=document.getElementById("logclear");if(cl)cl.addEventListener("click",function(){lines=[];render();});
+/* ---------- Presentation mode ---------- */
+var SLIDES=[
+["Syed Kashif Ali","DevOps Engineer — Cloud Infrastructure & DevSecOps\nHyderabad, India · MCA 2026–2028 · BCA CGPA 8.3/10"],
+["Core skills","AWS · Terraform · Kubernetes / EKS · Helm · Argo CD GitOps\nCI/CD · Prometheus · Grafana · Alertmanager · PagerDuty · Datadog · Dynatrace"],
+["Experience","Cloud Engineer Intern — Future Applications Technologies (Nov 2025 – May 2026)\nTerraform AWS automation · EC2 shutdown automation to S3 · Lambda workflow exporting CloudWatch logs to S3 · CI/CD pipelines for Clariop"],
+["Projects","WasteFlow AI \u2014 AI waste-collection prioritization on AWS: FastAPI, MCP server, Groq\nProcureHub \u2014 AI procurement platform: FastAPI microservices, React, SI-Talker AI\nTerraform IaC on AWS\nEcommerce-Shopping — microservices on EKS, GitOps with Argo CD + Helm, MySQL on RDS\nAI Agent Hostel Platform — Lambda, API Gateway, DynamoDB, SQS, Bedrock + MCP\nMonitoring & Alerting — Prometheus, Grafana, PagerDuty\nIncident-Pilot-Agent — React app deployed on Vercel"],
+["How I handle incidents","Acknowledge → lock the time window → read the first real error → fix the root cause → verify recovery.\nSLO thinking: a 99.9% budget is 43.2 minutes a month — shorter incidents protect it."],
+["Let's talk","13 certifications, including AWS Well-Architected Proficient and OCI 2025 Foundations.\nLinkedIn: /in/syed-kashif-ali-844137292 · GitHub: kashifsayyad09\nApplying for Cloud & DevOps fresher roles."]];
+var pres=document.getElementById("pres"),cur=0;
+function show(n){cur=Math.max(0,Math.min(SLIDES.length-1,n));
+var k=document.getElementById("presk"),h=document.getElementById("prest"),b=document.getElementById("presp");
+if(k)k.textContent="Slide "+(cur+1)+" / "+SLIDES.length;
+if(h)h.textContent=SLIDES[cur][0];if(b)b.textContent=SLIDES[cur][1];}
+function openPres(){if(!pres)return;pres.classList.add("on");show(0);}
+function closePres(){if(pres)pres.classList.remove("on");}
+var po=document.getElementById("presopen");if(po)po.addEventListener("click",openPres);
+var pn=document.getElementById("presnext");if(pn)pn.addEventListener("click",function(){show(cur+1)});
+var pp=document.getElementById("presprev");if(pp)pp.addEventListener("click",function(){show(cur-1)});
+document.addEventListener("keydown",function(e){if(!pres||!pres.classList.contains("on"))return;
+if(e.key==="Escape")closePres();if(e.key==="ArrowRight")show(cur+1);if(e.key==="ArrowLeft")show(cur-1);});
+/* ---------- Accessibility toolbar ---------- */
+var panel=document.getElementById("a11ypanel");
+function hook(id,fn){var el=document.getElementById(id);if(el)el.addEventListener("click",fn);}
+hook("a11yopen",function(){if(!panel)return;var hid=panel.hidden;panel.hidden=!hid;var b=document.getElementById("a11yopen");if(b)b.setAttribute("aria-expanded",String(hid));});
+var big=false;
+hook("a11ybig",function(e){big=!big;document.body.style.zoom=big?"1.15":"";e.currentTarget.setAttribute("aria-pressed",String(big));e.currentTarget.textContent=big?"Text size: reset":"Text size: larger";try{localStorage.setItem("adv5big",big?"1":"")}catch(x){}});
+hook("a11ymotion",function(e){var on=document.body.classList.toggle("adv5-rm");e.currentTarget.setAttribute("aria-pressed",String(on));try{localStorage.setItem("adv5rm",on?"1":"")}catch(x){}});
+hook("a11ycontrast",function(e){var on=document.body.classList.toggle("adv5-hc");e.currentTarget.setAttribute("aria-pressed",String(on));try{localStorage.setItem("adv5hc",on?"1":"")}catch(x){}});
+try{if(localStorage.getItem("adv5rm"))document.body.classList.add("adv5-rm");
+if(localStorage.getItem("adv5hc"))document.body.classList.add("adv5-hc");
+if(localStorage.getItem("adv5big")){big=true;document.body.style.zoom="1.15";}}catch(x){}
+})();
+</script>
+
+
+<div id="printone" aria-hidden="true">
+<h1>Syed Kashif Ali — DevOps Engineer</h1>
+<p>Cloud Infrastructure &amp; DevSecOps · Hyderabad, India · kashifsayyad09@gmail.com · linkedin.com/in/syed-kashif-ali-844137292 · github.com/kashifsayyad09</p>
+<h2>Experience</h2>
+<p><b>Cloud Engineer Intern — Future Applications Technologies</b> (Nov 2025 – May 2026, Hybrid)</p>
+<ul><li>Automated AWS infrastructure provisioning with Terraform; deployment and user-data scripts</li><li>EC2 shutdown automation archiving code/logs to S3; Lambda workflow exporting CloudWatch logs to S3</li><li>CI/CD pipelines for the Clariop product</li></ul>
+<h2>Projects</h2>
+<ul><li><b>WasteFlow AI:</b> AI-powered waste-collection prioritization (explainable 0–100 score) — React/TypeScript, FastAPI, MCP server, Groq AI, deployed on AWS (EC2, dual ALB, RDS MySQL)</li><li><b>ProcureHub:</b> AI-powered procurement platform for SMEs — FastAPI microservices, React/TypeScript, MySQL on RDS, SI-Talker AI (MCP, Groq, Gemini); Team Nexaroh, Startup Buildathon India 2026 (Founder &amp; CEO / Technical Lead)</li><li><b>Terraform IaC — AWS:</b> reusable infrastructure as code</li><li><b>Ecommerce-Shopping:</b> microservices on AWS EKS, GitOps via Argo CD, Helm, Ingress; Flask backend, MySQL on RDS</li><li><b>AI Agent Hostel Management Platform:</b> EC2, Lambda, API Gateway, DynamoDB, SQS, Bedrock + MCP</li><li><b>Monitoring &amp; Alerting:</b> Prometheus, Grafana, PagerDuty</li><li><b>Incident-Pilot-Agent:</b> React web application (react-scripts), deployed to production on Vercel</li></ul>
+<h2>Skills</h2>
+<p>AWS (EKS, ECS, ECR, EC2, S3, Lambda, Secrets Manager, WAF, KMS) · Terraform · Kubernetes · Helm · Argo CD · CI/CD · Prometheus · Grafana · Alertmanager · CloudWatch · Datadog · Dynatrace · PagerDuty</p>
+<h2>Certifications (13)</h2>
+<p>Including AWS Well-Architected Proficient · OCI 2025 Certified Foundations Associate · Manage Kubernetes in Google Cloud Skill Badge · DevOps with Multi-Cloud (Naresh i Technologies) · Foundations of Prompt Engineering</p>
+<h2>Education</h2>
+<p>MCA (2026–2028), Aditya Engineering College, Dr. Babasaheb Ambedkar Marathwada University, Beed · BCA (2022–2025), Savitribai Phule Pune University, CGPA 8.3/10</p>
+</div>
+<button class="printb" id="printopen">🖨 One-pager</button>
+
+
+<script>
+/* ===== ADVANCED v6 JS: pipeline builder + quiz + print one-pager (self-contained) ===== */
+(function(){
+"use strict";
+function hook(id,fn){var el=document.getElementById(id);if(el)el.addEventListener("click",fn);}
+/* ---------- Pipeline builder ---------- */
+var STAGES=[
+["checkout","Checkout code",1,"actions/checkout@v4"],
+["test","Run tests",2,"npm test  # or: pytest"],
+["sonar","SonarQube scan",3,"sonarqube-scan-action"],
+["snyk","Snyk scan",3,"snyk/actions"],
+["checkov","Checkov IaC scan",3,"checkov -d ."],
+["build","Build Docker image",4,"docker build -t app:${{ github.sha }} ."],
+["trivy","Trivy image scan",5,"trivy image app:${{ github.sha }}"],
+["push","Push to ECR",6,"docker push $ECR/app:${{ github.sha }}"],
+["deploy","Deploy to EKS (Helm)",7,"helm upgrade --install app ./chart"],
+["smoke","Smoke test",8,"curl -f https://app/healthz"]];
+var chosen=[];
+var pal=document.getElementById("pbpal");
+STAGES.forEach(function(s){if(!pal)return;var b=document.createElement("button");b.className="pbstage";b.textContent="+ "+s[1];b.dataset.id=s[0];
+b.addEventListener("click",function(){chosen.push(s[0]);renderPB();});pal.appendChild(b);});
+function stage(id){return STAGES.filter(function(s){return s[0]===id})[0];}
+function yaml(){var out=["name: ci-cd","on: [push]","jobs:","  build-deploy:","    runs-on: ubuntu-latest","    steps:"];
+if(!chosen.length)out.push("      # add stages from the palette →");
+chosen.forEach(function(id){var s=stage(id);out.push("      - name: "+s[1]);out.push("        run: "+s[3]);});
+return out.join("\n");}
+function validate(){var msgs=[],has=function(id){return chosen.indexOf(id)>-1};
+if(has("deploy")&&!has("test"))msgs.push("⚠ Deploying without a test stage — failures would ship.");
+if(has("deploy")&&!has("trivy")&&!has("snyk"))msgs.push("⚠ No image/dependency scan before deploy — the security gate is open.");
+if(has("push")&&!has("build"))msgs.push("⚠ Push comes before Build in your order — there would be no image to push.");
+if(has("deploy")&&has("push")&&chosen.indexOf("deploy")<chosen.indexOf("push"))msgs.push("⚠ Deploy is ordered before Push — the cluster would pull an old image.");
+return msgs;}
+function renderPB(){var w=document.getElementById("pbchosen");if(!w)return;w.innerHTML="";
+if(!chosen.length){var e=document.createElement("p");e.style.color="var(--mu)";e.textContent="No stages yet — add some from the palette.";w.appendChild(e);}
+chosen.forEach(function(id,i){var s=stage(id);var d=document.createElement("div");d.className="pbitem";
+var n=document.createElement("span");n.textContent=(i+1)+".";var b=document.createElement("b");b.textContent=s[1];
+var up=document.createElement("button");up.textContent="↑";up.setAttribute("aria-label","Move up");
+up.addEventListener("click",function(){if(i>0){chosen.splice(i,1);chosen.splice(i-1,0,id);renderPB();}});
+var dn=document.createElement("button");dn.textContent="↓";dn.setAttribute("aria-label","Move down");
+dn.addEventListener("click",function(){if(i<chosen.length-1){chosen.splice(i,1);chosen.splice(i+1,0,id);renderPB();}});
+var x=document.createElement("button");x.textContent="×";x.setAttribute("aria-label","Remove stage");
+x.addEventListener("click",function(){chosen.splice(i,1);renderPB();});
+d.appendChild(n);d.appendChild(b);d.appendChild(up);d.appendChild(dn);d.appendChild(x);w.appendChild(d);});
+document.querySelectorAll(".pbstage").forEach(function(b){b.disabled=chosen.indexOf(b.dataset.id)>-1;});
+var y=document.getElementById("pbyaml");if(y)y.textContent=yaml();
+var m=document.getElementById("pbmsg");if(m){var v=validate();
+if(v.length){m.className="pbwarn";m.textContent=v[0];}
+else{m.className="pbok";m.textContent=chosen.length?"✓ Order looks sound — gates before deploy, build before push.":"";}}}
+hook("pbclear",function(){chosen=[];renderPB();});
+hook("pbsort",function(){chosen.sort(function(a,b){return stage(a)[2]-stage(b)[2];});renderPB();});
+hook("pbcopy",function(){if(navigator.clipboard)navigator.clipboard.writeText(yaml());});
+["checkout","test","sonar","build","trivy","push","deploy"].forEach(function(id){chosen.push(id);});
+renderPB();
+/* ---------- Quiz ---------- */
+var QUIZ=[
+["A pod keeps restarting with status OOMKilled. What happened?",["Its image failed to pull","The container exceeded its memory limit","The node ran out of disk","DNS resolution failed"],1],
+["What does `terraform plan` do?",["Applies the changes immediately","Deletes unused resources","Shows the changes Terraform would make, without applying them","Formats the configuration files"],2],
+["In GitOps with Argo CD, what is the source of truth for the cluster's desired state?",["The cluster's live state","A spreadsheet of deployments","The Git repository","The CI server's cache"],2],
+["What does a Kubernetes Horizontal Pod Autoscaler scale, and based on what?",["Nodes, based on cost","Pods, based on metrics like CPU/memory","Services, based on DNS traffic","Volumes, based on disk usage"],1],
+["An alert spikes. Which log line matters most?",["The last error in the stream","The first error at the spike's timestamp","The longest stack trace","Every WARN line"],1],
+["How does Helm usually give one chart different settings per environment?",["Separate chart copies per environment","Editing the chart before each deploy","Per-environment values files","Environment variables on the laptop"],2]];
+var score=0,answered=0;
+function buildQuiz(){score=0;answered=0;var grid=document.getElementById("qzgrid");if(!grid)return;grid.innerHTML="";
+QUIZ.forEach(function(q,qi){var card=document.createElement("div");card.className="qzq";
+var h=document.createElement("h3");h.textContent=(qi+1)+". "+q[0];card.appendChild(h);
+var opts=document.createElement("div");opts.className="qzopts";
+q[1].forEach(function(opt,oi){var b=document.createElement("button");b.textContent=opt;
+b.addEventListener("click",function(){if(b.disabled)return;
+opts.querySelectorAll("button").forEach(function(x){x.disabled=true;});
+if(oi===q[2]){b.classList.add("right");score++;}
+else{b.classList.add("wrong");opts.querySelectorAll("button")[q[2]].classList.add("right");}
+answered++;updScore();});
+opts.appendChild(b);});
+card.appendChild(opts);grid.appendChild(card);});updScore();}
+function updScore(){var s=document.getElementById("qzscore");if(s)s.textContent="Score: "+score+" / "+QUIZ.length;
+var m=document.getElementById("qzmsg");if(m&&answered===QUIZ.length){
+m.textContent=score===6?"Perfect score — that's exactly the thinking this page is built on. 🏆":
+score>=4?"Strong — "+score+"/6. The method sections above cover the ones that slipped.":
+score+"/6 — worth a walk through the simulations above, then retry.";}}
+buildQuiz();
+hook("qzretry",buildQuiz);
+/* ---------- Print one-pager ---------- */
+hook("printopen",function(){window.print();});
 })();
 </script>
 
