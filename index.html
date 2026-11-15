@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Syed Kashif Ali — DevOps &amp; Cloud Engineer</title>
-<meta name="portfolio-version" content="advanced-v16">
+<meta name="portfolio-version" content="advanced-v19">
 <meta name="description" content="Portfolio of Syed Kashif Ali: AWS, Terraform, Kubernetes, CI/CD and observability.">
 <script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="theme-color" content="#0b0a10">
@@ -209,29 +209,12 @@ html{scroll-padding-top:88px}
 #menu a{display:flex;align-items:baseline;gap:18px;width:100%;max-width:560px;font-size:min(6.4vh,clamp(28px,3.6vw,52px));line-height:1.1;padding:.2em 0;min-height:44px;border-bottom:1px solid rgba(244,240,232,.1)}
 #menu a small{flex:0 0 30px;font-size:12px;letter-spacing:.12em}
 #menu a:hover{transform:translateX(10px)}
-/* cursor themes + mouse doll */
-body.ck,body.ck *{cursor:none!important}body.ck dialog.rd,body.ck dialog.rd *,body.ck dialog.rd::backdrop{cursor:auto!important}
-#ck{position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:0;transition:opacity .2s}#ck>*{display:none;position:absolute;left:0;top:0;will-change:transform}
-#ck[data-t=orb] .od,#ck[data-t=orb] .or,#ck[data-t=arrow] .ar,#ck[data-t=arrow] .al,#ck[data-t=term] .tm,#ck[data-t=doll] .dl{display:block}
-#ckcv{position:fixed;inset:0;width:100%;height:100%;z-index:9998;pointer-events:none;display:none;transition:opacity .2s}
-.od{width:8px;height:8px;margin:-4px 0 0 -4px;border-radius:50%;background:#b29dff;box-shadow:0 0 14px 2px #b29dff}
-.or{width:36px;height:36px;margin:-18px 0 0 -18px;border-radius:50%;border:1.5px solid rgba(178,157,255,.8);transition:width .25s,height .25s,margin .25s,background .25s}.or.hov{width:58px;height:58px;margin:-29px 0 0 -29px;background:rgba(178,157,255,.2)}
-.ar{width:28px;height:28px;margin:-2px 0 0 -2px;filter:drop-shadow(0 0 8px var(--a1,rgba(178,157,255,.8)));transition:transform .2s}.al{margin:18px 0 0 20px;padding:2px 7px;border-radius:7px;font:800 10px/1.3 var(--sans);letter-spacing:.08em;background:var(--a1,#ff8a6b);color:var(--as,#fff);box-shadow:0 4px 12px -2px rgba(0,0,0,.5)}.al:empty{display:none!important}.ar.hov{transform:scale(1.25) rotate(-8deg)}
-.tm{font:800 20px/1 ui-monospace,Menlo,Consolas,monospace;color:#ff8a6b;margin:-4px 0 0 -2px;text-shadow:0 0 10px rgba(255,138,107,.6);white-space:nowrap}.tm b{display:inline-block;animation:bl 1s steps(2) infinite}.tm.hov{color:#2fb37a}@keyframes bl{50%{opacity:0}}
-.dl{width:56px;height:56px}.dl svg{width:100%;height:100%;overflow:visible;transition:transform .1s}
-.dl .ears,.dl .eyes{transform-box:fill-box;transform-origin:center}.dl .eyes{animation:blk 4.2s infinite}@keyframes blk{0%,94%,100%{transform:scaleY(1)}97%{transform:scaleY(.1)}}
-.dl.hov .ears{animation:ew .25s infinite alternate}@keyframes ew{to{transform:scale(1.12) rotate(4deg)}}
-.dl.sl .eyes{animation:none;transform:scaleY(.12)}.zz,.say{position:absolute;opacity:0;white-space:nowrap}.zz{left:46px;top:-16px;font:italic 400 20px var(--ser);color:var(--pu)}.dl.sl .zz{opacity:1;animation:zz 2s ease-in-out infinite}@keyframes zz{50%{transform:translateY(-7px)}}
-.say{left:48px;top:-10px;font:800 13px var(--sans);background:var(--tx);color:var(--bg);border-radius:10px;padding:3px 10px;transform:scale(.6);transition:.18s}.dl.sy .say{opacity:1;transform:none}.dl.sy svg{transform:scale(.88)}
-.ckw{position:fixed;left:16px;bottom:16px;z-index:70}#ckb{min-height:44px;padding:0 18px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(178,157,255,.55);color:var(--tx);font-weight:600;font-size:14px;backdrop-filter:blur(8px)}#ckb b{color:var(--pu);font-weight:600}
-#ckp{position:absolute;bottom:56px;left:0;min-width:220px;background:var(--s2);border:1px solid rgba(244,240,232,.2);border-radius:18px;padding:8px;display:grid;gap:2px;box-shadow:0 20px 50px -10px rgba(0,0,0,.7)}#ckp[hidden]{display:none}
-#ckp button{min-height:44px;padding:0 14px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:14px;color:var(--tx);text-align:left}#ckp button:hover{background:var(--s3)}#ckp [aria-checked=true]{background:var(--s3);color:var(--pu)}#ckp [aria-checked=true]:after{content:"✓"}
 /* advanced: palette, progress, flow, skip link */
 .skip{position:fixed;left:12px;top:-70px;z-index:200;background:var(--tx);color:var(--bg);padding:12px 18px;border-radius:10px;font-weight:700;transition:top .2s}.skip:focus{top:12px}
 #pg{position:fixed;left:0;top:0;height:3px;width:100%;z-index:80;background:linear-gradient(90deg,var(--pu),var(--co));transform:scaleX(0);transform-origin:left;pointer-events:none}
 .kb{font:600 13px ui-monospace,Menlo,Consolas,monospace;border:1px solid rgba(244,240,232,.3);border-radius:10px;padding:0 12px}
 #toast{position:fixed;left:50%;bottom:28px;transform:translate(-50%,20px);background:var(--tx);color:var(--bg);padding:12px 20px;border-radius:12px;font-weight:600;opacity:0;transition:.3s;z-index:200;pointer-events:none}#toast.on{opacity:1;transform:translate(-50%,0)}
-dialog.cmd{width:min(640px,92vw);margin:12vh auto auto;padding:0;border-radius:20px;background:var(--s2);border:1px solid rgba(178,157,255,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.cmd::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}body.ck dialog.cmd,body.ck dialog.cmd *,body.ck dialog.cmd::backdrop{cursor:auto!important}
+dialog.cmd{width:min(640px,92vw);margin:12vh auto auto;padding:0;border-radius:20px;background:var(--s2);border:1px solid rgba(178,157,255,.45);color:var(--tx);overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.cmd::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
 .cmi{display:flex;align-items:center;gap:12px;padding:6px 18px;border-bottom:1px solid rgba(244,240,232,.14)}.cmi input{flex:1;min-height:56px;background:none;border:0;color:var(--tx);font:500 18px var(--sans);outline:0}.cmi kbd{font:12px ui-monospace,monospace;border:1px solid rgba(244,240,232,.3);border-radius:6px;padding:2px 8px;color:var(--mu)}
 #cml{list-style:none;max-height:min(52vh,440px);overflow:auto;padding:8px}#cml li{min-height:46px;padding:0 14px;border-radius:12px;display:flex;justify-content:space-between;align-items:center;gap:12px;cursor:pointer}#cml li span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--mu)}#cml li[aria-selected=true]{background:var(--s3);color:var(--pu)}#cml .no{color:var(--mu);cursor:default}
 .pl.pl5{grid-template-columns:repeat(5,1fr)}@media(max-width:1100px){.pl.pl5{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.pl.pl5{grid-template-columns:1fr 1fr}}
@@ -243,7 +226,7 @@ dialog.cmd{width:min(640px,92vw);margin:12vh auto auto;padding:0;border-radius:2
 .ms{--c:#9be7c4;display:inline-block;padding:4px 14px;border-radius:99px;font-weight:800;font-size:13px;letter-spacing:.08em;border:1.5px solid var(--c);color:var(--c)}.ms[data-st=pending]{--c:#ffb35c}.ms[data-st=firing]{--c:#ff5d6c;animation:pls 1s infinite}
 #mlog{min-height:210px;max-height:260px;overflow:auto}
 .shb{position:fixed;right:16px;bottom:16px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(155,231,196,.55);color:#9be7c4;font:700 14px ui-monospace,Menlo,Consolas,monospace;backdrop-filter:blur(8px)}
-dialog.sh{width:min(780px,94vw);height:min(72vh,580px);margin:auto;padding:0;border-radius:18px;background:#07060b;border:1px solid rgba(178,157,255,.45);color:#d9d3e6;overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.sh[open]{display:flex;flex-direction:column}dialog.sh::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}body.ck dialog.sh,body.ck dialog.sh *,body.ck dialog.sh::backdrop{cursor:auto!important}
+dialog.sh{width:min(780px,94vw);height:min(72vh,580px);margin:auto;padding:0;border-radius:18px;background:#07060b;border:1px solid rgba(178,157,255,.45);color:#d9d3e6;overflow:hidden;box-shadow:0 40px 100px -20px rgba(106,76,224,.6)}dialog.sh[open]{display:flex;flex-direction:column}dialog.sh::backdrop{background:rgba(5,4,10,.72);backdrop-filter:blur(6px)}
 .shh{display:flex;align-items:center;gap:8px;padding:10px 14px;border-bottom:1px solid rgba(244,240,232,.12);font:13px ui-monospace,Menlo,Consolas,monospace;color:var(--mu)}.shh i{width:12px;height:12px;border-radius:50%;background:#ff5d6c}.shh i+i{background:#ffb35c}.shh i+i+i{background:#9be7c4}.shh span{margin:0 auto}.shh button{min-width:44px;min-height:44px;font-size:20px;color:var(--mu)}
 #sho{flex:1;overflow:auto;padding:16px;font:13px/1.65 ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;white-space:pre-wrap;overflow-wrap:anywhere}#sho .pr{color:#9be7c4}#sho .er{color:#ff5d6c}#sho .mu{color:#7d768c}#sho .hl{color:#b29dff}
 .shi{display:flex;gap:10px;align-items:center;padding:6px 16px 14px;font:13px ui-monospace,Menlo,Consolas,monospace}.shi span{color:#9be7c4;white-space:nowrap}.shi input{flex:1;min-height:44px;background:none;border:0;outline:0;color:#f4f0e8;font:inherit;min-width:0}
@@ -296,7 +279,7 @@ html[data-theme=light] body *{font-style:normal!important}
 :where(html[data-theme=light]) .tfc .rs li[data-st=plan]{color:#c98a00}:where(html[data-theme=light]) .tfc .rs li[data-st=done]{color:#1f9d6b}:where(html[data-theme=light]) .tfs[data-st=lock] b{color:#c98a00}:where(html[data-theme=light]) .tfs[data-st=saved] b{color:#1f9d6b}:where(html[data-theme=light]) .tfc .rs,:where(html[data-theme=light]) .tfs{border-top-color:rgba(18,18,18,.12)}
 :where(html[data-theme=light]) .gbars i.z{background:rgba(18,18,18,.12)}:where(html[data-theme=light]) .gev li{border-bottom-color:rgba(18,18,18,.1)}
 :where(html[data-theme=light]) :is(.kb,.cmi kbd,.ks kbd,.x2,.rdh .x){border-color:rgba(18,18,18,.25)}:where(html[data-theme=light]) .ks kbd{color:#121212}:where(html[data-theme=light]) :is(.rdh,.cmi){border-bottom-color:rgba(18,18,18,.1)}
-:where(html[data-theme=light]) #ckb{background:rgba(255,255,255,.92);color:#121212}
+
 :where(html[data-theme=light]) .gtc circle{fill:#fff}:where(html[data-theme=light]) .gtp rect{fill:rgba(108,95,255,.1);stroke:#6c5fff}
 :where(html[data-theme=light]) .jt{text-shadow:none}
 :where(html[data-theme=light]) .paper .eb{color:#666}:where(html[data-theme=light]) .cf input,:where(html[data-theme=light]) .cf textarea{background:#ebebf4}:where(html[data-theme=light]) .edu div{background:#ebebf4}
@@ -477,8 +460,8 @@ body:not(.toolsopen) .askb,body:not(.toolsopen) .perfb,body:not(.toolsopen) .rec
 html[data-theme=light] .toolstab{background:rgba(255,255,255,.95)}
 
 /* ===== ADVANCED v12: canary simulator + GitHub activity + cost estimator ===== */
-.can,.gh,.cost{padding:var(--sec) 0}
-.can h2,.gh h2,.cost h2{margin:14px 0 clamp(28px,4vw,48px)}
+.can,.gh{padding:var(--sec) 0}
+.can h2,.gh h2{margin:14px 0 clamp(28px,4vw,48px)}
 .cangrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
 @media(max-width:820px){.cangrid{grid-template-columns:1fr}}
 .cancard{border:1px solid rgba(244,240,232,.14);border-radius:22px;padding:22px;background:var(--s2)}
@@ -498,32 +481,16 @@ html[data-theme=light] .toolstab{background:rgba(255,255,255,.95)}
 .ghcard h3{font-size:17px;margin-bottom:6px}
 .ghcard p{opacity:.75;font-size:13.5px;line-height:1.55;min-height:40px}
 .ghmeta{display:flex;gap:14px;font:12px ui-monospace,Menlo,monospace;opacity:.7;margin-top:10px;flex-wrap:wrap}
-.costgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
-@media(max-width:820px){.costgrid{grid-template-columns:1fr}}
-.costctl{display:grid;gap:16px}
-.costctl label{font-weight:700;font-size:14px;display:grid;gap:7px}
-.costctl select{padding:11px 13px;border-radius:12px;background:var(--s2);color:var(--tx);border:1px solid rgba(244,240,232,.25);min-height:44px;font-size:14px}
-.costrow{display:flex;justify-content:space-between;padding:11px 2px;border-bottom:1px dashed rgba(244,240,232,.18);font-size:15px}
-.costrow b{font-variant-numeric:tabular-nums}
-.costtotal{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px}
-.costtotal b{font:italic 400 clamp(34px,4.5vw,52px) var(--ser);color:var(--pu)}
-html[data-theme=light] .cancard,html[data-theme=light] .ghcard{background:#fff}
 
-/* ===== ADVANCED v13: detailed AWS cost estimator ===== */
-.cegroup{border:1px solid rgba(244,240,232,.12);border-radius:16px;padding:16px 18px;display:grid;gap:13px}
-.cegroup h3{font-size:13px;text-transform:uppercase;letter-spacing:.1em;opacity:.65;margin:0}
-.cegroup label{font-weight:700;font-size:14px;display:grid;gap:7px}
-.cegroup select{padding:11px 13px;border-radius:12px;background:var(--s2);color:var(--tx);border:1px solid rgba(244,240,232,.25);min-height:44px;font-size:14px}
-.cecheck{display:flex!important;align-items:center;gap:10px;font-weight:700;font-size:14px}
-.cecheck input{width:20px;height:20px;accent-color:var(--pu)}
-.cerow{padding:9px 2px 11px;border-bottom:1px dashed rgba(244,240,232,.16)}
-.cerow .cerowtop{display:flex;justify-content:space-between;font-size:14.5px}
-.cerow .cerowtop b{font-variant-numeric:tabular-nums}
-.cebar{height:6px;border-radius:99px;background:rgba(244,240,232,.1);margin-top:7px;overflow:hidden}
-.cebar i{display:block;height:100%;background:var(--pu);border-radius:99px;transition:width .25s}
-.cesum{position:sticky;top:18px}
-.cesave{color:#9be7c4;font-weight:700}
-html[data-theme=light] .cegroup{background:#fff}
+
+
+
+
+
+
+
+
+html[data-theme=light] .cancard,html[data-theme=light] .ghcard{background:#fff}
 
 /* ===== ADVANCED v14: UI polish — progress, reveal, hover, scrollbar ===== */
 ::selection{background:var(--pu);color:#14101f}
@@ -600,6 +567,31 @@ h2 .it{background:linear-gradient(92deg,var(--pu) 10%,#9be7c4 90%);-webkit-backg
 .ldmeta{display:flex;gap:16px;font:12.5px ui-monospace,Menlo,monospace;color:rgba(244,240,232,.72)}
 .ldpct{color:#b29dff;font-weight:700}
 @media print{#boot{display:none!important}}
+
+/* ===== ADVANCED v18: marquee, card glow, glass dialogs, accent picker ===== */
+.mq{overflow:hidden;border-top:1px solid rgba(244,240,232,.12);border-bottom:1px solid rgba(244,240,232,.12);padding:15px 0;white-space:nowrap;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.mqtrack{display:inline-flex;gap:0;animation:mqmove 30s linear infinite;will-change:transform}
+.mq:hover .mqtrack{animation-play-state:paused}
+.mqtrack span{font:700 13.5px ui-monospace,Menlo,monospace;letter-spacing:.16em;text-transform:uppercase;opacity:.66;padding:0 20px}
+.mqtrack b{color:var(--pu);opacity:.9}
+@keyframes mqmove{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.cancard,.ghcard{position:relative}
+.cancard::after,.ghcard::after{content:"";position:absolute;inset:0;border-radius:inherit;background:radial-gradient(340px circle at var(--mx,50%) var(--my,50%),rgba(178,157,255,.14),transparent 65%);opacity:0;transition:opacity .3s;pointer-events:none}
+.cancard:hover::after,.ghcard:hover::after{opacity:1}
+dialog::backdrop{background:rgba(5,4,12,.55);backdrop-filter:blur(7px)}
+dialog[open]{animation:dlgin .32s cubic-bezier(.2,.8,.3,1)}
+@keyframes dlgin{from{opacity:0;transform:translateY(16px) scale(.985)}to{opacity:1;transform:none}}
+.accbar{position:fixed;left:50%;transform:translateX(-50%);bottom:14px;z-index:72;display:flex;align-items:center;gap:9px;padding:9px 14px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(244,240,232,.22);backdrop-filter:blur(9px);box-shadow:0 12px 30px rgba(0,0,0,.32)}
+.accbar span{font:700 11px ui-monospace,Menlo,monospace;letter-spacing:.14em;text-transform:uppercase;opacity:.65}
+.accdot{width:21px;height:21px;border-radius:50%;border:2px solid transparent;cursor:pointer;padding:0;transition:transform .18s,border-color .18s}
+.accdot:hover{transform:scale(1.18)}
+.accdot.on{border-color:#f4f0e8;transform:scale(1.12)}
+html[data-theme=light] .accbar{background:rgba(255,255,255,.94)}
+html[data-theme=light] .accdot.on{border-color:#14101f}
+p a,li a{background-image:linear-gradient(currentColor,currentColor);background-size:0% 1.5px;background-repeat:no-repeat;background-position:0 100%;transition:background-size .3s}
+p a:hover,li a:hover{background-size:100% 1.5px}
+@media (prefers-reduced-motion: reduce){.mqtrack{animation:none}dialog[open]{animation:none}}
+@media print{.mq,.accbar{display:none!important}}
 </style>
 </head>
 <body>
@@ -664,6 +656,8 @@ h2 .it{background:linear-gradient(92deg,var(--pu) 10%,#9be7c4 90%);-webkit-backg
   </div>
 </section>
 
+
+<div class="mq" aria-hidden="true"><div class="mqtrack"><span>Terraform <b>✦</b> AWS <b>✦</b> Kubernetes <b>✦</b> Amazon EKS <b>✦</b> Docker <b>✦</b> Argo CD <b>✦</b> CI/CD <b>✦</b> Prometheus <b>✦</b> Grafana <b>✦</b> DevSecOps <b>✦</b> GitOps <b>✦</b> MCP <b>✦</b> </span><span>Terraform <b>✦</b> AWS <b>✦</b> Kubernetes <b>✦</b> Amazon EKS <b>✦</b> Docker <b>✦</b> Argo CD <b>✦</b> CI/CD <b>✦</b> Prometheus <b>✦</b> Grafana <b>✦</b> DevSecOps <b>✦</b> GitOps <b>✦</b> MCP <b>✦</b> </span></div></div>
 <section class="cases" aria-label="Project case studies" id="cases"></section>
 <noscript><section class="wrap" style="padding:40px var(--pad)"><h2 class="it">Projects</h2><ul style="margin-left:20px;display:grid;gap:12px"><li><b>WasteFlow AI</b>: AI-powered waste-collection prioritization and route optimization — explainable 0–100 priority score, React/TypeScript, FastAPI, MCP server, Groq AI, deployed on AWS (EC2, dual ALB, RDS MySQL).</li><li><b>ProcureHub</b>: AI-powered procurement platform for SMEs — FastAPI microservices, React/TypeScript, RDS MySQL, SI-Talker AI (MCP, Groq, Gemini). Team Nexaroh, Buildathon 2026.</li><li><b>Infrastructure as Code with Terraform (AWS)</b>: modular Terraform for VPC networking and least-privilege IAM, with remote state.</li><li><b>Ecommerce microservices on EKS</b>: Flask + MySQL RDS, Helm charts, GitOps with Argo CD, Ingress with TLS.</li><li><b>AI Agent Hostel Management Platform</b>: EC2 frontend, Lambda + API Gateway, MCP server with Claude on Amazon Bedrock, DynamoDB and SQS.</li><li><b>Monitoring &amp; alerting</b>: Prometheus and Grafana on Kubernetes with PagerDuty escalation.</li><li><b>Incident-Pilot-Agent</b>: React web application (react-scripts), deployed to production on Vercel.</li></ul><p style="margin-top:16px">Enable JavaScript to see the interactive demos.</p></section></noscript>
 
@@ -924,77 +918,7 @@ h2 .it{background:linear-gradient(92deg,var(--pu) 10%,#9be7c4 90%);-webkit-backg
 <p class="k8note">Pulled live from the GitHub API in your browser. <a href="https://github.com/kashifsayyad09" target="_blank" rel="noopener">View the full profile ↗</a></p>
 </section>
 
-<section class="cost wrap" id="cost" aria-label="Detailed AWS cost estimator">
-<p class="eb">Interactive tool · FinOps basics</p>
-<h2>What would it cost <span class="it">per month?</span> — in detail</h2>
-<div class="costgrid">
-<div class="costctl">
-<div class="cegroup"><h3>Region &amp; commitment</h3>
-<label>Region
-<select id="ce_region">
-<option value="1" selected>US East (N. Virginia) · us-east-1 · ×1.00</option>
-<option value="0.92">Asia Pacific (Mumbai) · ap-south-1 · ×0.92</option>
-<option value="1.06">Europe (Ireland) · eu-west-1 · ×1.06</option>
-</select></label>
-<label>Commitment discount (applies to EC2, RDS, EKS)
-<select id="ce_disc">
-<option value="0" selected>On-Demand — no discount</option>
-<option value="0.28">Savings Plan 1-year — ~28% off compute</option>
-<option value="0.45">Savings Plan 3-year — ~45% off compute</option>
-</select></label>
-</div>
-<div class="cegroup"><h3>Compute · EC2</h3>
-<label>Instances: <span id="ce_v_ec2n">3</span> <input type="range" id="ce_ec2n" min="0" max="30" step="1" value="3"></label>
-<label>Instance size (Linux, on-demand)
-<select id="ce_ec2size">
-<option value="0.0052">t3.nano — $0.0052/hr</option>
-<option value="0.0104">t3.micro — $0.0104/hr</option>
-<option value="0.0208">t3.small — $0.0208/hr</option>
-<option value="0.0416" selected>t3.medium — $0.0416/hr</option>
-<option value="0.0832">t3.large — $0.0832/hr</option>
-<option value="0.096">m5.large — $0.096/hr</option>
-<option value="0.192">m5.xlarge — $0.192/hr</option>
-<option value="0.085">c5.large — $0.085/hr</option>
-</select></label>
-<label>Usage hours / month: <span id="ce_v_hours">730</span> <input type="range" id="ce_hours" min="100" max="730" step="10" value="730"></label>
-<label>EBS storage (gp3, all instances): <span id="ce_v_ebs">100</span> GB <input type="range" id="ce_ebs" min="0" max="2000" step="10" value="100"></label>
-</div>
-<div class="cegroup"><h3>Database · RDS MySQL</h3>
-<label>Instance
-<select id="ce_rds">
-<option value="0">None</option>
-<option value="0.018">db.t3.micro — $0.018/hr</option>
-<option value="0.036" selected>db.t3.small — $0.036/hr</option>
-<option value="0.072">db.t3.medium — $0.072/hr</option>
-<option value="0.171">db.m5.large — $0.171/hr</option>
-<option value="0.342">db.m5.xlarge — $0.342/hr</option>
-</select></label>
-<label class="cecheck"><input type="checkbox" id="ce_rdsmaz"> Multi-AZ deployment (×2 instance + storage)</label>
-<label>RDS storage: <span id="ce_v_rdsstore">50</span> GB <input type="range" id="ce_rdsstore" min="0" max="1000" step="10" value="50"></label>
-</div>
-<div class="cegroup"><h3>Networking</h3>
-<label>Application Load Balancers: <span id="ce_v_alb">1</span> <input type="range" id="ce_alb" min="0" max="6" step="1" value="1"></label>
-<label>NAT Gateways: <span id="ce_v_nat">1</span> <input type="range" id="ce_nat" min="0" max="4" step="1" value="1"></label>
-<label>NAT data processed: <span id="ce_v_natgb">100</span> GB <input type="range" id="ce_natgb" min="0" max="2000" step="50" value="100"></label>
-<label>Data transfer out: <span id="ce_v_dt">100</span> GB <input type="range" id="ce_dt" min="0" max="10000" step="100" value="100"></label>
-</div>
-<div class="cegroup"><h3>Platform, storage &amp; serverless</h3>
-<label>EKS clusters ($0.10/hr each): <span id="ce_v_eks">0</span> <input type="range" id="ce_eks" min="0" max="3" step="1" value="0"></label>
-<label>S3 storage: <span id="ce_v_s3">200</span> GB <input type="range" id="ce_s3" min="0" max="10000" step="100" value="200"></label>
-<label>CloudWatch Logs ingested: <span id="ce_v_cw">20</span> GB <input type="range" id="ce_cw" min="0" max="500" step="5" value="20"></label>
-<label>Lambda requests: <span id="ce_v_lam">1</span>M / month <input type="range" id="ce_lam" min="0" max="100" step="1" value="1"></label>
-</div>
-</div>
-<div class="cancard cesum">
-<div id="ce_rows"></div>
-<div class="costtotal"><span>Monthly total</span><b id="ce_monthly">$0</b></div>
-<div class="costrow"><span>Yearly (12 × monthly)</span><b id="ce_yearly">$0</b></div>
-<p class="cesave" id="ce_savenote" hidden></p>
-<div class="canbtns"><button class="btn" id="ce_copy">📋 Copy estimate</button></div>
-<p class="k8note">Sample on-demand rates for estimation only (EC2/RDS/ALB/NAT/EKS hourly × region factor; EBS gp3 $0.08/GB-mo; RDS storage $0.115/GB-mo; NAT data &amp; transfer out $0.045–$0.09/GB; S3 $0.023/GB-mo; Logs $0.50/GB; Lambda $0.20 per 1M requests). Always confirm in the AWS Pricing Calculator before budgeting.</p>
-</div>
-</div>
-</section>
+
 <section class="paper" id="approach" data-s="4">
   <div class="wrap">
     <p class="eb rv0">Approach</p>
@@ -1034,9 +958,6 @@ h2 .it{background:linear-gradient(92deg,var(--pu) 10%,#9be7c4 90%);-webkit-backg
   </div>
 </section>
 </main>
-<div id="ck" aria-hidden="true" data-t="system"><i class="od"></i><i class="or"></i><svg class="ar" viewBox="0 0 28 28"><defs><linearGradient id="ckg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" style="stop-color:var(--a1,#ff8a6b)"/><stop offset="1" style="stop-color:var(--a2,#6a4ce0)"/></linearGradient></defs><path d="M2 2v20l5.5-4.5L11 26l4-1.6-3.4-8H20z" fill="url(#ckg)" style="stroke:var(--as,#fff)" stroke-width="1.5" stroke-linejoin="round"/></svg><span class="al"></span><div class="tm">~$<b>▌</b></div><div class="dl"><svg viewBox="0 0 64 64" aria-hidden="true"><g class="rot"><g class="ears"><circle cx="13" cy="15" r="11" fill="#d9cffc"/><circle cx="13" cy="15" r="6.5" fill="#ff9fb2"/><circle cx="51" cy="15" r="11" fill="#d9cffc"/><circle cx="51" cy="15" r="6.5" fill="#ff9fb2"/></g><ellipse cx="32" cy="36" rx="24" ry="22" fill="#ece7ff" stroke="#b9aee6" stroke-width="1.5"/><circle cx="17" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><circle cx="47" cy="42" r="4.5" fill="#ff9fb2" opacity=".5"/><g class="eyes"><circle cx="23" cy="31" r="5" fill="#fff"/><circle cx="41" cy="31" r="5" fill="#fff"/><g class="pp"><circle cx="23" cy="31" r="2.8" fill="#1a1724"/><circle cx="41" cy="31" r="2.8" fill="#1a1724"/><circle cx="22" cy="30" r=".9" fill="#fff"/><circle cx="40" cy="30" r=".9" fill="#fff"/></g></g><ellipse cx="32" cy="40" rx="3.6" ry="2.7" fill="#ff7a93"/><path d="M28 45q4 3.5 8 0" fill="none" stroke="#6a4ce0" stroke-width="1.6" stroke-linecap="round"/><path d="M4 38l11 2M4 45l11-1M60 38l-11 2M60 45l-11-1" stroke="#b9aee6" stroke-width="1.4" stroke-linecap="round"/></g></svg><span class="zz">z z</span><span class="say">squeak!</span></div></div>
-<canvas id="ckcv" aria-hidden="true"></canvas>
-<div class="ckw" id="ckw"><button id="ckb" type="button" aria-expanded="false" aria-controls="ckp">Cursor · <b id="ckn">System</b></button><div id="ckp" role="radiogroup" aria-label="Cursor theme" hidden></div></div>
 
 <button class="askb" id="askopen" aria-haspopup="dialog">✦ Ask <b>about Kashif</b></button>
 
@@ -1402,43 +1323,17 @@ function open(){if(!d.showModal){window.open(url,'_blank','noopener');return}
 if(navigator.pdfViewerEnabled&&url){f.hidden=false;sh.hidden=true;if(!f.getAttribute('src'))f.src=url}else{f.hidden=true;sh.hidden=false}
 d.showModal();document.body.style.overflow='hidden'}
 $$('[data-ropen]').forEach(b=>b.onclick=open);$('#rcl').onclick=()=>d.close();d.addEventListener('click',e=>{if(e.target===d)d.close()});d.addEventListener('close',()=>{document.body.style.overflow=''})})();
-/* Cursor themes + mouse doll (fine pointers only; choice saved in localStorage) */
-safe(function(){const w=$('#ckw');if(!w)return;if(!matchMedia('(hover:hover) and (pointer:fine)').matches){w.hidden=true;return}
-const ck=$('#ck'),cv=$('#ckcv'),c=cv.getContext('2d'),od=ck.querySelector('.od'),or=ck.querySelector('.or'),ar=ck.querySelector('.ar'),al=ck.querySelector('.al'),tm=ck.querySelector('.tm'),dl=ck.querySelector('.dl'),rot=dl.querySelector('.rot'),pp=dl.querySelector('.pp'),dlg=$('#rdlg'),dpr=Math.min(devicePixelRatio||1,2);
-const T=[['system','System arrow'],['arrow','Glow arrow','arrow','#ff8a6b','#6a4ce0','#fff',''],['aws','AWS arrow','arrow','#ff9900','#232f3e','#fff','AWS'],['tf','Terraform arrow','arrow','#7b42bc','#b29dff','#fff','TF'],['k8s','Kubernetes arrow','arrow','#326ce5','#7fb0ff','#fff','K8S'],['gh','GitHub arrow','arrow','#f0f6fc','#8b949e','#0d1117','GIT'],['orb','Neon orb'],['term','Terminal'],['doll','Mouse doll']];let th='system',mx=-99,my=-99,px=-99,py=-99,rx=-99,ry=-99,hov=false,inside=false,raf=0,lm=0,tail=[];
-try{th=localStorage.getItem('ck-th')||'system'}catch(e){}if(!T.some(t=>t[0]===th))th='system';
-function size(){cv.width=innerWidth*dpr;cv.height=innerHeight*dpr;c.setTransform(dpr,0,0,dpr,0,0)}size();addEventListener('resize',size);
-const P=$('#ckp');P.innerHTML=T.map(t=>`<button type="button" role="radio" aria-checked="false" data-t="${t[0]}">${t[1]}</button>`).join('');
-function apply(t){th=t;const D=T.find(x=>x[0]===t);ck.dataset.t=D[2]||t;['--a1','--a2','--as'].forEach((k,i)=>D[3+i]?ck.style.setProperty(k,D[3+i]):ck.style.removeProperty(k));al.textContent=D[6]||'';document.body.classList.toggle('ck',t!=='system');cv.style.display=t==='doll'?'block':'none';$('#ckn').textContent=T.find(x=>x[0]===t)[1];[...P.children].forEach(b=>b.setAttribute('aria-checked',b.dataset.t===t));try{localStorage.setItem('ck-th',t)}catch(e){}if(t!=='system'&&!raf)raf=requestAnimationFrame(loop)}
-P.onclick=e=>{const b=e.target.closest('button');if(b){apply(b.dataset.t);P.hidden=true;$('#ckb').setAttribute('aria-expanded','false')}};
-$('#ckb').onclick=()=>{P.hidden=!P.hidden;$('#ckb').setAttribute('aria-expanded',!P.hidden)};
-addEventListener('keydown',e=>{if(e.key==='Escape'&&!P.hidden){P.hidden=true;$('#ckb').setAttribute('aria-expanded','false');$('#ckb').focus()}});
-addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;inside=true;lm=performance.now();hov=!!(e.target.closest&&e.target.closest('a,button,input,label,summary,[role=button]'));if(px<0){px=rx=mx;py=ry=my;tail=Array.from({length:16},()=>({x:mx,y:my}))}},{passive:true});
-document.documentElement.addEventListener('mouseleave',()=>inside=false);document.documentElement.addEventListener('mouseenter',()=>inside=true);
-addEventListener('mousedown',()=>{if(th==='doll'){dl.classList.add('sy');setTimeout(()=>dl.classList.remove('sy'),650)}});
-const cl=(v,a,b)=>Math.min(b,Math.max(a,v));
-function loop(now){if(th==='system'){raf=0;ck.style.opacity=0;c.clearRect(0,0,innerWidth,innerHeight);return}raf=requestAnimationFrame(loop);
-const f=RM?1:.22,show=inside&&mx>-50&&!document.querySelector('dialog[open]');ck.style.opacity=cv.style.opacity=show?1:0;
-const vx=mx-px,vy=my-py;px+=vx*f;py+=vy*f;rx+=(mx-rx)*(RM?1:.14);ry+=(my-ry)*(RM?1:.14);
-for(const el of [or,ar,al,tm,dl])el.classList.toggle('hov',hov);
-od.style.transform=`translate(${mx}px,${my}px)`;or.style.transform=`translate(${rx}px,${ry}px)`;ar.style.transform=`translate(${mx}px,${my}px)`+(hov?' scale(1.25) rotate(-8deg)':'');tm.style.transform=`translate(${mx}px,${my}px)`;al.style.transform=`translate(${mx}px,${my}px)`;
-if(th==='doll'){dl.style.transform=`translate(${px-28}px,${py-35}px)`;dl.classList.toggle('sl',now-lm>4000);rot.style.transform=`rotate(${cl(vx*.9,-20,20)}deg)`;rot.style.transformOrigin='32px 40px';
-pp.setAttribute('transform',`translate(${cl(vx*.2,-1.8,1.8).toFixed(2)} ${cl(vy*.2,-1.4,1.4).toFixed(2)})`);
-c.clearRect(0,0,innerWidth,innerHeight);tail[0].x=px;tail[0].y=py+14;
-for(let i=1;i<tail.length;i++){const a=tail[i-1],b=tail[i];b.y+=.18;b.x+=RM?0:Math.sin(now/260+i*.7)*.35;let dx=b.x-a.x,dy=b.y-a.y,d=Math.hypot(dx,dy)||1;b.x=a.x+dx/d*8;b.y=a.y+dy/d*8}
-c.lineCap='round';c.lineJoin='round';for(let i=1;i<tail.length;i++){c.strokeStyle=i>13?'#ff9fb2':'#f4a8bd';c.lineWidth=5-i*.22;c.beginPath();c.moveTo(tail[i-1].x,tail[i-1].y);c.lineTo(tail[i].x,tail[i].y);c.stroke()}}}
-apply(th);document.addEventListener('visibilitychange',()=>{if(!document.hidden&&th!=='system'&&!raf)raf=requestAnimationFrame(loop)})})();
 /* Command palette (Ctrl/⌘+K) */
 safe(function(){const d=$('#cmd'),q=$('#cmq'),ul=$('#cml');if(!d||!d.showModal)return;
 const go=id=>()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth',block:'start'})};
 const go2=(id,sel)=>()=>{go(id)();setTimeout(()=>{const b=$(sel);if(b&&!b.disabled)b.click()},RM?0:800)};
 const toast=m=>{const t=$('#toast');t.textContent=m;t.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>t.classList.remove('on'),2200)};
 const ext=u=>()=>u?window.open(u,'_blank','noopener'):toast('Add this URL in SITE_CONFIG');
-const ck=t=>()=>{const b=$('#ckp [data-t='+t+']');b?b.click():toast('Cursor themes need a mouse')};
+
 const A=[['Projects','Go',go('work')],['Terraform environments','Go',go('terraform')],['Kubernetes self-healing','Go',go('k8s')],['Git branching','Go',go('branching')],['CI/CD pipeline','Go',go('cicd')],['GitHub repositories','Go',go('github')],['About me','Go',go('about')],['How this site is delivered','Go',go('delivery')],['Approach','Go',go('approach')],['Contact','Go',go('contact')],
 ['Preview resume','Action',()=>$('[data-ropen]').click()],['Download resume (PDF)','Action',()=>{const a=$('.rdl');if(a)a.click()}],['Copy email address','Action',()=>{const m=SITE_CONFIG.email;(navigator.clipboard?navigator.clipboard.writeText(m):Promise.reject()).then(()=>toast('Email copied'),()=>toast(m))}],['Open LinkedIn','Link',ext(SITE_CONFIG.linkedin)],['Open GitHub','Link',ext(SITE_CONFIG.github)],
 ['Run CI/CD pipeline','Demo',go2('cicd','#runpl')],['Crash a Kubernetes pod','Demo',go2('k8s','#kk')],['Run terraform workflow','Demo',go2('terraform','#tfrun')],['Play git branching','Demo',go2('branching','#gtplay')],['Send a request through CloudFront','Demo',go2('delivery','#flgo')],
-['Open terminal','Action',()=>{const b=$('#shb');if(b)b.click()}],['Monitoring dashboard','Go',go('monitor')],['Skill network','Go',go('skillmap')],['Write me a message','Go',go('cfrm')],['Keyboard shortcuts','Action',()=>$('#keys').showModal()],['Toggle light / dark theme','Action',()=>$('#tsw').click()],['Inject load (alert demo)','Demo',go2('monitor','#mgo')],['Cursor: Mouse doll','Cursor',ck('doll')],['Cursor: Neon orb','Cursor',ck('orb')],['Cursor: Terminal','Cursor',ck('term')],['Cursor: System arrow','Cursor',ck('system')]];
+['Open terminal','Action',()=>{const b=$('#shb');if(b)b.click()}],['Monitoring dashboard','Go',go('monitor')],['Skill network','Go',go('skillmap')],['Write me a message','Go',go('cfrm')],['Keyboard shortcuts','Action',()=>$('#keys').showModal()],['Toggle light / dark theme','Action',()=>$('#tsw').click()],['Inject load (alert demo)','Demo',go2('monitor','#mgo')]];
 let L=A,i=0;
 function draw(){ul.innerHTML=L.length?L.map((a,n)=>`<li role="option" id="cm${n}" data-i="${n}" aria-selected="${n===i}">${a[0]}<span>${a[1]}</span></li>`).join(''):'<li class="no" role="option" aria-selected="false">No matching command</li>';q.setAttribute('aria-activedescendant',L.length?'cm'+i:'');const e=$('#cm'+i);if(e)e.scrollIntoView({block:'nearest'})}
 function filter(){const w=q.value.toLowerCase().split(/\s+/).filter(Boolean);L=A.filter(a=>w.every(x=>(a[0]+' '+a[1]).toLowerCase().includes(x)));i=0;draw()}
@@ -1480,8 +1375,8 @@ safe(function(){const d=$('#sh'),out=$('#sho'),inp=$('#shi'),b=$('#shb');if(!d||
 const w=(t,c)=>{const e=document.createElement('div');e.textContent=t;if(c)e.className=c;out.appendChild(e);out.scrollTop=out.scrollHeight};
 const go=id=>{d.close();setTimeout(()=>{const e=document.getElementById(id);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth'})},80)};
 const S=SITE_CONFIG,FILES={'about.txt':['Syed Kashif Ali, DevOps & Cloud Engineer from Hyderabad.','Cloud Engineer intern at Future Applications Technologies (Nov 2025 - May 2026).','Pursuing MCA (2026-2028); BCA 2022-2025, CGPA 8.3/10.'],'skills.txt':['AWS: EC2 ECS S3 VPC IAM Lambda RDS ALB ECR CloudWatch KMS WAF','IaC: Terraform (AWS/Azure/GCP modules), Ansible basics','Containers: Docker, Kubernetes (EKS), Helm, Trivy','CI/CD: Jenkins, GitHub Actions, Argo CD, SonarQube','Observability: Prometheus, Grafana, CloudWatch, Dynatrace, EFK, PagerDuty','Code: Python, Bash, Java, SQL'],'contact.txt':['email:    '+S.email,'linkedin: '+S.linkedin,'github:   '+S.github,'site:     '+S.site]};
-const THEMES=['system','arrow','aws','tf','k8s','gh','orb','term','doll'],SEC={projects:'work',terraform:'terraform',kubernetes:'k8s',git:'branching',cicd:'cicd',monitor:'monitor',github:'github',about:'about',contact:'contact'},DEMO={pipeline:['cicd','#runpl'],pod:['k8s','#kk'],terraform:['terraform','#tfrun'],git:['branching','#gtplay'],cdn:['delivery','#flgo'],alert:['monitor','#mgo']};
-const C={help:()=>['Commands:','  whoami  about  skills  projects  experience  certs  education  contact','  ls  cat <file>  resume  github  linkedin  goto <section>  demo <name>','  kubectl get pods  terraform plan  neofetch  theme <name>  clear  exit','','goto: '+Object.keys(SEC).join(' '),'demo: '+Object.keys(DEMO).join(' '),'theme: '+THEMES.join(' ')],
+const SEC={projects:'work',terraform:'terraform',kubernetes:'k8s',git:'branching',cicd:'cicd',monitor:'monitor',github:'github',about:'about',contact:'contact'},DEMO={pipeline:['cicd','#runpl'],pod:['k8s','#kk'],terraform:['terraform','#tfrun'],git:['branching','#gtplay'],cdn:['delivery','#flgo'],alert:['monitor','#mgo']};
+const C={help:()=>['Commands:','  whoami  about  skills  projects  experience  certs  education  contact','  ls  cat <file>  resume  github  linkedin  goto <section>  demo <name>','  kubectl get pods  terraform plan  neofetch  theme <name>  clear  exit','','goto: '+Object.keys(SEC).join(' '),'demo: '+Object.keys(DEMO).join(' ')],
 whoami:()=>['kashif  (DevOps & Cloud Engineer, Hyderabad, India)'],about:()=>FILES['about.txt'],skills:()=>FILES['skills.txt'],contact:()=>FILES['contact.txt'],
 projects:()=>['1. Infrastructure as Code with Terraform (AWS)','2. Ecommerce microservices on EKS with Helm + Argo CD','3. AI Agent Hostel Management Platform (Lambda, Bedrock, MCP)','4. Monitoring & alerting with Prometheus, Grafana, PagerDuty'],
 experience:()=>['Cloud Engineer (Internship) - Future Applications Technologies','Nov 2025 - May 2026 | Beed, Maharashtra | Hybrid','- Terraform on AWS, CI/CD pipelines, EC2 shutdown archival to S3, Lambda log rotation'],
@@ -1500,7 +1395,6 @@ case'resume':w('opening resume preview...','mu');d.close();setTimeout(()=>$('[da
 case'github':case'linkedin':{const u=c==='github'?S.github:S.linkedin;w(u?'opening '+u:'URL not set in SITE_CONFIG',u?'mu':'er');if(u)window.open(u,'_blank','noopener');return}
 case'goto':{const t=SEC[a[0]];return t?(w('scrolling to '+a[0]+'...','mu'),go(t)):w('usage: goto <'+Object.keys(SEC).join('|')+'>','er')}
 case'demo':{const t=DEMO[a[0]];return t?(w('starting demo: '+a[0],'mu'),d.close(),setTimeout(()=>{const e=document.getElementById(t[0]);if(e)e.scrollIntoView({behavior:RM?'auto':'smooth'});setTimeout(()=>{const x=$(t[1]);if(x&&!x.disabled)x.click()},RM?0:800)},80)):w('usage: demo <'+Object.keys(DEMO).join('|')+'>','er')}
-case'theme':{const t=a[0],x=$('#ckp [data-t='+t+']');return THEMES.includes(t)&&x?(x.click(),w('cursor theme: '+t,'ok')):w(x||!t?'usage: theme <'+THEMES.join('|')+'>':'cursor themes need a mouse','er')}
 case'rm':w('nice try. this shell is read-only.','er');return;case'sudo':w('kashif is not in the sudoers file. This incident will be reported.','er');return}
 w('command not found: '+c+'. Type "help".','er')}
 function open(){d.showModal();inp.focus();if(!out.children.length){w('Welcome! This is a simulated shell: nothing real is executed.','hl');w('Type "help" to see commands. Tip: press ` anywhere to open me.','mu')}}
@@ -1938,7 +1832,7 @@ document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);}
 </script>
 
 <script>
-/* ===== ADVANCED v12 JS: canary sim + GitHub activity + cost estimator (self-contained) ===== */
+/* ===== ADVANCED v12 JS: canary sim + GitHub activity (self-contained) ===== */
 (function(){
 "use strict";
 function el(id){return document.getElementById(id);}
@@ -1988,56 +1882,6 @@ if(window.fetch){fetch("https://api.github.com/users/kashifsayyad09/repos?sort=u
 .then(function(data){ghRender(data.map(function(x){return{n:x.name,d:x.description,l:x.language,s:x.stargazers_count,u:(x.updated_at||"").slice(0,10)};}));})
 .catch(function(){ghRender(FALLBACK,"Live fetch unavailable — showing the two flagship repositories.");});}
 else{ghRender(FALLBACK,"Showing the two flagship repositories.");}
-/* ---------- Detailed AWS cost estimator (v13) ---------- */
-var CE_ROWS=[["ec2","EC2 compute"],["ebs","EBS storage (gp3)"],["rds","RDS instance"],["rdsstore","RDS storage"],["alb","Application Load Balancers"],["nat","NAT Gateways"],["natdata","NAT data processing"],["dt","Data transfer out"],["eks","EKS control plane"],["s3","S3 storage"],["cw","CloudWatch Logs"],["lam","Lambda requests"]];
-var ceRowsEl=el("ce_rows");
-CE_ROWS.forEach(function(r){var d=document.createElement("div");d.className="cerow";
-d.innerHTML='<div class="cerowtop"><span>'+r[1]+'</span><b id="ce_r_'+r[0]+'">$0</b></div><div class="cebar"><i id="ce_b_'+r[0]+'"></i></div>';
-ceRowsEl.appendChild(d);});
-var ceLast={};
-function ceCalc(){
-function gv(id){var e=el(id);return e?+e.value:0;}
-var region=gv("ce_region"),disc=gv("ce_disc"),hrs=gv("ce_hours");
-var ec2raw=gv("ce_ec2n")*gv("ce_ec2size")*hrs*region;
-var rdsraw=gv("ce_rds")*730*region*(el("ce_rdsmaz")&&el("ce_rdsmaz").checked?2:1);
-var eksraw=gv("ce_eks")*0.10*730*region;
-var keep=1-disc;
-var L={};
-L.ec2=ec2raw*keep; L.eks=eksraw*keep; L.rds=rdsraw*keep;
-L.ebs=gv("ce_ebs")*0.08;
-L.rdsstore=gv("ce_rdsstore")*0.115*(el("ce_rdsmaz")&&el("ce_rdsmaz").checked?2:1);
-L.alb=gv("ce_alb")*0.0225*730*region;
-L.nat=gv("ce_nat")*0.045*730*region;
-L.natdata=gv("ce_natgb")*0.045;
-L.dt=gv("ce_dt")*0.09;
-L.s3=gv("ce_s3")*0.023;
-L.cw=gv("ce_cw")*0.50;
-L.lam=gv("ce_lam")*0.20;
-var total=0,max=0.01;
-CE_ROWS.forEach(function(r){total+=L[r[0]];if(L[r[0]]>max)max=L[r[0]];});
-CE_ROWS.forEach(function(r){el("ce_r_"+r[0]).textContent=money(L[r[0]]);el("ce_b_"+r[0]).style.width=(L[r[0]]/max*100).toFixed(1)+"%";});
-el("ce_monthly").textContent=money(total);
-el("ce_yearly").textContent=money(total*12);
-var saved=(ec2raw+rdsraw+eksraw)*disc;
-var sn=el("ce_savenote");
-if(disc>0&&saved>0){sn.hidden=false;sn.textContent="Commitment discount saves "+money(saved)+"/month vs on-demand.";}
-else{sn.hidden=true;}
-[["ce_ec2n","ce_v_ec2n"],["ce_hours","ce_v_hours"],["ce_ebs","ce_v_ebs"],["ce_rdsstore","ce_v_rdsstore"],["ce_alb","ce_v_alb"],["ce_nat","ce_v_nat"],["ce_natgb","ce_v_natgb"],["ce_dt","ce_v_dt"],["ce_eks","ce_v_eks"],["ce_s3","ce_v_s3"],["ce_cw","ce_v_cw"],["ce_lam","ce_v_lam"]].forEach(function(pair){var s=el(pair[1]);if(s)s.textContent=el(pair[0]).value;});
-ceLast={lines:L,total:total,saved:saved};}
-["ce_region","ce_disc","ce_ec2n","ce_ec2size","ce_hours","ce_ebs","ce_rds","ce_rdsmaz","ce_rdsstore","ce_alb","ce_nat","ce_natgb","ce_dt","ce_eks","ce_s3","ce_cw","ce_lam"].forEach(function(id){var e=el(id);if(e){e.addEventListener("input",ceCalc);e.addEventListener("change",ceCalc);}});
-if(el("ce_rows"))ceCalc();
-var ceCopy=el("ce_copy");
-if(ceCopy)ceCopy.addEventListener("click",function(){
-var out=["AWS cost estimate (sample rates)",""];
-CE_ROWS.forEach(function(r){out.push(r[1]+": "+money(ceLast.lines[r[0]]||0)+"/mo");});
-out.push("","Monthly total: "+money(ceLast.total),"Yearly: "+money(ceLast.total*12));
-if(ceLast.saved>0)out.push("Commitment savings: "+money(ceLast.saved)+"/mo");
-out.push("Estimate only — confirm in the AWS Pricing Calculator.");
-var txt=out.join("\n");
-function done(){ceCopy.textContent="✅ Copied";setTimeout(function(){ceCopy.textContent="📋 Copy estimate";},1600);}
-if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(done).catch(done);}
-else{var ta=document.createElement("textarea");ta.value=txt;document.body.appendChild(ta);ta.select();try{document.execCommand("copy");}catch(e){}ta.remove();done();}
-});
 })();
 </script>
 
@@ -2105,6 +1949,32 @@ document.querySelectorAll("#cases .case").forEach(function(card){
   });
   card.addEventListener("mouseleave",function(){card.style.transition="transform .35s ease";card.style.transform="";});
 });
+})();
+</script>
+
+<div class="accbar" role="group" aria-label="Accent colour">
+<span>Accent</span>
+<button class="accdot on" data-acc="#b29dff" style="background:#b29dff" aria-label="Purple accent"></button>
+<button class="accdot" data-acc="#9be7c4" style="background:#9be7c4" aria-label="Green accent"></button>
+<button class="accdot" data-acc="#ffd166" style="background:#ffd166" aria-label="Amber accent"></button>
+<button class="accdot" data-acc="#7cc7ff" style="background:#7cc7ff" aria-label="Sky accent"></button>
+</div>
+<script>
+/* ===== ADVANCED v18 JS: accent picker + card glow (self-contained) ===== */
+(function(){
+"use strict";
+/* accent picker (persists) */
+var dots=document.querySelectorAll(".accdot");
+function applyAcc(c){document.documentElement.style.setProperty("--pu",c);dots.forEach(function(d){d.classList.toggle("on",d.getAttribute("data-acc")===c);});}
+var saved=null;try{saved=localStorage.getItem("accent");}catch(e){}
+if(saved)applyAcc(saved);
+dots.forEach(function(d){d.addEventListener("click",function(){var c=d.getAttribute("data-acc");applyAcc(c);try{localStorage.setItem("accent",c);}catch(e){}});});
+/* cursor glow position on cards */
+if(window.matchMedia&&window.matchMedia("(pointer:fine)").matches){
+  document.querySelectorAll(".cancard,.ghcard").forEach(function(card){
+    card.addEventListener("mousemove",function(e){var r=card.getBoundingClientRect();card.style.setProperty("--mx",((e.clientX-r.left)/r.width*100)+"%");card.style.setProperty("--my",((e.clientY-r.top)/r.height*100)+"%");});
+  });
+}
 })();
 </script>
 </body>
