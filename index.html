@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Syed Kashif Ali — DevOps &amp; Cloud Engineer</title>
-<meta name="portfolio-version" content="advanced-v9">
+<meta name="portfolio-version" content="advanced-v12">
 <meta name="description" content="Portfolio of Syed Kashif Ali: AWS, Terraform, Kubernetes, CI/CD and observability.">
 <script>try{if(localStorage.getItem("theme")==="light")document.documentElement.dataset.theme="light"}catch(e){}</script>
 <meta name="theme-color" content="#0b0a10">
@@ -443,8 +443,8 @@ html[data-theme=light] body.adv5-hc{--mu:#2c2c38}
 .presnav span{color:var(--mu);font:700 14px ui-monospace,Menlo,Consolas,monospace}
 html[data-theme=light] #a11ypanel,html[data-theme=light] .logbar input[type=search],html[data-theme=light] .logbar select{background:#fff;color:#121212}
 
-/* ===== ADVANCED v6: pipeline builder + DevOps quiz + print one-pager ===== */
-.pb,.qz{padding:var(--sec) 0}.pb h2,.qz h2{margin:14px 0 clamp(28px,4vw,48px)}
+/* ===== ADVANCED v6: pipeline builder + print one-pager ===== */
+.pb{padding:var(--sec) 0}.pb h2{margin:14px 0 clamp(28px,4vw,48px)}
 .pbgrid{display:grid;grid-template-columns:1fr 1.2fr;gap:20px}
 @media(max-width:900px){.pbgrid{grid-template-columns:1fr}}
 .pbpal{display:flex;flex-wrap:wrap;gap:10px;align-content:flex-start}
@@ -457,16 +457,6 @@ html[data-theme=light] #a11ypanel,html[data-theme=light] .logbar input[type=sear
 .pbwarn{color:#ffb35c;font-size:15px;min-height:1.4em}
 .pbok{color:#9be7c4;font-size:15px;min-height:1.4em}
 #pbyaml{min-height:280px;max-height:380px;overflow:auto;font-size:12.5px}
-.qzgrid{display:grid;gap:16px}
-.qzq{border:1px solid rgba(244,240,232,.14);border-radius:20px;padding:20px;background:var(--s2)}
-.qzq h3{font-size:19px;margin-bottom:12px;letter-spacing:-.02em}
-.qzopts{display:grid;gap:8px}
-.qzopts button{text-align:left;border:1.5px solid rgba(244,240,232,.2);border-radius:12px;padding:12px 16px;min-height:48px;font-weight:600;transition:.2s}
-.qzopts button:hover{border-color:var(--pu)}
-.qzopts button.right{border-color:#9be7c4;background:rgba(155,231,196,.1)}
-.qzopts button.wrong{border-color:#ff5d6c;background:rgba(255,93,108,.1)}
-.qzopts button[disabled]{opacity:.75}
-.qzscore{font:italic 400 clamp(28px,3.4vw,44px) var(--ser);color:var(--pu)}
 .printb{position:fixed;right:16px;bottom:330px;z-index:70;min-height:44px;padding:0 16px;border-radius:99px;background:rgba(18,16,25,.92);border:1px solid rgba(244,240,232,.45);color:var(--tx);font-weight:700;font-size:14px;backdrop-filter:blur(8px)}
 #printone{display:none}
 @media print{
@@ -476,7 +466,48 @@ body>#printone{display:block!important;color:#000;background:#fff;font:14px/1.55
 #printone h2{font:700 16px Georgia,serif;margin:16px 0 6px;border-bottom:1.5px solid #000;padding-bottom:2px}
 #printone ul{margin-left:18px}#printone p{margin:3px 0}
 }
-html[data-theme=light] .qzq,html[data-theme=light] .pbitem{background:#fff}
+html[data-theme=light] .pbitem{background:#fff}
+
+/* ===== ADVANCED v11: all floating actions in one Tools tab ===== */
+.toolstab{position:fixed;right:16px;bottom:16px;z-index:72;min-height:44px;padding:0 18px;border-radius:99px;background:rgba(18,16,25,.94);border:1.5px solid var(--pu);color:var(--tx);font-weight:800;font-size:14px;cursor:pointer;backdrop-filter:blur(8px);box-shadow:0 12px 32px rgba(0,0,0,.35);transition:bottom .25s ease,transform .2s}
+.toolstab:hover{transform:translateY(-1px)}
+body.toolsopen .toolstab{bottom:384px}
+.askb,.perfb,.rec,.tro,.presb,.printb,.shb{transition:opacity .22s ease,transform .22s ease,visibility .22s}
+body:not(.toolsopen) .askb,body:not(.toolsopen) .perfb,body:not(.toolsopen) .rec,body:not(.toolsopen) .tro,body:not(.toolsopen) .presb,body:not(.toolsopen) .printb,body:not(.toolsopen) .shb{opacity:0;visibility:hidden;transform:translateX(14px);pointer-events:none}
+html[data-theme=light] .toolstab{background:rgba(255,255,255,.95)}
+
+/* ===== ADVANCED v12: canary simulator + GitHub activity + cost estimator ===== */
+.can,.gh,.cost{padding:var(--sec) 0}
+.can h2,.gh h2,.cost h2{margin:14px 0 clamp(28px,4vw,48px)}
+.cangrid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
+@media(max-width:820px){.cangrid{grid-template-columns:1fr}}
+.cancard{border:1px solid rgba(244,240,232,.14);border-radius:22px;padding:22px;background:var(--s2)}
+#canplot{width:100%;height:190px;display:block}
+.canstats{display:flex;gap:26px;flex-wrap:wrap;margin-top:14px}
+.canstats div b{display:block;font-size:26px;letter-spacing:-.02em}
+.canstats div span{opacity:.65;font-size:12.5px;text-transform:uppercase;letter-spacing:.08em}
+.canlog{font:12.5px/1.75 ui-monospace,Menlo,Consolas,monospace;max-height:190px;overflow:auto;white-space:pre-wrap}
+.canlog .bad{color:#ff8b96}.canlog .good{color:#9be7c4}
+.canbtns{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.cansteps{display:flex;gap:8px;margin:0 0 16px;flex-wrap:wrap}
+.canstep{padding:7px 14px;border-radius:99px;border:1.5px solid rgba(244,240,232,.25);font-weight:700;font-size:13px;opacity:.55}
+.canstep.on{opacity:1;border-color:var(--pu);background:rgba(178,157,255,.12)}
+.canstep.done{opacity:1;border-color:#9be7c4;color:#9be7c4}
+.ghgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.ghcard{border:1px solid rgba(244,240,232,.14);border-radius:18px;padding:18px;background:var(--s2);display:block}
+.ghcard h3{font-size:17px;margin-bottom:6px}
+.ghcard p{opacity:.75;font-size:13.5px;line-height:1.55;min-height:40px}
+.ghmeta{display:flex;gap:14px;font:12px ui-monospace,Menlo,monospace;opacity:.7;margin-top:10px;flex-wrap:wrap}
+.costgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:18px}
+@media(max-width:820px){.costgrid{grid-template-columns:1fr}}
+.costctl{display:grid;gap:16px}
+.costctl label{font-weight:700;font-size:14px;display:grid;gap:7px}
+.costctl select{padding:11px 13px;border-radius:12px;background:var(--s2);color:var(--tx);border:1px solid rgba(244,240,232,.25);min-height:44px;font-size:14px}
+.costrow{display:flex;justify-content:space-between;padding:11px 2px;border-bottom:1px dashed rgba(244,240,232,.18);font-size:15px}
+.costrow b{font-variant-numeric:tabular-nums}
+.costtotal{display:flex;justify-content:space-between;align-items:baseline;padding-top:16px}
+.costtotal b{font:italic 400 clamp(34px,4.5vw,52px) var(--ser);color:var(--pu)}
+html[data-theme=light] .cancard,html[data-theme=light] .ghcard{background:#fff}
 </style>
 </head>
 <body>
@@ -768,17 +799,72 @@ html[data-theme=light] .qzq,html[data-theme=light] .pbitem{background:#fff}
 </div>
 </div>
 </section>
-<section class="qz wrap" id="quiz" aria-label="DevOps knowledge quiz">
-<p class="eb">Interactive challenge · Test yourself</p>
-<h2>Six questions. <span class="it">No pressure.</span></h2>
-<div class="qzgrid" id="qzgrid"></div>
-<div class="incrow" style="margin-top:20px;align-items:center">
-<span class="qzscore" id="qzscore">Score: 0 / 6</span>
-<button class="btn" id="qzretry">↻ Retry quiz</button>
+
+
+
+<section class="can wrap" id="canary" aria-label="Canary deployment simulator">
+<p class="eb">Interactive demo · Progressive delivery</p>
+<h2>Ship it to 5% first. <span class="it">Watch the errors.</span></h2>
+<div class="cansteps" id="cansteps"></div>
+<div class="cangrid">
+<div class="cancard">
+<canvas id="canplot" width="640" height="190" aria-label="Canary error rate chart"></canvas>
+<div class="canstats">
+<div><b id="canerr">0.0%</b><span>error rate</span></div>
+<div><b id="cantraffic">5%</b><span>traffic on v2</span></div>
+<div><b id="canverdict">Healthy</b><span>verdict (gate: 2%)</span></div>
 </div>
-<p class="k8note" id="qzmsg">Questions drawn from the tools and methods used across this page — Kubernetes, Terraform, GitOps, Helm and incident work.</p>
+<div class="canbtns">
+<button class="btn" id="canpromote">⬆ Promote canary</button>
+<button class="btn g" id="caninject">⚠ Inject bad deploy</button>
+<button class="btn g" id="canrollback">↩ Roll back</button>
+</div>
+</div>
+<div class="cancard"><div class="canlog" id="canlog" aria-live="polite"></div></div>
+</div>
+<p class="k8note">A canary release routes a slice of traffic to the new version while error rates are watched against a gate. Stay under the gate and promote; breach it and roll back. Simulated data.</p>
 </section>
 
+<section class="gh wrap" id="github" aria-label="Live GitHub activity">
+<p class="eb">Live data · github.com/kashifsayyad09</p>
+<h2>Fresh from <span class="it">GitHub.</span></h2>
+<div class="ghgrid" id="ghgrid"><p class="k8note" id="ghstatus">Loading repositories…</p></div>
+<p class="k8note">Pulled live from the GitHub API in your browser. <a href="https://github.com/kashifsayyad09" target="_blank" rel="noopener">View the full profile ↗</a></p>
+</section>
+
+<section class="cost wrap" id="cost" aria-label="AWS cost estimator">
+<p class="eb">Interactive tool · FinOps basics</p>
+<h2>What would it cost <span class="it">per month?</span></h2>
+<div class="costgrid">
+<div class="costctl">
+<label>EC2 instances: <span id="costn2">3</span> <input type="range" id="costn" min="0" max="20" step="1" value="3"></label>
+<label>Instance size
+<select id="costsize">
+<option value="0.0104">t3.micro — $0.0104/hr</option>
+<option value="0.0208">t3.small — $0.0208/hr</option>
+<option value="0.0416" selected>t3.medium — $0.0416/hr</option>
+<option value="0.096">m5.large — $0.096/hr</option>
+</select></label>
+<label>RDS database
+<select id="costrds">
+<option value="0">None</option>
+<option value="0.018">db.t3.micro — $0.018/hr</option>
+<option value="0.036" selected>db.t3.small — $0.036/hr</option>
+<option value="0.171">db.m5.large — $0.171/hr</option>
+</select></label>
+<label>Application Load Balancers: <span id="costalb2">1</span> <input type="range" id="costalb" min="0" max="4" step="1" value="1"></label>
+<label>Data transfer out: <span id="costgb2">100</span> GB <input type="range" id="costgb" min="0" max="2000" step="50" value="100"></label>
+</div>
+<div class="cancard">
+<div class="costrow"><span>EC2 compute</span><b id="costec2">$0</b></div>
+<div class="costrow"><span>RDS database</span><b id="costrdsout">$0</b></div>
+<div class="costrow"><span>Load balancers</span><b id="costalbout">$0</b></div>
+<div class="costrow"><span>Data transfer</span><b id="costdtout">$0</b></div>
+<div class="costtotal"><span>Estimated monthly total</span><b id="costtotal">$0</b></div>
+<p class="k8note">730 hours/month. Sample us-east-1 on-demand rates for estimation only — always confirm in the AWS Pricing Calculator before budgeting.</p>
+</div>
+</div>
+</section>
 <section class="paper" id="approach" data-s="4">
   <div class="wrap">
     <p class="eb rv0">Approach</p>
@@ -1640,7 +1726,7 @@ if(localStorage.getItem("adv5big")){big=true;document.body.style.zoom="1.15";}}c
 
 
 <script>
-/* ===== ADVANCED v6 JS: pipeline builder + quiz + print one-pager (self-contained) ===== */
+/* ===== ADVANCED v6 JS: pipeline builder + print one-pager (self-contained) ===== */
 (function(){
 "use strict";
 function hook(id,fn){var el=document.getElementById(id);if(el)el.addEventListener("click",fn);}
@@ -1692,38 +1778,93 @@ hook("pbsort",function(){chosen.sort(function(a,b){return stage(a)[2]-stage(b)[2
 hook("pbcopy",function(){if(navigator.clipboard)navigator.clipboard.writeText(yaml());});
 ["checkout","test","sonar","build","trivy","push","deploy"].forEach(function(id){chosen.push(id);});
 renderPB();
-/* ---------- Quiz ---------- */
-var QUIZ=[
-["A pod keeps restarting with status OOMKilled. What happened?",["Its image failed to pull","The container exceeded its memory limit","The node ran out of disk","DNS resolution failed"],1],
-["What does `terraform plan` do?",["Applies the changes immediately","Deletes unused resources","Shows the changes Terraform would make, without applying them","Formats the configuration files"],2],
-["In GitOps with Argo CD, what is the source of truth for the cluster's desired state?",["The cluster's live state","A spreadsheet of deployments","The Git repository","The CI server's cache"],2],
-["What does a Kubernetes Horizontal Pod Autoscaler scale, and based on what?",["Nodes, based on cost","Pods, based on metrics like CPU/memory","Services, based on DNS traffic","Volumes, based on disk usage"],1],
-["An alert spikes. Which log line matters most?",["The last error in the stream","The first error at the spike's timestamp","The longest stack trace","Every WARN line"],1],
-["How does Helm usually give one chart different settings per environment?",["Separate chart copies per environment","Editing the chart before each deploy","Per-environment values files","Environment variables on the laptop"],2]];
-var score=0,answered=0;
-function buildQuiz(){score=0;answered=0;var grid=document.getElementById("qzgrid");if(!grid)return;grid.innerHTML="";
-QUIZ.forEach(function(q,qi){var card=document.createElement("div");card.className="qzq";
-var h=document.createElement("h3");h.textContent=(qi+1)+". "+q[0];card.appendChild(h);
-var opts=document.createElement("div");opts.className="qzopts";
-q[1].forEach(function(opt,oi){var b=document.createElement("button");b.textContent=opt;
-b.addEventListener("click",function(){if(b.disabled)return;
-opts.querySelectorAll("button").forEach(function(x){x.disabled=true;});
-if(oi===q[2]){b.classList.add("right");score++;}
-else{b.classList.add("wrong");opts.querySelectorAll("button")[q[2]].classList.add("right");}
-answered++;updScore();});
-opts.appendChild(b);});
-card.appendChild(opts);grid.appendChild(card);});updScore();}
-function updScore(){var s=document.getElementById("qzscore");if(s)s.textContent="Score: "+score+" / "+QUIZ.length;
-var m=document.getElementById("qzmsg");if(m&&answered===QUIZ.length){
-m.textContent=score===6?"Perfect score — that's exactly the thinking this page is built on. 🏆":
-score>=4?"Strong — "+score+"/6. The method sections above cover the ones that slipped.":
-score+"/6 — worth a walk through the simulations above, then retry.";}}
-buildQuiz();
-hook("qzretry",buildQuiz);
 /* ---------- Print one-pager ---------- */
 hook("printopen",function(){window.print();});
 })();
 </script>
 
+
+<button class="toolstab" id="toolstab" aria-expanded="false" aria-label="Open tools menu">☰ Tools</button>
+<script>
+/* ===== ADVANCED v11 JS: one Tools tab for all floating actions (self-contained) ===== */
+(function(){
+"use strict";
+var tab=document.getElementById("toolstab"); if(!tab)return;
+var ids=["printopen","presopen","troopen","recopen","perfopen","askopen","shb"];
+function set(o){document.body.classList.toggle("toolsopen",o);tab.setAttribute("aria-expanded",o?"true":"false");tab.innerHTML=o?"✕ Close":"☰ Tools";}
+tab.addEventListener("click",function(e){e.stopPropagation();set(!document.body.classList.contains("toolsopen"));});
+ids.forEach(function(id){var el=document.getElementById(id);if(el)el.addEventListener("click",function(){set(false);});});
+document.addEventListener("click",function(e){
+  if(!document.body.classList.contains("toolsopen")||e.target===tab)return;
+  var hit=ids.some(function(id){var el=document.getElementById(id);return el&&el.contains(e.target);});
+  if(!hit)set(false);
+});
+document.addEventListener("keydown",function(e){if(e.key==="Escape")set(false);});
+})();
+</script>
+
+<script>
+/* ===== ADVANCED v12 JS: canary sim + GitHub activity + cost estimator (self-contained) ===== */
+(function(){
+"use strict";
+function el(id){return document.getElementById(id);}
+/* ---------- Canary deployment simulator ---------- */
+var STAGES=[5,25,50,100],stage=0,pts=[],bad=false,timer=null;
+var logEl=el("canlog");
+function log(msg,cls){if(!logEl)return;var d=document.createElement("div");if(cls)d.className=cls;d.textContent=msg;logEl.appendChild(d);logEl.scrollTop=logEl.scrollHeight;}
+function steps(){var w=el("cansteps");if(!w)return;w.innerHTML="";STAGES.forEach(function(s,i){var d=document.createElement("span");d.className="canstep"+(i<stage?" done":i===stage?" on":"");d.textContent=s+"%";w.appendChild(d);});}
+function draw(){var c=el("canplot");if(!c)return;var x=c.getContext("2d");var W=c.width,H=c.height;x.clearRect(0,0,W,H);
+x.strokeStyle="rgba(255,93,108,.75)";x.setLineDash([5,4]);x.beginPath();var gy=H-(2/8)*H;x.moveTo(0,gy);x.lineTo(W,gy);x.stroke();x.setLineDash([]);
+x.fillStyle="rgba(244,240,232,.6)";x.font="11px ui-monospace,monospace";x.fillText("gate 2%",8,gy-6);
+x.strokeStyle="#b29dff";x.lineWidth=2;x.beginPath();
+pts.forEach(function(v,i){var px=i/(39)*W,py=H-(Math.min(v,8)/8)*H;if(i===0)x.moveTo(px,py);else x.lineTo(px,py);});
+x.stroke();x.lineWidth=1;}
+function tick(){var base=bad?5.2:0.45;var v=base+(Math.random()-0.5)*(bad?1.6:0.5);if(!bad&&Math.random()<0.05)v+=1.1;v=Math.max(0.05,v);
+pts.push(v);if(pts.length>40)pts.shift();
+var avg=pts.slice(-8).reduce(function(a,b){return a+b;},0)/Math.min(8,pts.length);
+if(el("canerr"))el("canerr").textContent=avg.toFixed(1)+"%";
+if(el("cantraffic"))el("cantraffic").textContent=STAGES[stage]+"%";
+var vd=el("canverdict");if(vd){vd.textContent=avg<2?"Healthy":avg<3.5?"Warning":"BREACH";vd.style.color=avg<2?"#9be7c4":avg<3.5?"#ffd166":"#ff8b96";}
+if(avg>=2&&pts.length%4===0)log("⚠ error rate "+avg.toFixed(1)+"% is over the 2% gate at "+STAGES[stage]+"% traffic","bad");
+draw();}
+steps();log("v2 deployed as canary at 5% traffic. Watching error rate against the 2% gate.","good");
+timer=setInterval(tick,900);tick();
+function hook(id,fn){var b=el(id);if(b)b.addEventListener("click",fn);}
+hook("canpromote",function(){var avg=pts.slice(-8).reduce(function(a,b){return a+b;},0)/Math.min(8,pts.length||1);
+if(avg>=2){log("Promotion blocked — error rate "+avg.toFixed(1)+"% is over the gate. Roll back or fix forward.","bad");return;}
+if(stage>=STAGES.length-1){log("✅ v2 is already at 100% — release complete.","good");return;}
+stage++;steps();log("⬆ Promoted: v2 now serves "+STAGES[stage]+"% of traffic (error rate "+avg.toFixed(1)+"%).","good");
+if(stage===STAGES.length-1)log("✅ Release complete — v2 is the new production version.","good");});
+hook("caninject",function(){bad=true;log("⚠ A bad config just shipped inside v2 — error rate climbing…","bad");});
+hook("canrollback",function(){bad=false;stage=0;steps();log("↩ Rolled back: all traffic returned to stable v1. v2 quarantined for investigation.","good");});
+/* ---------- Live GitHub activity ---------- */
+var FALLBACK=[
+{n:"waste-flow-ai",d:"AI-powered waste collection prioritization and route optimization system",l:"TypeScript",s:0,u:""},
+{n:"procure-hub",d:"AI-powered Smart Procurement Platform — FastAPI microservices, React, SI-Talker AI",l:"Python",s:0,u:""}];
+function ghCard(r){var a=document.createElement("a");a.className="ghcard";a.href="https://github.com/kashifsayyad09/"+r.n;a.target="_blank";a.rel="noopener";
+var h=document.createElement("h3");h.textContent=r.n;a.appendChild(h);
+var p=document.createElement("p");p.textContent=r.d||"No description";a.appendChild(p);
+var m=document.createElement("div");m.className="ghmeta";
+m.innerHTML="<span>● "+(r.l||"—")+"</span><span>★ "+r.s+"</span>"+(r.u?"<span>updated "+r.u+"</span>":"");
+a.appendChild(m);return a;}
+function ghRender(list,note){var g=el("ghgrid");if(!g)return;g.innerHTML="";list.forEach(function(r){g.appendChild(ghCard(r));});
+if(note){var s=el("ghstatus");if(s)s.textContent=note;}}
+if(window.fetch){fetch("https://api.github.com/users/kashifsayyad09/repos?sort=updated&per_page=6")
+.then(function(r){if(!r.ok)throw new Error("api");return r.json();})
+.then(function(data){ghRender(data.map(function(x){return{n:x.name,d:x.description,l:x.language,s:x.stargazers_count,u:(x.updated_at||"").slice(0,10)};}));})
+.catch(function(){ghRender(FALLBACK,"Live fetch unavailable — showing the two flagship repositories.");});}
+else{ghRender(FALLBACK,"Showing the two flagship repositories.");}
+/* ---------- AWS cost estimator ---------- */
+var HRS=730;
+function money(v){return "$"+v.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,",");}
+function calc(){var n=+el("costn").value,size=+el("costsize").value,rds=+el("costrds").value,alb=+el("costalb").value,gb=+el("costgb").value;
+var ec2=n*size*HRS,rd=rds*HRS,al=alb*0.0225*HRS,dt=gb*0.09;
+el("costn2").textContent=n;el("costalb2").textContent=alb;el("costgb2").textContent=gb;
+el("costec2").textContent=money(ec2);el("costrdsout").textContent=money(rd);el("costalbout").textContent=money(al);el("costdtout").textContent=money(dt);
+el("costtotal").textContent=money(ec2+rd+al+dt);}
+["costn","costsize","costrds","costalb","costgb"].forEach(function(id){var e=el(id);if(e){e.addEventListener("input",calc);e.addEventListener("change",calc);}});
+if(el("costn"))calc();
+})();
+</script>
 </body>
 </html>
